@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PLUMKY — Your style, your object.">
+    <title>PLUMKY</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <!-- LIPS 제품 슬라이더 라이브러리 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
+    <script src="js/common.js" defer></script>
+  </head>
+  <body>
+    <!-- 헤더 아이콘 -->
+    <svg class="header-icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="icon-search" viewBox="0 0 24 24">
+        <circle cx="10.5" cy="10.5" r="7.5"></circle>
+        <path d="m16 16 5 5"></path>
+      </symbol>
+      <symbol id="icon-cart" viewBox="0 0 24 24">
+        <path d="M2 4h3l3 12h11l3-10H5.5M8 12h12"></path>
+        <circle cx="9.5" cy="20" r="1.5"></circle>
+        <circle cx="18.5" cy="20" r="1.5"></circle>
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18"></path>
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="m5 5 14 14M19 5 5 19"></path>
+      </symbol>
+    </svg>
+
+    <!-- 헤더 -->
+    <header class="site-header">
+      <a class="header-logo" href="./index.html" aria-label="PLUMKY 메인">
+        <img src="이미지/logo.svg" alt="PLUMKY" width="306" height="107">
+      </a>
+
+      <nav class="header-nav" aria-label="주 메뉴">
+        <ul class="header-nav-list">
+          <li class="header-nav-item" data-header-dropdown>
+            <button class="header-nav-link" type="button" aria-expanded="false" aria-controls="header-shop-menu">SHOP</button>
+            <ul class="header-dropdown" id="header-shop-menu" hidden>
+              <li><a href="#best">BEST</a></li>
+              <li><a href="#holiday">holiday</a></li>
+              <li><a href="#lips">Lips</a></li>
+              <li><a href="#case">Case</a></li>
+              <li><a href="#charm">charm</a></li>
+            </ul>
+          </li>
+          <li class="header-nav-item"><a class="header-nav-link" href="#custom">CUSTOM</a></li>
+          <li class="header-nav-item"><a class="header-nav-link" href="#brand">BRAND</a></li>
+          <li class="header-nav-item" data-header-dropdown>
+            <button class="header-nav-link" type="button" aria-expanded="false" aria-controls="header-community-menu">COMMUNITY</button>
+            <ul class="header-dropdown" id="header-community-menu" hidden>
+              <li><a href="#style-gallery">style gallary</a></li>
+              <li><a href="#review">review</a></li>
+              <li><a href="#event">event</a></li>
+              <li><a href="#qna">Q&amp;A</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <button class="header-icon-button" type="button" data-header-dialog="header-search" aria-label="검색 열기" aria-haspopup="dialog" aria-controls="header-search">
+          <svg class="header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+        </button>
+        <button class="header-icon-button" type="button" data-header-dialog="header-cart" aria-label="장바구니 열기" aria-haspopup="dialog" aria-controls="header-cart">
+          <svg class="header-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+        </button>
+        <button class="header-icon-button" type="button" data-header-dialog="header-side-menu" aria-label="전체 메뉴 열기" aria-haspopup="dialog" aria-controls="header-side-menu">
+          <svg class="header-icon" aria-hidden="true"><use href="#icon-menu"></use></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- 헤더 메인 비주얼 -->
+    <main>
+      <section class="header-visual" aria-labelledby="header-visual-title">
+        <video class="header-visual-background" autoplay muted loop playsinline preload="auto" poster="이미지/01_헤더참조이미지.jpg" aria-label="PLUMKY 메인 배너 영상">
+          <source src="이미지/01_메인배너.mp4" type="video/mp4">
+          <img src="이미지/01_헤더참조이미지.jpg" alt="나비 장식과 실버 체인을 배경으로 한 PLUMKY 모델" width="2752" height="1536">
+        </video>
+        <h1 class="header-visual-title" id="header-visual-title" aria-label="Your style, your object">
+          <span class="header-slogan header-slogan-style">
+            <img class="header-word-your" src="이미지/01_YOUR.png" alt="YOUR" width="237" height="79">
+            <img class="header-word-style" src="이미지/01_STYLE.png" alt="STYLE" width="329" height="94">
+          </span>
+          <span class="header-slogan header-slogan-object">
+            <img class="header-word-your" src="이미지/01_YOUR.png" alt="YOUR" width="237" height="79">
+            <img class="header-word-object" src="이미지/01_OBJECT.png" alt="OBJECT" width="387" height="111">
+          </span>
+        </h1>
+      </section>
+      <!-- PRODUCT LIPS -->
+      <section class="lips-section" id="lips" aria-labelledby="product-title">
+        <div class="lips-intro">
+          <h2 id="product-title">PRODUCT</h2>
+          <p>“일상 속 스타일에 새로운 감각을 더하는 플럼키의 오브제 컬렉션을 만나보세요”</p>
+        </div>
+        <div class="lips-content">
+          <div class="lips-layout">
+            <img class="lips-model" src="이미지/02_LIPS.모델.jpg" alt="플러미 글레이즈 틴트를 들고 있는 모델" width="1792" height="2400" loading="lazy">
+            <div class="lips-products">
+              <h3 class="lips-heading">LIPS</h3>
+              <div class="lips-slider-reveal">
+              <div class="swiper lips-swiper" aria-label="플러미 글레이즈 틴트 컬렉션">
+                <div class="swiper-wrapper">
+                  <article class="swiper-slide lips-card" aria-labelledby="lips-plu-title">
+                    <img class="lips-product-image" src="이미지/02_1.PLU.jpg" alt="플루 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
+                    <img class="lips-product-hover" src="이미지/02_1.PLU_호버%20.jpg?v=2" alt="" width="1792" height="2400" loading="lazy" draggable="false">
+                    <img class="lips-best" src="이미지/BEST아이콘.png" alt="Best" width="117" height="117" loading="lazy" draggable="false">
+                    <div class="lips-card-info">
+                      <p class="lips-product-english">PLUMMY GLAZE TINT 01 PLU</p>
+                      <h4 id="lips-plu-title">플러미 글레이즈 틴트 01 플루</h4>
+                      <p class="lips-description">깊고 매혹적인 플럼빛, 강렬한 존재감.</p>
+                      <a class="lips-buy" href="#lips" aria-label="플루 구매하기">구매하기</a>
+                    </div>
+                  </article>
+                  <article class="swiper-slide lips-card" aria-labelledby="lips-mouvy-title">
+                    <img class="lips-product-image" src="이미지/02_2.MOV.jpg" alt="모비 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
+                    <img class="lips-product-hover" src="이미지/02_2.MOV호버.jpg?v=2" alt="" width="1792" height="2400" loading="lazy" draggable="false">
+                    <img class="lips-best" src="이미지/BEST아이콘.png" alt="Best" width="117" height="117" loading="lazy" draggable="false">
+                    <div class="lips-card-info">
+                      <p class="lips-product-english">PLUMMY GLAZE TINT 02 MOUVY</p>
+                      <h4 id="lips-mouvy-title">플러미 글레이즈 틴트 02 모비</h4>
+                      <p class="lips-description">차분하게 스며드는 모브빛의 여운.</p>
+                      <a class="lips-buy" href="#lips" aria-label="모비 구매하기">구매하기</a>
+                    </div>
+                  </article>
+                  <article class="swiper-slide lips-card" aria-labelledby="lips-berrit-title">
+                    <img class="lips-product-image" src="이미지/02_3.BERRY.jpg" alt="베리 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
+                    <img class="lips-product-hover" src="이미지/02_3.BERRY호버.jpg" alt="" width="1792" height="2400" loading="lazy" draggable="false">
+                    <div class="lips-card-info">
+                      <p class="lips-product-english">PLUMMY GLAZE TINT 03 BERRIT</p>
+                      <h4 id="lips-berrit-title">플러미 글레이즈 틴트 03 베리</h4>
+                      <p class="lips-description">선명한 베리빛으로 완성하는 대담한 무드.</p>
+                      <a class="lips-buy" href="#lips" aria-label="베리 구매하기">구매하기</a>
+                    </div>
+                  </article>
+                  <article class="swiper-slide lips-card" aria-labelledby="lips-rozy-title">
+                    <img class="lips-product-image" src="이미지/02_4.ROSY.jpg" alt="로지 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
+                    <img class="lips-product-hover" src="이미지/02_4.ROSY호버.jpg" alt="" width="1792" height="2400" loading="lazy" draggable="false">
+                    <div class="lips-card-info">
+                      <p class="lips-product-english">PLUMMY GLAZE TINT 04 ROZY</p>
+                      <h4 id="lips-rozy-title">플러미 글레이즈 틴트 04 로지</h4>
+                      <p class="lips-description">은은한 로즈빛으로 물드는 특별한 순간.</p>
+                      <a class="lips-buy" href="#lips" aria-label="로지 구매하기">구매하기</a>
+                    </div>
+                  </article>
+                  <article class="swiper-slide lips-card" aria-labelledby="lips-peony-title">
+                    <img class="lips-product-image" src="이미지/02_5.PIONY.jpg" alt="피오니 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
+                    <img class="lips-product-hover" src="이미지/02_5.PIONY호버.jpg" alt="" width="1792" height="2400" loading="lazy" draggable="false">
+                    <div class="lips-card-info">
+                      <p class="lips-product-english">PLUMMY GLAZE TINT 05 PEONY</p>
+                      <h4 id="lips-peony-title">플러미 글레이즈 틴트 05 피오니</h4>
+                      <p class="lips-description">부드러운 핑크빛이 남기는 섬세한 분위기.</p>
+                      <a class="lips-buy" href="#lips" aria-label="피오니 구매하기">구매하기</a>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <div class="lips-controls">
+                <button class="lips-prev" type="button" aria-label="이전 제품"><span aria-hidden="true">‹</span></button>
+                <div class="lips-pagination" aria-label="제품 슬라이드 선택"></div>
+                <button class="lips-next" type="button" aria-label="다음 제품"><span aria-hidden="true">›</span></button>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- PRODUCT CASE -->
+      <section class="case-section" id="case" aria-labelledby="case-title">
+        <div class="case-layout">
+          <div class="case-products">
+            <h2 class="case-heading" id="case-title">CASE</h2>
+            <div class="case-slider-reveal">
+            <div class="swiper case-swiper" dir="rtl" aria-label="나비 메탈 케이스 컬렉션">
+              <div class="swiper-wrapper">
+                  <article class="swiper-slide case-card" aria-labelledby="case-silver-title">
+                    <img class="case-product-image" src="이미지/03_1.실버.jpg" alt="실버 메탈 나비 케이스 기본 사진" width="2400" height="1792" loading="lazy" draggable="false">
+                    <img class="case-product-hover" src="이미지/03_1.실버_호버.png" alt="" width="1086" height="1448" loading="lazy" draggable="false">
+                    <div class="case-card-info">
+                      <p class="case-collection">PLUMKEY — BUTTERFLY CASE</p>
+                      <h3 id="case-silver-title">01 SILVER METAL<span>실버 메탈</span></h3>
+                      <p class="case-description">깨끗하고 세련된 실버 메탈 컬러로, 어떤 스타일에도 자연스럽게 어우러지는 시크한 무드.</p>
+                      <a class="case-buy" href="#case" aria-label="실버 메탈 구매하기">구매하기</a>
+                    </div>
+                  </article>
+                  <article class="swiper-slide case-card" aria-labelledby="case-lilac-title">
+                    <img class="case-product-image" src="이미지/03_2.라일락.jpg" alt="라일락 메탈 나비 케이스 기본 사진" width="2400" height="1792" loading="lazy" draggable="false">
+                    <img class="case-product-hover" src="이미지/03_2.라일_호버.png" alt="" width="543" height="724" loading="lazy" draggable="false">
+                    <img class="case-best" src="이미지/BEST아이콘.png" alt="Best" width="117" height="117" loading="lazy" draggable="false">
+                    <div class="case-card-info">
+                      <p class="case-collection">PLUMKEY — BUTTERFLY CASE</p>
+                      <h3 id="case-lilac-title">02 LILAC METAL<span>라일락 메탈</span></h3>
+                      <p class="case-description">은은한 라벤더빛과 부드러운 메탈 광택이 어우러져 몽환적이고 신비로운 분위기를 연출하는 컬러.</p>
+                      <a class="case-buy" href="#case" aria-label="라일락 메탈 구매하기">구매하기</a>
+                    </div>
+                  </article>
+                  <article class="swiper-slide case-card" aria-labelledby="case-purple-title">
+                    <img class="case-product-image" src="이미지/03_3딥퍼플.jpg" alt="딥퍼플 메탈 나비 케이스 기본 사진" width="2400" height="1792" loading="lazy" draggable="false">
+                    <img class="case-product-hover" src="이미지/03_3딥퍼플_호버.png" alt="" width="543" height="724" loading="lazy" draggable="false">
+                    <div class="case-card-info">
+                      <p class="case-collection">PLUMKEY — BUTTERFLY CASE</p>
+                      <h3 id="case-purple-title">03 DEEP PURPLE METAL<span>딥퍼플 메탈</span></h3>
+                      <p class="case-description">깊고 짙은 퍼플 메탈 컬러로, 묵직한 광택과 강렬한 존재감이 돋보이는 매혹적인 무드.</p>
+                      <a class="case-buy" href="#case" aria-label="딥퍼플 메탈 구매하기">구매하기</a>
+                    </div>
+                  </article>
+                  <article class="swiper-slide case-card" aria-labelledby="case-blue-title">
+                    <img class="case-product-image" src="이미지/03_4_블루.jpg" alt="아이스블루 메탈 나비 케이스 기본 사진" width="2400" height="1792" loading="lazy" draggable="false">
+                    <img class="case-product-hover" src="이미지/03_4_블루_호버.png" alt="" width="1086" height="1448" loading="lazy" draggable="false">
+                    <div class="case-card-info">
+                      <p class="case-collection">PLUMKEY — BUTTERFLY CASE</p>
+                      <h3 id="case-blue-title">04 ICE BLUE METAL<span>아이스블루 메탈</span></h3>
+                      <p class="case-description">차가운 블루빛이 감도는 메탈 컬러로, 청량하면서도 미래적인 분위기를 담은 쿨한 무드.</p>
+                      <a class="case-buy" href="#case" aria-label="아이스블루 메탈 구매하기">구매하기</a>
+                    </div>
+                  </article>
+                  <article class="swiper-slide case-card" aria-labelledby="case-pink-title">
+                    <img class="case-product-image" src="이미지/03_5.핑크.jpg" alt="핑크 메탈 나비 케이스 기본 사진" width="2400" height="1792" loading="lazy" draggable="false">
+                    <img class="case-product-hover" src="이미지/03_5.핑크_호버.png" alt="" width="1086" height="1448" loading="lazy" draggable="false">
+                    <div class="case-card-info">
+                      <p class="case-collection">PLUMKEY — BUTTERFLY CASE</p>
+                      <h3 id="case-pink-title">05 PINK METAL<span>핑크 메탈</span></h3>
+                      <p class="case-description">은은한 핑크빛과 글로시한 메탈 광택이 만나 사랑스러우면서도 키치한 매력을 표현하는 컬러.</p>
+                      <a class="case-buy" href="#case" aria-label="핑크 메탈 구매하기">구매하기</a>
+                    </div>
+                  </article>
+              </div>
+            </div>
+            <div class="case-controls">
+              <button class="case-next" type="button" aria-label="다음 케이스"><span aria-hidden="true">‹</span></button>
+              <div class="case-pagination" aria-label="케이스 슬라이드 선택"></div>
+              <button class="case-prev" type="button" aria-label="이전 케이스"><span aria-hidden="true">›</span></button>
+            </div>
+            </div>
+          </div>
+          <img class="case-model" src="이미지/03_case모델.png" alt="나비 장식과 메탈 케이스 컬렉션을 연출한 모델" width="1086" height="1448" loading="lazy">
+        </div>
+      </section>
+      <!-- CUSTOMIZING -->
+      <section class="custom-section" id="custom" aria-labelledby="custom-title">
+        <h2 class="custom-title" id="custom-title">COSTUMIZING</h2>
+        <div class="custom-layout">
+          <p class="custom-lead">MAKE IT YOURS</p>
+          <!-- CUSTOMIZING 미디어: 추후 img를 video로 교체해도 같은 크기와 비율을 유지합니다. -->
+          <figure class="custom-media">
+            <img src="이미지/04_예시이미지.png" alt="나비 케이스와 참을 조합한 나만의 커스터마이징 예시" width="1254" height="1254" loading="lazy">
+          </figure>
+          <p class="custom-description">
+            <span>“ 컬러와 형태의 조합으로</span>
+            <span>완성하는 나만의 시그니처 ”</span>
+          </p>
+        </div>
+        <a class="custom-more" href="#" aria-label="커스터마이징 케이스 컬렉션 더 보기">MORE</a>
+      </section>
+      <!-- HOLIDAY EDITION -->
+      <section class="holiday-section" id="holiday" aria-labelledby="holiday-title">
+        <!-- HOLIDAY EDITION 이동 제목 -->
+        <h2 class="holiday-marquee" id="holiday-title" aria-label="Holiday Edition" tabindex="0">
+          <span class="holiday-marquee-track">
+              <span class="holiday-marquee-group" aria-hidden="true">
+                <img src="이미지/05_홀리데이%20문구.png" alt="" width="735" height="116" draggable="false">
+                <img src="이미지/05_홀리데이%20문구.png" alt="" width="735" height="116" draggable="false">
+                <img src="이미지/05_홀리데이%20문구.png" alt="" width="735" height="116" draggable="false">
+                <img src="이미지/05_홀리데이%20문구.png" alt="" width="735" height="116" draggable="false">
+              </span>
+              <span class="holiday-marquee-group" aria-hidden="true">
+                <img src="이미지/05_홀리데이%20문구.png" alt="" width="735" height="116" draggable="false">
+                <img src="이미지/05_홀리데이%20문구.png" alt="" width="735" height="116" draggable="false">
+                <img src="이미지/05_홀리데이%20문구.png" alt="" width="735" height="116" draggable="false">
+                <img src="이미지/05_홀리데이%20문구.png" alt="" width="735" height="116" draggable="false">
+              </span>
+          </span>
+        </h2>
+        <div class="holiday-intro">
+          <img class="holiday-intro-image" src="이미지/05_텍스트.png" alt="PLUMMY GLAZE TINT ∞ Butterfly Edition. 익숙한 컬러, 새롭게 빠져드는 매력." width="642" height="68" loading="lazy">
+        </div>
+        <!-- HOLIDAY EDITION 제품 -->
+        <div class="holiday-products">
+          <article class="holiday-card">
+            <a class="holiday-product-link" href="#" aria-label="01 플루 버터플라이 에디션 자세히 보기">
+              <img class="holiday-product-image" src="이미지/05_1.PLU.jpg" alt="플루 버터플라이 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="holiday-product-hover" src="이미지/05_1.PLU_호버%20.jpg" alt="" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="holiday-new" src="이미지/new.png" alt="new" width="46" height="46" loading="lazy">
+              <h3 class="holiday-product-title"><span>01</span>PLU BUTTERFLY</h3>
+            </a>
+          </article>
+          <article class="holiday-card">
+            <a class="holiday-product-link" href="#" aria-label="02 모비 버터플라이 에디션 자세히 보기">
+              <img class="holiday-product-image" src="이미지/05_2.MOV.jpg" alt="모비 버터플라이 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="holiday-product-hover" src="이미지/05_2.MOV_호버.jpg" alt="" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="holiday-new" src="이미지/new.png" alt="new" width="46" height="46" loading="lazy">
+              <h3 class="holiday-product-title"><span>02</span>MOUVY BUTTERFLY</h3>
+            </a>
+          </article>
+          <article class="holiday-card">
+            <a class="holiday-product-link" href="#" aria-label="03 베리 버터플라이 에디션 자세히 보기">
+              <img class="holiday-product-image" src="이미지/05_3.BERRY.jpg" alt="베리 버터플라이 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="holiday-product-hover" src="이미지/05_3.BERRY호버.jpg" alt="" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="holiday-new" src="이미지/new.png" alt="new" width="46" height="46" loading="lazy">
+              <h3 class="holiday-product-title"><span>03</span>BERRIT BUTTERFLY</h3>
+            </a>
+          </article>
+          <article class="holiday-card">
+            <a class="holiday-product-link" href="#" aria-label="04 로지 버터플라이 에디션 자세히 보기">
+              <img class="holiday-product-image" src="이미지/05_4.ROSY.jpg" alt="로지 버터플라이 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="holiday-product-hover" src="이미지/05_4.ROSY호버.jpg" alt="" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="holiday-new" src="이미지/new.png" alt="new" width="46" height="46" loading="lazy">
+              <h3 class="holiday-product-title"><span>04</span>ROSY BUTTERFLY</h3>
+            </a>
+          </article>
+          <article class="holiday-card">
+            <a class="holiday-product-link" href="#" aria-label="05 피오니 버터플라이 에디션 자세히 보기">
+              <img class="holiday-product-image" src="이미지/05_5.PIONY.jpg" alt="피오니 버터플라이 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="holiday-product-hover" src="이미지/05_5.PIONY호버.jpg" alt="" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="holiday-new" src="이미지/new.png" alt="new" width="46" height="46" loading="lazy">
+              <h3 class="holiday-product-title"><span>05</span>PEONY BUTTERFLY</h3>
+            </a>
+          </article>
+        </div>
+        <a class="holiday-buy" href="#" aria-label="홀리데이 에디션 구매하기">구매하기</a>
+      </section>
+      <!-- BRAND -->
+      <section class="brand-section" id="brand" aria-labelledby="brand-title">
+        <h2 class="brand-title" id="brand-title">BRAND</h2>
+        <div class="brand-visual">
+          <img class="brand-image" src="이미지/06모델이미지.png" alt="버터플라이 틴트로 자신만의 스타일을 표현하는 모델" width="1672" height="941" loading="lazy">
+          <div class="brand-content">
+            <h3 class="brand-slogan">NOT JUST A BEAUTY</h3>
+            <p class="brand-description">
+              <span>“ 단순한 뷰티 아이템을 넘어, 나를 표현하는 하나의 오브제 ”</span>
+              <span>플럼키는 취향과 개성이 새로운 스타일이 되는 순간을 만들어갑니다.</span>
+            </p>
+            <a class="brand-more" href="#" aria-label="브랜드 이야기 더 보기">MORE</a>
+          </div>
+        </div>
+      </section>
+      <!-- GALLERY -->
+      <section class="gallery-section" id="style-gallery" aria-labelledby="gallery-title">
+        <h2 class="gallery-title" id="gallery-title">
+          <svg class="gallery-logo" viewBox="90 0 216 107" role="img" aria-label="PLUMKY 갤러리">
+            <image href="이미지/logo.svg" width="306" height="107"></image>
+          </svg>
+        </h2>
+        <div class="gallery-stage">
+          <div class="swiper gallery-swiper" aria-label="플럼키 스타일 갤러리">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide gallery-slide" data-gallery-photo="1">
+                  <figure class="gallery-photo swiper-slide-transform">
+                    <img src="이미지/07_모델3.jpg" alt="꽃과 함께 누워 있는 금발 모델" width="2752" height="1536" loading="lazy" draggable="false">
+                  </figure>
+                </div>
+                <div class="swiper-slide gallery-slide" data-gallery-photo="2">
+                  <figure class="gallery-photo swiper-slide-transform">
+                    <img src="이미지/07_모델1.jpg" alt="안개 낀 들판에서 흰 드레스를 입은 두 모델" width="1792" height="2400" loading="lazy" draggable="false">
+                  </figure>
+                </div>
+                <div class="swiper-slide gallery-slide" data-gallery-photo="3">
+                  <figure class="gallery-photo swiper-slide-transform">
+                    <img src="이미지/07_모델4.jpg" alt="초록빛 배경 앞 땋은 머리 모델의 옆모습" width="1792" height="2400" loading="lazy" draggable="false">
+                  </figure>
+                </div>
+                <div class="swiper-slide gallery-slide" data-gallery-photo="4">
+                  <figure class="gallery-photo swiper-slide-transform">
+                    <img src="이미지/07_모델2.png" alt="푸른 안개와 빛이 감도는 몽환적인 숲" width="1456" height="816" loading="lazy" draggable="false">
+                  </figure>
+                </div>
+                <div class="swiper-slide gallery-slide" data-gallery-photo="5">
+                  <figure class="gallery-photo swiper-slide-transform">
+                    <img src="이미지/07_모델5.jpg" alt="나비와 안경을 스타일링한 검은 머리 모델" width="2752" height="1536" loading="lazy" draggable="false">
+                  </figure>
+                </div>
+            </div>
+          </div>
+          <button class="gallery-prev" type="button" aria-label="이전 갤러리 사진">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"></path></svg>
+          </button>
+          <button class="gallery-next" type="button" aria-label="다음 갤러리 사진">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"></path></svg>
+          </button>
+        </div>
+        <a class="gallery-more" href="#" aria-label="스타일 갤러리 더 보기">MORE</a>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="footer">
+      <div class="footer-top">
+        <a class="footer-home" href="./index.html" aria-label="PLUMKY 메인으로">
+          <svg viewBox="90 0 216 107" role="img" aria-label="PLUMKY">
+            <image href="이미지/logo.svg" width="306" height="107"></image>
+          </svg>
+        </a>
+        <nav class="footer-links" aria-label="사이트 안내">
+          <a href="#">공지사항</a>
+          <a href="#">개인정보 이용 처리방침</a>
+          <a href="#footer-contact">고객센터</a>
+        </nav>
+        <nav class="footer-social" aria-label="소셜 미디어">
+          <a href="#" aria-label="인스타그램">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle class="footer-icon-fill" cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+          </a>
+          <a href="#" aria-label="틱톡">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 4v11a4 4 0 1 1-4-4M14 4c0 4 3 5 6 5"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="유튜브">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect class="footer-icon-fill" x="2" y="4" width="20" height="16" rx="5"></rect>
+              <path class="footer-icon-cutout" d="m10 8 6 4-6 4Z"></path>
+            </svg>
+          </a>
+        </nav>
+      </div>
+      <div class="footer-details">
+        <div class="footer-contact" id="footer-contact">
+          <h2>CONTACT</h2>
+          <address>
+            <a href="mailto:nara0062@naver.com">nara0062@naver.com</a>
+            <a href="tel:05119950809">051-1995-0809</a>
+          </address>
+        </div>
+        <div class="footer-company">
+          <h2>COMPANY</h2>
+          <address>
+            <span>부산광역시 부산진구 가야대로 157번길</span>
+            <span>중앙 브랜드타운 10층</span>
+          </address>
+        </div>
+      </div>
+
+      <!-- FOOTER 메탈 심볼·로고 -->
+      <div class="footer-metal" aria-label="PLUMKY 메탈 심볼과 로고">
+        <div class="footer-metal-item footer-metal-symbol">
+          <img src="이미지/심볼1.png" alt="PLUMKY 메탈 심볼" width="2175" height="2232" loading="lazy" draggable="false">
+        </div>
+        <div class="footer-metal-item footer-metal-wordmark">
+          <svg viewBox="700 0 1880 987" role="img" aria-label="PLUMKY 메탈 로고">
+            <image href="이미지/로고1.png" width="2580" height="987"></image>
+          </svg>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 헤더 전체 메뉴 -->
+    <dialog class="header-dialog header-side-menu" id="header-side-menu" aria-label="전체 메뉴">
+      <div class="header-side-tools">
+        <a class="header-login" href="#login">Login/Join</a>
+        <button class="header-icon-button" type="button" data-header-dialog="header-search" aria-label="검색 열기" aria-haspopup="dialog" aria-controls="header-search">
+          <svg class="header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+        </button>
+        <button class="header-icon-button" type="button" data-header-dialog="header-cart" aria-label="장바구니 열기" aria-haspopup="dialog" aria-controls="header-cart">
+          <svg class="header-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+        </button>
+        <button class="header-icon-button" type="button" data-header-close aria-label="전체 메뉴 닫기" autofocus>
+          <svg class="header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+      <nav class="header-side-nav" aria-label="전체 메뉴">
+        <a class="header-side-title header-my-page" href="#my-page">My Page</a>
+        <details class="header-side-group" open>
+          <summary class="header-side-title">SHOP</summary>
+          <ul class="header-side-links">
+            <li><a href="#best">BEST</a></li>
+            <li><a href="#holiday">holiday</a></li>
+            <li><a href="#lips">Lips</a></li>
+            <li><a href="#case">Case</a></li>
+            <li><a href="#charm">charm</a></li>
+          </ul>
+        </details>
+        <a class="header-side-title" href="#custom">CUSTOM</a>
+        <a class="header-side-title" href="#brand">BRAND</a>
+        <details class="header-side-group">
+          <summary class="header-side-title">COMMUNITY</summary>
+          <ul class="header-side-links">
+            <li><a href="#style-gallery">style gallary</a></li>
+            <li><a href="#review">review</a></li>
+            <li><a href="#event">event</a></li>
+            <li><a href="#qna">Q&amp;A</a></li>
+          </ul>
+        </details>
+      </nav>
+    </dialog>
+
+    <!-- 헤더 검색 -->
+    <dialog class="header-dialog header-search" id="header-search" aria-labelledby="header-search-title">
+      <div class="header-dialog-heading">
+        <h2 id="header-search-title">Search</h2>
+        <button class="header-icon-button" type="button" data-header-close aria-label="검색 닫기">
+          <svg class="header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+      <label class="header-search-field">
+        <span class="header-sr-only">검색어</span>
+        <input type="search" name="keyword" placeholder="검색어를 입력하세요" autocomplete="off" autofocus>
+        <svg class="header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+      </label>
+    </dialog>
+
+    <!-- 헤더 장바구니 -->
+    <dialog class="header-dialog header-cart" id="header-cart" aria-labelledby="header-cart-title">
+      <div class="header-dialog-heading">
+        <h2 id="header-cart-title">Shopping Bag <span>(0)</span></h2>
+        <button class="header-icon-button" type="button" data-header-close aria-label="장바구니 닫기" autofocus>
+          <svg class="header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+      <p class="header-cart-empty">장바구니가 비어 있습니다.</p>
+    </dialog>
+  </body>
+</html>
