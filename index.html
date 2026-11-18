@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PLUMKY — Your style, your object.">
     <title>PLUMKY</title>
+    <!-- MAIN 시작화면 심볼 미리 불러오기 -->
+    <link rel="preload" as="image" href="이미지/심볼1.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
+    <!-- MAIN 전용 스타일 -->
+    <link rel="stylesheet" href="css/main.css">
     <!-- LIPS 제품 슬라이더 라이브러리 -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
     <script src="js/common.js" defer></script>
+    <!-- MAIN 전용 기능 -->
+    <script src="js/main.js" defer></script>
   </head>
   <body>
+    <!-- MAIN 시작화면 -->
+    <div class="main-intro" aria-hidden="true">
+      <img class="main-intro-symbol" src="이미지/심볼1.png" alt="" width="2175" height="2232" fetchpriority="high" draggable="false">
+    </div>
     <!-- 헤더 아이콘 -->
     <svg class="header-icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <symbol id="icon-search" viewBox="0 0 24 24">
