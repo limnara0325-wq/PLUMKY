@@ -921,7 +921,7 @@ html.is-intro-active {
       color-mix(in srgb, var(--color-background) 65%, transparent) 48%,
       color-mix(in srgb, var(--color-background) 35%, transparent) 100%
     ),
-    url("../이미지/04_bg.jpg");
+    url("../main_image/04_bg.jpg");
   background-size: cover;
   background-position: center;
   text-align: center;
