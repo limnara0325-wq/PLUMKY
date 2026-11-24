@@ -1,0 +1,820 @@
+@charset "UTF-8";
+
+/* SUB3 공통 헤더 */
+.sub3-page > .common-header {
+  position: absolute;
+  isolation: isolate;
+  background: transparent;
+}
+
+/* SUB3 헤더 상단 어두운 그라데이션 */
+.sub3-page > .common-header::before {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  height: clamp(8rem, 12vw, 14rem);
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-text) 85%, transparent) 0%,
+    color-mix(in srgb, var(--color-text) 60%, transparent) 35%,
+    color-mix(in srgb, var(--color-text) 25%, transparent) 65%,
+    transparent 100%
+  );
+  pointer-events: none;
+  content: "";
+}
+
+/* SUB3 헤더 로그인 및 도구 아이콘 */
+.sub3-page > .common-header .common-header-tools {
+  color: var(--color-white);
+}
+
+.sub3-page > .common-header .common-header-account {
+  font-weight: 600;
+}
+
+.sub3-page > .common-header .common-header-tools .common-header-icon {
+  stroke-width: 1.5;
+}
+
+/* BRAND 메인 비주얼 */
+.brand-hero {
+  position: relative;
+  isolation: isolate;
+  height: 50vw;
+  overflow: hidden;
+  color: var(--color-white);
+  background: var(--color-purple-dark);
+}
+
+.brand-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.brand-hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--color-primary) 55%, transparent), transparent 85%);
+  pointer-events: none;
+  content: "";
+}
+
+.brand-hero-title {
+  position: absolute;
+  top: 6.770833vw;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4.166667vw;
+  font-weight: 600;
+  line-height: 1.2;
+  text-shadow: 0 0 0.5rem color-mix(in srgb, var(--color-white) 50%, transparent);
+}
+
+/* BRAND 메인 문구 이미지 */
+.brand-hero-copy,
+.brand-hero-statement {
+  position: absolute;
+  inset: 0;
+}
+
+.brand-hero-description {
+  position: absolute;
+  top: 47.395833%;
+  left: 5.208333%;
+  width: 21.822917%;
+}
+
+.brand-hero-description img,
+.brand-hero-word {
+  height: auto;
+}
+
+.brand-hero-description img {
+  width: 100%;
+}
+
+.brand-hero-word {
+  position: absolute;
+}
+
+.brand-hero-beyond {
+  top: 52.708333%;
+  left: 5.052083%;
+  width: 18.59375%;
+}
+
+.brand-hero-beauty {
+  top: 65.3125%;
+  left: 15.520833%;
+  width: 17.916667%;
+}
+
+.brand-hero-into {
+  top: 66.354167%;
+  left: 64.583333%;
+  width: 11.666667%;
+}
+
+.brand-hero-identity {
+  top: 76.458333%;
+  left: 74.739583%;
+  width: 21.770833%;
+}
+
+/* BRAND OUR STORY */
+.brand-story {
+  position: relative;
+  isolation: isolate;
+  padding: 7.291667vw 0 8.020833vw;
+  overflow: hidden;
+  color: var(--color-purple-dark);
+  background: var(--color-background);
+  text-align: center;
+}
+
+.brand-story-title {
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0.125rem 0.125rem 0.25rem color-mix(in srgb, var(--color-purple-dark) 30%, transparent);
+}
+
+.brand-story-intro,
+.brand-story-copy p,
+.brand-story-message {
+  color: #543662;
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.65;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.brand-story-intro {
+  margin: 5.208333vw auto 0;
+  padding-inline: 1.5rem;
+}
+
+.brand-story-intro em {
+  margin-right: 0.4em;
+  font-family: "Playfair Display", serif;
+  font-size: 1.5em;
+}
+
+/* OUR STORY 브랜드 소개와 이미지 콜라주 */
+.brand-story-feature {
+  display: grid;
+  grid-template-columns: 52.325581% 34.302326%;
+  gap: 13.372093%;
+  width: 71.666667%;
+  margin: 5.208333vw auto 0;
+}
+
+.brand-story-copy {
+  padding-top: 11.458333vw;
+  text-align: right;
+}
+
+.brand-story-copy h3 {
+  margin-bottom: 1.875vw;
+  font-size: clamp(1.5rem, 1.875vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.brand-story-collage {
+  position: relative;
+  height: 44.375vw;
+}
+
+.brand-story-portrait {
+  width: 100%;
+  height: 38.854167vw;
+  object-fit: cover;
+}
+
+.brand-story-hologram {
+  position: absolute;
+  top: 27.708333vw;
+  left: -7.604167vw;
+  width: 15.208333vw;
+  height: 16.666667vw;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* OUR STORY 브랜드 메시지와 모델 이미지 */
+.brand-story-message {
+  margin: 3.645833vw auto 0;
+  padding-inline: 1.5rem;
+}
+
+.brand-story-wide {
+  width: 62.5%;
+  height: 38.385417vw;
+  margin: 4.479167vw auto 0;
+  object-fit: cover;
+}
+
+/* OUR STORY 하단 이미지 */
+.brand-story-gallery {
+  display: grid;
+  grid-template-columns: 42.288557% 50%;
+  gap: 7.711443%;
+  align-items: end;
+  width: 41.875%;
+  margin: 5.729167vw auto 0;
+}
+
+.brand-story-pair {
+  width: 100%;
+  height: 13.75vw;
+  object-fit: cover;
+}
+
+.brand-story-forest {
+  width: 100%;
+  height: 30.520833vw;
+  object-fit: cover;
+}
+
+/* OUR STORY 나비와 빛 장식 */
+.brand-story-decor {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.brand-story-butterfly {
+  position: absolute;
+  width: 9.739583vw;
+  height: auto;
+  transform: translate(-25%, -25%);
+}
+
+.brand-story-butterfly-one { top: 3.5%; left: 37%; }
+.brand-story-butterfly-two { top: 26%; left: 10%; width: 9.270833vw; }
+.brand-story-butterfly-three { top: 36%; left: 45%; width: 9.270833vw; }
+.brand-story-butterfly-four { top: 83%; left: 25%; width: 8.072917vw; }
+.brand-story-butterfly-five { top: 93%; left: 75%; width: 9.270833vw; }
+
+.brand-story-sparkle {
+  position: absolute;
+  width: 8.229167vw;
+  height: auto;
+  transform: translate(-25%, -25%);
+}
+
+.brand-story-sparkle-one { top: 46%; left: 16%; }
+.brand-story-sparkle-two { top: 58%; right: 10%; }
+
+/* OUR STORY 태블릿 */
+@media (max-width: 1024px) {
+  .brand-story { padding-block: 5rem; }
+  .brand-story-intro { margin-top: 3rem; }
+  .brand-story-feature { width: 88%; grid-template-columns: 56% 38%; gap: 6%; margin-top: 4rem; }
+  .brand-story-copy { padding-top: 3rem; }
+  .brand-story-copy p br { display: none; }
+  .brand-story-copy h3 { margin-bottom: 1.5rem; }
+  .brand-story-collage { height: 61vw; }
+  .brand-story-portrait { height: 54vw; }
+  .brand-story-hologram { top: 39vw; left: -4vw; width: 20vw; height: 22vw; }
+  .brand-story-message { margin-top: 3rem; }
+  .brand-story-wide { width: 80%; height: 49vw; margin-top: 3rem; }
+  .brand-story-gallery { width: 60%; margin-top: 4rem; }
+  .brand-story-pair { height: 20vw; }
+  .brand-story-forest { height: 44vw; }
+}
+
+/* OUR STORY 모바일 */
+@media (max-width: 600px) {
+  .brand-story { padding-block: 4rem; }
+  .brand-story-intro { margin-top: 2rem; }
+  .brand-story-intro br { display: none; }
+  .brand-story-feature { display: block; width: 88%; margin-top: 3rem; }
+  .brand-story-copy { padding-top: 0; text-align: center; }
+  .brand-story-collage { width: 78%; height: 120vw; margin: 2.5rem 0 0 auto; }
+  .brand-story-portrait { height: 105vw; }
+  .brand-story-hologram { top: 78vw; left: -18vw; width: 38vw; height: 42vw; }
+  .brand-story-wide { width: 88%; height: 65vw; margin-top: 2rem; }
+  .brand-story-gallery { width: 76%; margin-top: 3rem; }
+  .brand-story-pair { height: 27vw; }
+  .brand-story-forest { height: 57vw; }
+  .brand-story-butterfly { width: 20vw; }
+  .brand-story-sparkle { width: 18vw; }
+}
+
+/* BRAND 메인 비주얼 태블릿 */
+@media (max-width: 1024px) {
+  .brand-hero {
+    height: 64vw;
+    min-height: 32rem;
+  }
+
+  .brand-hero-title {
+    top: 7rem;
+    font-size: clamp(2.5rem, 5.208333vw, 3.5rem);
+  }
+
+  .brand-hero-description {
+    top: 43%;
+    width: 40%;
+  }
+
+  .brand-hero-beyond {
+    top: 52%;
+    width: 25%;
+  }
+
+  .brand-hero-beauty {
+    top: 64%;
+    width: 24%;
+  }
+
+  .brand-hero-into {
+    top: 65%;
+    left: 59%;
+    width: 16%;
+  }
+
+  .brand-hero-identity {
+    top: 77%;
+    left: 65%;
+    width: 30%;
+  }
+}
+
+/* BRAND 메인 비주얼 모바일 */
+@media (max-width: 600px) {
+  .brand-hero {
+    height: 170vw;
+    min-height: 36rem;
+  }
+
+  .brand-hero-title {
+    top: 6.5rem;
+    font-size: 2.75rem;
+  }
+
+  .brand-hero-description {
+    top: 38%;
+    left: 6%;
+    width: 88%;
+    max-width: 26.1875rem;
+  }
+
+  .brand-hero-beyond {
+    top: 47%;
+    left: 5%;
+    width: 48%;
+  }
+
+  .brand-hero-beauty {
+    top: 58%;
+    left: 20%;
+    width: 46%;
+  }
+
+  .brand-hero-into {
+    top: 72%;
+    left: 46%;
+    width: 30%;
+  }
+
+  .brand-hero-identity {
+    top: 83%;
+    left: 34%;
+    width: 62%;
+  }
+}
+
+/* BRAND YOUR STYLE 배너 */
+.brand-style-banner {
+  position: relative;
+  height: 30.416667vw;
+  overflow: hidden;
+  color: var(--color-white);
+  background: var(--color-text);
+}
+
+.brand-style-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* YOUR STYLE 배너 문구 이미지 */
+.brand-style-copy {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.brand-style-copy img {
+  width: 100%;
+  height: auto;
+}
+
+.brand-style-copy-left {
+  left: 21.875%;
+  width: 12.34375%;
+}
+
+.brand-style-copy-right {
+  left: 80.9375%;
+  width: 13.385417%;
+}
+
+/* YOUR STYLE 배너 태블릿 */
+@media (max-width: 1024px) {
+  .brand-style-banner {
+    height: 38vw;
+    min-height: 18rem;
+  }
+
+  .brand-style-copy-left {
+    left: 19%;
+    width: 20%;
+  }
+
+  .brand-style-copy-right {
+    left: 81%;
+    width: 22%;
+  }
+}
+
+/* YOUR STYLE 배너 모바일 */
+@media (max-width: 600px) {
+  .brand-style-banner {
+    height: 75vw;
+    min-height: 20rem;
+  }
+
+  .brand-style-copy {
+    top: auto;
+    bottom: 10%;
+    transform: translateX(-50%);
+  }
+
+  .brand-style-copy-left {
+    left: 24%;
+    width: 35%;
+  }
+
+  .brand-style-copy-right {
+    left: 76%;
+    width: 38%;
+  }
+}
+
+/* BRAND IDENTITY */
+.brand-identity {
+  position: relative;
+  isolation: isolate;
+  padding-top: 7.8125vw;
+  overflow: hidden;
+  color: var(--color-purple-dark);
+  background: var(--color-background);
+}
+
+.brand-identity-title {
+  font-size: clamp(2rem, 2.083333vw, 2.5rem);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 0.125rem 0.125rem 0.25rem color-mix(in srgb, var(--color-purple-dark) 30%, transparent);
+}
+
+.brand-identity-intro,
+.brand-identity-copy p,
+.brand-identity-naming,
+.brand-identity-symbol-caption {
+  color: #543662;
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.65;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.brand-identity-intro {
+  margin: 4.791667vw auto 0;
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+
+/* IDENTITY 디자인 소개 */
+.brand-identity-feature {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46% minmax(0, 1fr);
+  gap: 9.6875rem;
+  width: 76%;
+  margin: 3.402647vw auto 0;
+}
+
+.brand-identity-portrait {
+  width: 100%;
+  height: 47.826087vw;
+  object-fit: cover;
+}
+
+.brand-identity-copy {
+  padding-top: 8.223062vw;
+}
+
+.brand-identity-copy h3 {
+  margin-bottom: 1.666667vw;
+  font-size: clamp(1.25rem, 1.875vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.brand-identity-symbol {
+  position: absolute;
+  top: 32.8125vw;
+  right: 0;
+  width: 30vw;
+  height: auto;
+}
+
+/* IDENTITY 브랜드 이름과 심볼 의미 */
+.brand-identity-naming {
+  width: 47%;
+  margin: 6.238185vw 0 0 12%;
+  line-height: 1.65;
+  text-align: right;
+}
+
+.brand-identity-naming em {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8em;
+  line-height: 1.1;
+}
+
+.brand-identity-symbol-caption {
+  margin: 6.25vw 12% 0;
+}
+
+/* IDENTITY 로고와 제품 이미지 콜라주 */
+.brand-identity-gallery {
+  position: relative;
+  width: 72.916667%;
+  height: 58.541667vw;
+  margin: 3.125vw auto 0;
+}
+
+.brand-identity-logo {
+  position: absolute;
+  top: 10.833333vw;
+  left: 2.714286%;
+  width: 12.142857%;
+  height: auto;
+  aspect-ratio: 1880 / 987;
+}
+
+.brand-identity-mood,
+.brand-identity-products,
+.brand-identity-lip {
+  position: absolute;
+  object-fit: cover;
+}
+
+.brand-identity-mood {
+  top: 0;
+  left: 29.285714%;
+  width: 39%;
+  height: 25.625vw;
+}
+
+.brand-identity-products {
+  top: 28.541667vw;
+  left: 53.142857%;
+  width: 32.5%;
+  height: 21.458333vw;
+}
+
+.brand-identity-lip {
+  top: 34.375vw;
+  left: 14.857143%;
+  width: 36.714286%;
+  height: 24.166667vw;
+}
+
+/* IDENTITY 하단 모델 이미지 */
+.brand-identity-wide {
+  width: 72.916667%;
+  height: 25.520833vw;
+  margin: 10.416667vw auto 0;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* IDENTITY 나비와 빛 장식 */
+.brand-identity-decor {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.brand-identity-butterfly,
+.brand-identity-sparkle {
+  position: absolute;
+  width: 9.739583vw;
+  height: auto;
+  transform: translate(-25%, -25%);
+}
+
+.brand-identity-butterfly-one { top: 3.5%; left: 56%; }
+.brand-identity-butterfly-two { top: calc(8% - 1.5rem); left: 25%; }
+.brand-identity-butterfly-three { top: 34%; left: 45%; }
+.brand-identity-butterfly-four { top: 77%; left: 74%; }
+.brand-identity-butterfly-five { top: 82%; left: 14%; }
+.brand-identity-sparkle-one { top: 47%; left: 65%; width: 8.229167vw; }
+.brand-identity-sparkle-two { top: 62%; left: 29%; width: 7.604167vw; }
+
+/* IDENTITY 태블릿 */
+@media (max-width: 1024px) {
+  .brand-identity { padding-top: 5rem; }
+  .brand-identity-intro { margin-top: 3rem; }
+  .brand-identity-feature { width: 88%; grid-template-columns: 44% 50%; gap: 6%; margin-top: 3rem; }
+  .brand-identity-portrait { height: 56vw; }
+  .brand-identity-copy { padding-top: 2rem; }
+  .brand-identity-copy h3 { margin-bottom: 1.5rem; }
+  .brand-identity-copy p br { display: none; }
+  .brand-identity-symbol { top: auto; bottom: -19vw; right: 0; width: 30vw; }
+  .brand-identity-naming { width: 57%; margin: 3rem 0 0 6%; text-align: left; }
+  .brand-identity-naming br { display: none; }
+  .brand-identity-symbol-caption { margin: 4rem 6% 0; }
+  .brand-identity-gallery { width: 88%; height: 71vw; margin-top: 3rem; }
+  .brand-identity-mood { height: 31vw; }
+  .brand-identity-products { top: 35vw; height: 26vw; }
+  .brand-identity-lip { top: 42vw; height: 29vw; }
+  .brand-identity-wide { width: 88%; height: 38vw; margin-top: 6rem; }
+}
+
+/* IDENTITY 모바일 */
+@media (max-width: 600px) {
+  .brand-identity { padding-top: 4rem; }
+  .brand-identity-intro { margin-top: 2rem; }
+  .brand-identity-feature { display: flex; flex-direction: column; gap: 2rem; margin-top: 2.5rem; }
+  .brand-identity-portrait { height: 110vw; }
+  .brand-identity-copy { padding-top: 0; }
+  .brand-identity-symbol { position: static; align-self: center; width: 65%; }
+  .brand-identity-naming { width: auto; margin: 2rem 6% 0; text-align: center; }
+  .brand-identity-symbol-caption { margin-top: 3rem; text-align: center; }
+  .brand-identity-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; height: auto; margin-top: 2rem; }
+  .brand-identity-logo { position: static; grid-column: 1 / -1; justify-self: center; width: 30%; margin-bottom: 1rem; }
+  .brand-identity-mood,
+  .brand-identity-products,
+  .brand-identity-lip { position: static; width: 100%; height: 55vw; }
+  .brand-identity-mood { grid-column: 1 / -1; justify-self: center; width: 75%; height: 70vw; }
+  .brand-identity-products { margin-top: 1rem; }
+  .brand-identity-lip { margin-top: 10vw; }
+  .brand-identity-wide { height: 60vw; margin-top: 4rem; }
+  .brand-identity-butterfly { width: 20vw; }
+  .brand-identity-sparkle { width: 18vw; }
+}
+
+/* BRAND VISION */
+.brand-vision {
+  position: relative;
+  isolation: isolate;
+  padding: 5.15625vw 0 5.729167vw;
+  overflow: hidden;
+  color: var(--color-purple-dark);
+  background: var(--color-background);
+}
+
+/* VISION 소개문과 모델 이미지 */
+.brand-vision-inner {
+  display: grid;
+  grid-template-columns: 46% 44%;
+  gap: 10%;
+  align-items: center;
+  width: 64%;
+  margin-inline: auto;
+}
+
+.brand-vision-copy {
+  text-align: right;
+}
+
+.brand-vision-copy h2 {
+  margin-bottom: 2.604167vw;
+  font-size: clamp(2rem, 2.083333vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.brand-vision-copy p,
+.brand-vision-message {
+  color: #543662;
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.65;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.brand-vision-image {
+  width: 100%;
+  height: 33.229167vw;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* VISION 브랜드 가치 */
+.brand-vision-message {
+  width: 76%;
+  margin: 6.25vw auto 0;
+  text-align: center;
+}
+
+/* VISION 나비와 빛 장식 */
+.brand-vision-decor {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.brand-vision-butterfly,
+.brand-vision-sparkle {
+  position: absolute;
+  width: 9.739583vw;
+  height: auto;
+  transform: translate(-25%, -25%);
+}
+
+.brand-vision-butterfly-one { top: 10%; right: 7%; }
+.brand-vision-butterfly-two { top: 75%; left: 21%; }
+.brand-vision-sparkle { top: 23%; left: 8%; width: 8.229167vw; }
+
+/* VISION 태블릿 */
+@media (max-width: 1024px) {
+  .brand-vision { padding-block: 4rem; }
+  .brand-vision-inner { width: 84%; grid-template-columns: 50% 44%; gap: 6%; }
+  .brand-vision-copy h2 { margin-bottom: 2rem; }
+  .brand-vision-copy p br { display: none; }
+  .brand-vision-image { height: 48vw; }
+  .brand-vision-message { width: 84%; margin-top: 3rem; }
+}
+
+/* VISION 모바일 */
+@media (max-width: 600px) {
+  .brand-vision { padding-block: 3rem; }
+  .brand-vision-inner { display: flex; flex-direction: column; gap: 2rem; width: 88%; }
+  .brand-vision-copy { text-align: center; }
+  .brand-vision-copy h2 { margin-bottom: 1.5rem; }
+  .brand-vision-image { width: 82%; height: 100vw; }
+  .brand-vision-message { width: 88%; margin-top: 2.5rem; }
+  .brand-vision-butterfly { width: 20vw; }
+  .brand-vision-sparkle { width: 18vw; }
+}
+
+/* SUB3 영문 제목과 강조 문구 그림자 */
+#sub3 :is(h1, h2, h3, em) {
+  text-shadow: 0.0625rem 0.125rem 0.25rem color-mix(in srgb, var(--color-purple-dark) 30%, transparent);
+}
+
+/* SUB3 영문 문구 이미지 그림자 */
+#sub3 .brand-hero-word,
+#sub3 .brand-style-copy img {
+  filter: drop-shadow(0.0625rem 0.125rem 0.25rem color-mix(in srgb, var(--color-purple-dark) 35%, transparent));
+}
+
+/* SUB3 텍스트 및 이미지 아래에서 위로 등장 */
+.sub3-page .sub3-reveal {
+  opacity: 0;
+  translate: 0 1.75rem;
+  transition: opacity 700ms ease-out, translate 850ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sub3-page .sub3-reveal.is-sub3-revealed {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* SUB3 등장 애니메이션 모션 접근성 */
+@media (prefers-reduced-motion: reduce) {
+  .sub3-page .sub3-reveal {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+}

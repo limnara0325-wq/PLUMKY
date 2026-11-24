@@ -1,0 +1,378 @@
+/* sub1_2 공통 헤더 */
+body > .common-header {
+  position: relative;
+  color: var(--color-white);
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-purple-dark) 65%, #d8c6e0) 0%,
+    color-mix(in srgb, var(--color-purple-dark) 35%, #d8c6e0) 55%,
+    #d8c6e0 100%
+  );
+}
+
+/* sub1_2 헤더 메뉴와 아이콘 가독성 */
+body > .common-header .common-header-tools {
+  color: var(--color-white);
+}
+
+/* sub1_2 본문 */
+
+/* Lips 메인 비주얼 */
+.lips-visual {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  aspect-ratio: 1920 / 630;
+  overflow: hidden;
+  color: var(--color-purple-light);
+  background: var(--color-background);
+}
+
+.lips-visual-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 800ms ease;
+}
+
+.lips-visual::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-background) 22%, transparent) 0%,
+    color-mix(in srgb, var(--color-purple-dark) 22%, transparent) 55%,
+    var(--color-text) 100%
+  );
+}
+
+/* Lips 메인 비주얼 제목과 카테고리 */
+.lips-visual-content {
+  position: absolute;
+  right: 1rem;
+  bottom: 10.47619%;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.833333vw;
+  text-align: center;
+  text-shadow: 0 2px 4px color-mix(in srgb, var(--color-purple-light) 45%, transparent);
+}
+
+.lips-visual-title {
+  font-size: clamp(2.5rem, 4.166667vw, 5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.lips-visual-categories {
+  display: flex;
+  justify-content: center;
+  gap: 1.041667vw;
+  font-size: clamp(1.125rem, 1.666667vw, 2rem);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.lips-visual-categories a {
+  padding-bottom: 0.125rem;
+  border-bottom: 1px solid transparent;
+}
+
+.lips-visual-categories a[aria-current="page"],
+.lips-visual-categories a:hover {
+  border-bottom-color: currentColor;
+}
+
+.lips-visual-categories a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Lips 메인 비주얼 이미지 확대 호버 */
+@media (hover: hover) {
+  .lips-visual:hover .lips-visual-image {
+    transform: scale(1.06);
+  }
+}
+
+/* Lips 메인 비주얼 태블릿 */
+@media (max-width: 1024px) {
+  .lips-visual {
+    min-height: 22rem;
+  }
+
+  .lips-visual-content {
+    gap: 0.75rem;
+  }
+
+  .lips-visual-categories {
+    gap: 1rem;
+  }
+}
+
+/* Lips 메인 비주얼 모바일 */
+@media (max-width: 600px) {
+  .lips-visual {
+    min-height: 25rem;
+    aspect-ratio: 3 / 2;
+  }
+
+  .lips-visual-content {
+    bottom: 2rem;
+  }
+
+  .lips-visual-categories {
+    gap: 0.875rem;
+    font-size: 1.125rem;
+  }
+}
+
+/* Lips 메인 비주얼 모션 설정 */
+@media (prefers-reduced-motion: reduce) {
+  .lips-visual .lips-visual-image {
+    transform: none;
+    transition: none;
+  }
+}
+/* Lips 제품 컬렉션 */
+.lips-products {
+  padding: 10.5rem max(1.5rem, calc((100% - 89.375rem) / 2)) 22rem;
+  background: #fffaff;
+}
+
+.lips-products-title {
+  margin-bottom: 6.5rem;
+  color: var(--color-purple-dark);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  text-shadow: 0 2px 3px color-mix(in srgb, var(--color-purple-dark) 35%, transparent);
+}
+
+.lips-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 7.5rem 0.625rem;
+}
+
+.lips-product-card {
+  min-width: 0;
+  font-family: "Pretendard", sans-serif;
+}
+
+.lips-product-photo {
+  position: relative;
+  aspect-ratio: 350 / 412;
+  overflow: hidden;
+  background: var(--color-background);
+  box-shadow: 1px 2px 3px color-mix(in srgb, var(--color-text) 18%, transparent);
+}
+
+.lips-product-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lips-product-photo .lips-product-hover {
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 350ms ease, transform 650ms ease;
+}
+
+/* Lips 제품 이미지 호버 */
+@media (hover: hover) {
+  .lips-product-card:hover .lips-product-hover {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.lips-product-card:focus-within .lips-product-hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.lips-product-like {
+  position: absolute;
+  top: 1rem;
+  right: 0.75rem;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  color: var(--color-purple-light);
+}
+
+.lips-product-like svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.lips-product-like[aria-pressed="true"] svg {
+  fill: currentColor;
+}
+
+.lips-product-info {
+  position: relative;
+  padding-top: 0.625rem;
+  padding-right: 2.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.lips-product-info h3 {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.lips-product-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.5rem;
+  margin-top: 0.375rem;
+}
+
+.lips-product-discount {
+  color: #b900ff;
+  font-size: 0.875rem;
+}
+
+.lips-product-price strong {
+  font-weight: 500;
+}
+
+.lips-product-price del {
+  color: color-mix(in srgb, var(--color-text) 35%, var(--color-white));
+  font-size: 0.8125rem;
+}
+
+.lips-product-cart {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.125rem;
+  display: grid;
+  place-items: center;
+  width: 1.625rem;
+  height: 1.625rem;
+  border-radius: 0.3125rem;
+  color: var(--color-purple-light);
+  background: var(--color-purple-gray);
+}
+
+.lips-product-cart svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lips-product-card button:focus-visible {
+  outline: 2px solid var(--color-purple-dark);
+  outline-offset: 3px;
+}
+
+/* Lips 제품 컬렉션 태블릿 */
+@media (max-width: 1024px) {
+  .lips-products {
+    padding: 4.5rem 1.5rem 7rem;
+  }
+
+  .lips-products-title {
+    margin-bottom: 4rem;
+    font-size: 2.25rem;
+  }
+
+  .lips-products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3.5rem 1rem;
+  }
+}
+
+/* Lips 제품 컬렉션 모바일 */
+@media (max-width: 600px) {
+  .lips-products {
+    padding: 3rem 1rem 5rem;
+  }
+
+  .lips-products-title {
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .lips-products-grid {
+    gap: 2.5rem 0.75rem;
+  }
+
+  .lips-product-info {
+    padding-right: 0;
+    font-size: 0.875rem;
+  }
+
+  .lips-product-price {
+    gap: 0.125rem 0.375rem;
+    padding-right: 1.75rem;
+  }
+
+  .lips-product-cart {
+    top: auto;
+    right: 0;
+    bottom: 0;
+  }
+
+  .lips-product-like {
+    top: 0.25rem;
+    right: 0.25rem;
+  }
+}
+
+/* Lips 제품 이미지 모션 설정 */
+@media (prefers-reduced-motion: reduce) {
+  .lips-product-photo .lips-product-hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+
+/* Lips 제품 기본 이미지 전환 */
+.lips-product-photo > img:first-child {
+  transition: transform 650ms ease;
+}
+
+/* Lips 제품 기본 이미지 확대 호버 */
+@media (hover: hover) {
+  .lips-product-card:hover .lips-product-photo > img:first-child {
+    transform: scale(1.08);
+  }
+}
+
+.lips-product-card:focus-within .lips-product-photo > img:first-child {
+  transform: scale(1.08);
+}
+
+/* Lips 제품 기본 이미지 모션 설정 */
+@media (prefers-reduced-motion: reduce) {
+  .lips-product-card .lips-product-photo > img:first-child {
+    transform: none;
+    transition: none;
+  }
+}

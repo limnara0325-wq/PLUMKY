@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PLUMKY Style Gallery. 립 컬러, 케이스, 참으로 완성하는 나만의 스타일을 만나보세요.">
+    <title>Style Gallery | PLUMKY</title>
+    <!-- 공통 스타일과 기능 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/common.js" defer></script>
+    <!-- STYLE GALLERY 전용 스타일과 기능 -->
+    <link rel="stylesheet" href="css/sub4.css">
+    <script src="js/sub4.js" defer></script>
+  </head>
+  <body class="gallery-page">
+    <!-- STYLE GALLERY 본문 바로가기 -->
+    <a class="gallery-skip-link" href="#style-gallery">갤러리 바로가기</a>
+    <!-- 헤더 아이콘 -->
+    <svg class="common-header-icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="icon-search" viewBox="0 0 24 24">
+        <circle cx="10.5" cy="10.5" r="7.5"></circle>
+        <path d="m16 16 5 5"></path>
+      </symbol>
+      <symbol id="icon-cart" viewBox="0 0 24 24">
+        <path d="M2 4h3l3 12h11l3-10H5.5M8 12h12"></path>
+        <circle cx="9.5" cy="20" r="1.5"></circle>
+        <circle cx="18.5" cy="20" r="1.5"></circle>
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18"></path>
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="m5 5 14 14M19 5 5 19"></path>
+      </symbol>
+    </svg>
+
+    <!-- 공통 헤더: css/common.css · js/common.js -->
+    <header class="common-header">
+      <nav class="common-header-nav" aria-label="주 메뉴">
+        <ul class="common-header-nav-list">
+          <li class="common-header-nav-item" data-common-header-dropdown>
+            <a class="common-header-nav-link" href="./sub1.html" aria-expanded="false" aria-controls="common-header-shop-menu">SHOP</a>
+            <ul class="common-header-dropdown" id="common-header-shop-menu" hidden>
+              <li><a href="./sub1.html#best">BEST</a></li>
+              <li><a href="./sub1_1.html">holiday</a></li>
+              <li><a href="./sub1_2.html">Lips</a></li>
+              <li><a href="./sub1_3.html">Case</a></li>
+              <li><a href="./sub1_4.html">charm</a></li>
+            </ul>
+          </li>
+          <li class="common-header-nav-item"><a class="common-header-nav-link" href="./sub2.html">CUSTOM</a></li>
+          <li class="common-header-nav-item"><a class="common-header-nav-link" href="sub.3.html">BRAND</a></li>
+          <li class="common-header-nav-item" data-common-header-dropdown>
+            <a class="common-header-nav-link" aria-current="true" aria-expanded="false" aria-controls="common-header-community-menu" href="./sub4_1.html">COMMUNITY</a>
+            <ul class="common-header-dropdown" id="common-header-community-menu" hidden>
+              <li><a href="./sub4_1.html" aria-current="page">style gallery</a></li>
+              <li><a href="./sub4_2.html">review</a></li>
+              <li><a href="./sub4_3.html">event</a></li>
+              <li><a href="./sub4_4.html">Q&amp;A</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <a class="common-header-logo" href="./index.html" aria-label="PLUMKY 메인">
+        <svg viewBox="700 0 1880 987" role="img" aria-label="PLUMKY">
+          <image href="main_image/로고1.png" width="2580" height="987"></image>
+        </svg>
+      </a>
+
+      <div class="common-header-tools">
+        <a class="common-header-account" href="#login">Login/Join</a>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-search" aria-label="검색 열기" aria-haspopup="dialog" aria-controls="common-header-search">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+        </button>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-cart" aria-label="장바구니 열기" aria-haspopup="dialog" aria-controls="common-header-cart">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+        </button>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-side-menu" aria-label="전체 메뉴 열기" aria-haspopup="dialog" aria-controls="common-header-side-menu">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-menu"></use></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- SUB4_1 STYLE GALLERY 본문 -->
+    <main id="sub4_1">
+      <!-- COMMUNITY 메인 비주얼 -->
+      <section class="gallery-hero" aria-labelledby="gallery-hero-title">
+        <img class="gallery-hero-image" src="sub4_image/%EC%84%9C%EB%B8%8C4_1%20(10).jpg" alt="" width="735" height="490" fetchpriority="high">
+        <div class="gallery-hero-copy">
+          <h1 id="gallery-hero-title">COMUNITY</h1>
+          <nav class="gallery-community-nav" aria-label="커뮤니티 카테고리">
+            <a href="./sub4_1.html" aria-current="page">STYLE GALLERY</a>
+            <a href="./sub4_2.html">REVIEW</a>
+            <a href="./sub4_3.html">EVENT</a>
+            <a href="./sub4_4.html">Q &amp; A</a>
+          </nav>
+        </div>
+      </section>
+
+      <!-- STYLE GALLERY 콜라주 -->
+      <section class="style-gallery" id="style-gallery" aria-labelledby="gallery-title" tabindex="-1">
+        <h2 class="gallery-title" id="gallery-title">STYLE GALLERY</h2>
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- STYLE GALLERY Your everyday object -->
+          <article class="gallery-card gallery-card-1" data-category="CHARM" data-shop="./sub1_4.html" data-description="익숙한 데일리 룩에도 나만의 포인트. 작은 나비 하나로 달라지는 오늘의 분위기." aria-labelledby="gallery-photo-1">
+            <button class="gallery-open" type="button" aria-label="Your everyday object 사진 확대" aria-haspopup="dialog" aria-controls="gallery-dialog">
+              <img src="sub4_image/%EC%84%9C%EB%B8%8C4_1%20(4).jpg" alt="흰색 튜브 톱에 보라색 나비 장식을 더하고 계단에 앉아 있는 모델" width="1792" height="2400" loading="lazy" decoding="async">
+              <span class="gallery-credit">@plu_ming_</span>
+            </button>
+            <h3 class="common-header-sr-only" id="gallery-photo-1">Your everyday object</h3>
+          </article>
+          <!-- STYLE GALLERY Silver wings -->
+          <article class="gallery-card gallery-card-2" data-category="CHARM" data-shop="./sub1_4.html" data-description="차분한 스타일 위로 반짝이는 은빛 날개. 섬세한 메탈 포인트로 완성한 나만의 오브제." aria-labelledby="gallery-photo-2">
+            <button class="gallery-open" type="button" aria-label="Silver wings 사진 확대" aria-haspopup="dialog" aria-controls="gallery-dialog">
+              <img src="sub4_image/%EC%84%9C%EB%B8%8C4_1%20(1).jpg" alt="머리에 은빛 나비 장식을 하고 뒤돌아보는 모델" width="2752" height="1536" loading="lazy" decoding="async">
+              <span class="gallery-credit">@plu_ming_</span>
+            </button>
+            <h3 class="common-header-sr-only" id="gallery-photo-2">Silver wings</h3>
+          </article>
+          <!-- STYLE GALLERY Make it yours -->
+          <article class="gallery-card gallery-card-3" data-category="CHARM" data-shop="./sub1_4.html" data-description="블랙 레이스와 메탈 액세서리를 자유롭게 레이어링한 스타일. 정해진 방식 없이, 나답게." aria-labelledby="gallery-photo-3">
+            <button class="gallery-open" type="button" aria-label="Make it yours 사진 확대" aria-haspopup="dialog" aria-controls="gallery-dialog">
+              <img src="sub4_image/%EC%84%9C%EB%B8%8C4_1%20(8).jpg" alt="검은 레이스 톱에 초커와 메탈 액세서리를 매치한 모델" width="2752" height="1536" loading="lazy" decoding="async">
+              <span class="gallery-credit">@plu_ming_</span>
+            </button>
+            <h3 class="common-header-sr-only" id="gallery-photo-3">Make it yours</h3>
+          </article>
+          <!-- STYLE GALLERY Lilac point -->
+          <article class="gallery-card gallery-card-4" data-category="CHARM" data-shop="./sub1_4.html" data-description="레이스의 부드러움과 라일락 나비의 만남. 작은 디테일에 담아낸 취향의 조합." aria-labelledby="gallery-photo-4">
+            <button class="gallery-open" type="button" aria-label="Lilac point 사진 확대" aria-haspopup="dialog" aria-controls="gallery-dialog">
+              <img src="sub4_image/%EC%84%9C%EB%B8%8C4_1%20(9).jpg" alt="레이스 초커와 라일락색 나비 장식을 착용한 모델" width="1792" height="2400" loading="lazy" decoding="async">
+              <span class="gallery-credit">@plu_ming_</span>
+            </button>
+            <h3 class="common-header-sr-only" id="gallery-photo-4">Lilac point</h3>
+          </article>
+          <!-- STYLE GALLERY Soft glow -->
+          <article class="gallery-card gallery-card-5" data-category="LIPS" data-shop="./sub1_2.html" data-description="입술 위에 은은하게 더한 컬러와 빛. 가까이에서 만나는 부드러운 글로우 무드." aria-labelledby="gallery-photo-5">
+            <button class="gallery-open" type="button" aria-label="Soft glow 사진 확대" aria-haspopup="dialog" aria-controls="gallery-dialog">
+              <img src="sub4_image/%EC%84%9C%EB%B8%8C4_1%20(3).jpg" alt="윤기 있는 핑크빛 립 메이크업을 보여 주는 모델 클로즈업" width="2752" height="1536" loading="lazy" decoding="async">
+              <span class="gallery-credit">@plu_ming_</span>
+            </button>
+            <h3 class="common-header-sr-only" id="gallery-photo-5">Soft glow</h3>
+          </article>
+          <!-- STYLE GALLERY Moonlit beauty -->
+          <article class="gallery-card gallery-card-6" data-category="LIPS" data-shop="./sub1_2.html" data-description="차가운 빛 아래 더욱 선명해지는 립 컬러. 반짝이는 디테일과 함께 나만의 분위기를 만들어 보세요." aria-labelledby="gallery-photo-6">
+            <button class="gallery-open" type="button" aria-label="Moonlit beauty 사진 확대" aria-haspopup="dialog" aria-controls="gallery-dialog">
+              <img src="sub4_image/%EC%84%9C%EB%B8%8C4_1%20(5).jpg" alt="은빛 나비 장식과 흰색 의상을 착용하고 정면을 바라보는 모델" width="2752" height="1536" loading="lazy" decoding="async">
+              <span class="gallery-credit">@plu_ming_</span>
+            </button>
+            <h3 class="common-header-sr-only" id="gallery-photo-6">Moonlit beauty</h3>
+          </article>
+          <!-- STYLE GALLERY A little butterfly -->
+          <article class="gallery-card gallery-card-7" data-category="CASE" data-shop="./sub1_3.html" data-description="손끝에 내려앉은 작은 나비. 나만의 컬러와 케이스로 취향을 표현해 보세요." aria-labelledby="gallery-photo-7">
+            <button class="gallery-open" type="button" aria-label="A little butterfly 사진 확대" aria-haspopup="dialog" aria-controls="gallery-dialog">
+              <img src="sub4_image/%EC%84%9C%EB%B8%8C4_1%20(7).jpg" alt="빛나는 나비들 사이에서 보라색 케이스를 든 모델" width="2752" height="1536" loading="lazy" decoding="async">
+              <span class="gallery-credit">@plu_ming_</span>
+            </button>
+            <h3 class="common-header-sr-only" id="gallery-photo-7">A little butterfly</h3>
+          </article>
+          <!-- STYLE GALLERY Into the silver -->
+          <article class="gallery-card gallery-card-8" data-category="CASE" data-shop="./sub1_3.html" data-description="빛의 각도마다 달라지는 메탈릭 무드. 실버 케이스와 어울리는 대담한 스타일을 만나보세요." aria-labelledby="gallery-photo-8">
+            <button class="gallery-open" type="button" aria-label="Into the silver 사진 확대" aria-haspopup="dialog" aria-controls="gallery-dialog">
+              <img src="sub4_image/%EC%84%9C%EB%B8%8C4_1%20(6).jpg" alt="은빛 배경 앞에서 메탈릭한 스타일을 선보이는 모델" width="2752" height="1536" loading="lazy" decoding="async">
+              <span class="gallery-credit">@plu_ming_</span>
+            </button>
+            <h3 class="common-header-sr-only" id="gallery-photo-8">Into the silver</h3>
+          </article>
+          <!-- STYLE GALLERY Dream in lilac -->
+          <article class="gallery-card gallery-card-9" data-category="LIPS" data-shop="./sub1_2.html" data-description="보랏빛 꽃과 투명한 반짝임. 은은한 립 컬러로 완성한 몽환적인 순간." aria-labelledby="gallery-photo-9">
+            <button class="gallery-open" type="button" aria-label="Dream in lilac 사진 확대" aria-haspopup="dialog" aria-controls="gallery-dialog">
+              <img src="sub4_image/%EC%84%9C%EB%B8%8C4_1%20(2).jpg" alt="보랏빛 꽃과 촛불 사이에서 립 컬러를 바르는 모델" width="1792" height="2400" loading="lazy" decoding="async">
+              <span class="gallery-credit">@plu_ming_</span>
+            </button>
+            <h3 class="common-header-sr-only" id="gallery-photo-9">Dream in lilac</h3>
+          </article>
+        </div>
+
+        <!-- STYLE GALLERY 전체 사진 보기 -->
+        <div class="gallery-more-wrap">
+          <button class="gallery-more" type="button" data-gallery-more aria-haspopup="dialog" aria-controls="gallery-dialog" aria-label="갤러리 사진 더 보기">MORE</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- STYLE GALLERY 사진 확대 보기 -->
+    <dialog class="gallery-dialog" id="gallery-dialog" aria-labelledby="gallery-dialog-title" aria-describedby="gallery-dialog-description">
+      <div class="gallery-dialog-layout">
+        <img class="gallery-dialog-image" src="sub4_image/%EC%84%9C%EB%B8%8C4_1%20(4).jpg" alt="" width="1792" height="2400" loading="lazy">
+        <div class="gallery-dialog-copy">
+          <p class="gallery-category"></p>
+          <h2 class="gallery-dialog-title" id="gallery-dialog-title"></h2>
+          <p class="gallery-dialog-description" id="gallery-dialog-description"></p>
+          <a class="gallery-dialog-link" href="./sub1.html">컬렉션 보기</a>
+          <!-- STYLE GALLERY 사진 탐색 -->
+          <div class="gallery-dialog-navigation" aria-label="사진 탐색">
+            <button type="button" data-gallery-previous aria-label="이전 사진">PREV</button>
+            <p data-gallery-position role="status" aria-live="polite" aria-atomic="true">1 / 9</p>
+            <button type="button" data-gallery-next aria-label="다음 사진">NEXT</button>
+          </div>
+        </div>
+      </div>
+      <button class="gallery-dialog-close" type="button" aria-label="사진 확대 보기 닫기" autofocus>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-close"></use></svg>
+      </button>
+    </dialog>
+
+    <!-- 공통 푸터: css/common.css · js/common.js -->
+    <footer class="site-footer" id="footer">
+      <div class="footer-top">
+        <a class="footer-home" href="./index.html" aria-label="PLUMKY 메인으로">
+          <svg viewBox="90 0 216 107" role="img" aria-label="PLUMKY">
+            <image href="main_image/logo.svg" width="306" height="107"></image>
+          </svg>
+        </a>
+        <nav class="footer-links" aria-label="사이트 안내">
+          <a href="#">공지사항</a>
+          <a href="#">개인정보 이용 처리방침</a>
+          <a href="#footer-contact">고객센터</a>
+        </nav>
+        <nav class="footer-social" aria-label="소셜 미디어">
+          <a href="#" aria-label="인스타그램">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle class="footer-icon-fill" cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+          </a>
+          <a href="#" aria-label="틱톡">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 4v11a4 4 0 1 1-4-4M14 4c0 4 3 5 6 5"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="유튜브">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect class="footer-icon-fill" x="2" y="4" width="20" height="16" rx="5"></rect>
+              <path class="footer-icon-cutout" d="m10 8 6 4-6 4Z"></path>
+            </svg>
+          </a>
+        </nav>
+      </div>
+      <div class="footer-details">
+        <div class="footer-contact" id="footer-contact">
+          <h2>CONTACT</h2>
+          <address>
+            <a href="mailto:nara0062@naver.com">nara0062@naver.com</a>
+            <a href="tel:05119950809">051-1995-0809</a>
+          </address>
+        </div>
+        <div class="footer-company">
+          <h2>COMPANY</h2>
+          <address>
+            <span>부산광역시 부산진구 가야대로 157번길</span>
+            <span>중앙 브랜드타운 10층</span>
+          </address>
+        </div>
+      </div>
+
+      <!-- FOOTER 메탈 심볼·로고 -->
+      <div class="footer-metal" aria-label="PLUMKY 메탈 심볼과 로고">
+        <div class="footer-metal-item footer-metal-symbol">
+          <img src="main_image/심볼1.png" alt="PLUMKY 메탈 심볼" width="2175" height="2232" loading="lazy" draggable="false">
+        </div>
+        <div class="footer-metal-item footer-metal-wordmark">
+          <svg viewBox="700 0 1880 987" role="img" aria-label="PLUMKY 메탈 로고">
+            <image href="main_image/로고1.png" width="2580" height="987"></image>
+          </svg>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 헤더 전체 메뉴 -->
+    <dialog class="common-header-dialog common-header-side-menu" id="common-header-side-menu" aria-label="전체 메뉴">
+      <div class="common-header-side-tools">
+        <a class="common-header-login" href="#login">Login/Join</a>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-search" aria-label="검색 열기" aria-haspopup="dialog" aria-controls="common-header-search">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+        </button>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-cart" aria-label="장바구니 열기" aria-haspopup="dialog" aria-controls="common-header-cart">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+        </button>
+        <button class="common-header-icon-button" type="button" data-common-header-close aria-label="전체 메뉴 닫기" autofocus>
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+      <nav class="common-header-side-nav" aria-label="전체 메뉴">
+        <a class="common-header-side-title common-header-my-page" href="#my-page">My Page</a>
+        <details class="common-header-side-group" open>
+          <summary class="common-header-side-title"><a href="./sub1.html">SHOP</a></summary>
+          <ul class="common-header-side-links">
+            <li><a href="./sub1.html#best">BEST</a></li>
+            <li><a href="./sub1_1.html">holiday</a></li>
+            <li><a href="./sub1_2.html">Lips</a></li>
+            <li><a href="./sub1_3.html">Case</a></li>
+            <li><a href="./sub1_4.html">charm</a></li>
+          </ul>
+        </details>
+        <a class="common-header-side-title" href="./sub2.html">CUSTOM</a>
+        <a class="common-header-side-title" href="sub.3.html">BRAND</a>
+        <details class="common-header-side-group">
+          <summary class="common-header-side-title"><a href="./sub4_1.html">COMMUNITY</a></summary>
+          <ul class="common-header-side-links">
+            <li><a href="./sub4_1.html" aria-current="page">style gallery</a></li>
+            <li><a href="./sub4_2.html">review</a></li>
+            <li><a href="./sub4_3.html">event</a></li>
+            <li><a href="./sub4_4.html">Q&amp;A</a></li>
+          </ul>
+        </details>
+      </nav>
+    </dialog>
+
+    <!-- 헤더 검색 -->
+    <dialog class="common-header-dialog common-header-search" id="common-header-search" aria-labelledby="common-header-search-title">
+      <div class="common-header-dialog-heading">
+        <h2 id="common-header-search-title">Search</h2>
+        <button class="common-header-icon-button" type="button" data-common-header-close aria-label="검색 닫기">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+      <label class="common-header-search-field">
+        <span class="common-header-sr-only">검색어</span>
+        <input type="search" name="keyword" placeholder="검색어를 입력하세요" autocomplete="off" autofocus>
+        <svg class="common-header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+      </label>
+    </dialog>
+
+    <!-- 헤더 장바구니 -->
+    <dialog class="common-header-dialog common-header-cart" id="common-header-cart" aria-labelledby="common-header-cart-title">
+      <div class="common-header-dialog-heading">
+        <h2 id="common-header-cart-title">Shopping Bag <span>(0)</span></h2>
+        <button class="common-header-icon-button" type="button" data-common-header-close aria-label="장바구니 닫기" autofocus>
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+      <p class="common-header-cart-empty">장바구니가 비어 있습니다.</p>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PLUMKY 커뮤니티 페이지입니다.">
+    <title>Community | PLUMKY</title>
+    <!-- 공통 스타일과 기능 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/common.js" defer></script>
+    <!-- SUB4_2 페이지와 헤더 스타일 -->
+    <link rel="stylesheet" href="css/sub4_2.css">
+    <!-- 02 REVIEW 전용 기능 -->
+    <script src="js/sub4_2.js" defer></script>
+  </head>
+  <body class="community-page">
+    <!-- 헤더 아이콘 -->
+    <svg class="common-header-icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="icon-search" viewBox="0 0 24 24">
+        <circle cx="10.5" cy="10.5" r="7.5"></circle>
+        <path d="m16 16 5 5"></path>
+      </symbol>
+      <symbol id="icon-cart" viewBox="0 0 24 24">
+        <path d="M2 4h3l3 12h11l3-10H5.5M8 12h12"></path>
+        <circle cx="9.5" cy="20" r="1.5"></circle>
+        <circle cx="18.5" cy="20" r="1.5"></circle>
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18"></path>
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="m5 5 14 14M19 5 5 19"></path>
+      </symbol>
+    </svg>
+
+    <!-- 공통 헤더: css/common.css · js/common.js -->
+    <header class="common-header">
+      <nav class="common-header-nav" aria-label="주 메뉴">
+        <ul class="common-header-nav-list">
+          <li class="common-header-nav-item" data-common-header-dropdown>
+            <a class="common-header-nav-link" href="./sub1.html" aria-expanded="false" aria-controls="common-header-shop-menu">SHOP</a>
+            <ul class="common-header-dropdown" id="common-header-shop-menu" hidden>
+              <li><a href="./sub1.html#best">BEST</a></li>
+              <li><a href="./sub1_1.html">holiday</a></li>
+              <li><a href="./sub1_2.html">Lips</a></li>
+              <li><a href="./sub1_3.html">Case</a></li>
+              <li><a href="./sub1_4.html">charm</a></li>
+            </ul>
+          </li>
+          <li class="common-header-nav-item"><a class="common-header-nav-link" href="./sub2.html">CUSTOM</a></li>
+          <li class="common-header-nav-item"><a class="common-header-nav-link" href="sub.3.html">BRAND</a></li>
+          <li class="common-header-nav-item" data-common-header-dropdown>
+            <a class="common-header-nav-link" aria-current="true" aria-expanded="false" aria-controls="common-header-community-menu" href="./sub4_1.html">COMMUNITY</a>
+            <ul class="common-header-dropdown" id="common-header-community-menu" hidden>
+              <li><a href="./sub4_1.html">style gallery</a></li>
+              <li><a href="./sub4_2.html">review</a></li>
+              <li><a href="./sub4_3.html">event</a></li>
+              <li><a href="./sub4_4.html">Q&amp;A</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <a class="common-header-logo" href="./index.html" aria-label="PLUMKY 메인">
+        <svg viewBox="700 0 1880 987" role="img" aria-label="PLUMKY">
+          <image href="main_image/로고1.png" width="2580" height="987"></image>
+        </svg>
+      </a>
+
+      <div class="common-header-tools">
+        <a class="common-header-account" href="#login">Login/Join</a>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-search" aria-label="검색 열기" aria-haspopup="dialog" aria-controls="common-header-search">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+        </button>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-cart" aria-label="장바구니 열기" aria-haspopup="dialog" aria-controls="common-header-cart">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+        </button>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-side-menu" aria-label="전체 메뉴 열기" aria-haspopup="dialog" aria-controls="common-header-side-menu">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-menu"></use></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- SUB4_2 본문 -->
+    <main id="sub4_2">
+      <!-- 01 COMMUNITY 영상 배너 -->
+      <section class="review-hero" aria-labelledby="review-hero-title">
+        <video class="review-hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
+          <source src="sub4_image/서브4_2%20bg.mp4" type="video/mp4">
+        </video>
+        <div class="review-hero-copy">
+          <h1 id="review-hero-title">COMUNITY</h1>
+          <nav class="review-community-nav" aria-label="커뮤니티 카테고리">
+            <a href="./sub4_1.html">STYLE GALLERY</a>
+            <a href="./sub4_2.html" aria-current="page">REVIEW</a>
+            <a href="./sub4_3.html">EVENT</a>
+            <a href="./sub4_4.html">Q &amp; A</a>
+          </nav>
+        </div>
+      </section>
+
+      <!-- 02 REVIEW 포토 리뷰 -->
+      <section class="review-section" id="review" aria-labelledby="review-title">
+        <h2 class="review-section-title" id="review-title">REIVIEW</h2>
+        <div class="review-grid" id="review-grid">
+        <div class="review-column">
+          <!-- 02 REVIEW 상자를 열자마자 반한 실버 나비 -->
+          <article class="review-card" aria-labelledby="review-title-7">
+            <img class="review-card-photo" src="sub4_image/서브4_2%20(7).png" alt="선물 상자 위에 놓인 실버 나비 케이스와 참" width="1086" height="1448" loading="lazy" decoding="async">
+            <div class="review-card-copy">
+              <h3 id="review-title-7">상자를 열자마자 반한 실버 나비</h3>
+              <p class="review-card-text">포장부터 은은한 보랏빛이라 선물 받는 기분이었어요. 실버 날개 사이로 립 컬러가 살짝 보여서 더 예쁘고, 나비 참까지 달아 주니 작은 주얼리 같아요. 책상 위에 두어도 자꾸 눈이 가는 조합이에요.</p>
+              <p class="review-card-rating" aria-label="별점 5점 만점에 5점"><span aria-hidden="true">★★★★★</span></p>
+              <a class="review-card-product" href="./sub1_3.html#case-silver-title">
+                <span>플럼키 버터플라이케이스 · 실버</span>
+                <img src="sub4_image/서브4_2%20(7).png" alt="" width="32" height="32" loading="lazy">
+              </a>
+            </div>
+          </article>
+          <!-- 02 REVIEW 매일 들던 가방에 새로운 포인트 -->
+          <article class="review-card" aria-labelledby="review-title-11">
+            <img class="review-card-photo" src="sub4_image/서브4_2%20(11).png" alt="검은 가방에 실버 나비 케이스를 연결한 모습" width="1086" height="1448" loading="lazy" decoding="async">
+            <div class="review-card-copy">
+              <h3 id="review-title-11">매일 들던 가방에 새로운 포인트</h3>
+              <p class="review-card-text">검은 가방이 조금 심심해서 달아 봤는데 분위기가 확 달라졌어요. 체인 길이가 적당해서 걸을 때 자연스럽게 반짝여요. 립을 꺼낼 때마다 가방 속을 뒤적이지 않아도 돼서 외출할 때 꼭 챙기고 있어요.</p>
+              <p class="review-card-rating" aria-label="별점 5점 만점에 4점"><span aria-hidden="true">★★★★☆</span></p>
+              <a class="review-card-product" href="./sub1_3.html#case-silver-title">
+                <span>플럼키 버터플라이케이스 · 실버</span>
+                <img src="sub4_image/서브4_2%20(11).png" alt="" width="32" height="32" loading="lazy">
+              </a>
+            </div>
+          </article>
+          <!-- 02 REVIEW 블랙 데님에 보라 한 방울 -->
+          <article class="review-card" aria-labelledby="review-title-8">
+            <img class="review-card-photo" src="sub4_image/서브4_2%20(8).png" alt="검은 데님에 걸린 딥퍼플 나비 케이스" width="1086" height="1448" loading="lazy" decoding="async">
+            <div class="review-card-copy">
+              <h3 id="review-title-8">블랙 데님에 보라 한 방울</h3>
+              <p class="review-card-text">진한 데님에 퍼플 케이스를 걸었더니 생각보다 훨씬 잘 어울려요. 빛을 받을 때마다 보랏빛이 다르게 보여서 사진 찍는 재미도 있어요. 평소 무채색 옷을 자주 입는 분들께 추천하고 싶은 포인트예요.</p>
+              <p class="review-card-rating" aria-label="별점 5점 만점에 5점"><span aria-hidden="true">★★★★★</span></p>
+              <a class="review-card-product" href="./sub1_3.html#case-purple-title">
+                <span>플럼키 버터플라이케이스 · 딥퍼플</span>
+                <img src="sub4_image/서브4_2%20(8).png" alt="" width="32" height="32" loading="lazy">
+              </a>
+            </div>
+          </article>
+          <!-- 02 REVIEW 오늘의 기분에 맞춰 고르는 컬러 -->
+          <article class="review-card" aria-labelledby="review-title-12">
+            <img class="review-card-photo" src="sub4_image/서브4_2%20(12).png" alt="여러 컬러의 틴트와 손등 발색" width="1086" height="1448" loading="lazy" decoding="async">
+            <div class="review-card-copy">
+              <h3 id="review-title-12">오늘의 기분에 맞춰 고르는 컬러</h3>
+              <p class="review-card-text">색을 하나만 고르기 어려워서 여러 컬러를 함께 골랐어요. 손등에 나란히 발라 보니 각자 분위기가 확실히 다르네요. 차분하게 입는 날과 화사하게 꾸미는 날에 번갈아 쓰기 좋아서 아침마다 고르는 시간이 즐거워졌어요.</p>
+              <p class="review-card-rating" aria-label="별점 5점 만점에 4점"><span aria-hidden="true">★★★★☆</span></p>
+              <a class="review-card-product" href="./sub1_2.html#lips-products-title">
+                <span>플러미 글레이즈틴트</span>
+                <img src="sub4_image/서브4_2%20(12).png" alt="" width="32" height="32" loading="lazy">
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="review-column">
+          <!-- 02 REVIEW 거울 셀카에도 같이 담고 싶어요 -->
+          <article class="review-card" aria-labelledby="review-title-2">
+            <img class="review-card-photo" src="sub4_image/서브4_2%20(2).png" alt="실버 나비 케이스를 단 가방과 함께 찍은 거울 셀카" width="1086" height="1448" loading="lazy" decoding="async">
+            <div class="review-card-copy">
+              <h3 id="review-title-2">거울 셀카에도 같이 담고 싶어요</h3>
+              <p class="review-card-text">숄더백 옆에 달았더니 액세서리처럼 보여요. 친구가 어디서 샀냐고 먼저 물어봐서 괜히 뿌듯했어요. 실버 컬러라 목걸이나 반지와도 자연스럽게 어울리고, 캐주얼한 차림에도 부담 없이 매치할 수 있었어요.</p>
+              <p class="review-card-rating" aria-label="별점 5점 만점에 5점"><span aria-hidden="true">★★★★★</span></p>
+              <a class="review-card-product" href="./sub1_3.html#case-silver-title">
+                <span>플럼키 버터플라이케이스 · 실버</span>
+                <img src="sub4_image/서브4_2%20(2).png" alt="" width="32" height="32" loading="lazy">
+              </a>
+            </div>
+          </article>
+          <!-- 02 REVIEW 작은 디테일까지 취향 저격 -->
+          <article class="review-card" aria-labelledby="review-title-5">
+            <img class="review-card-photo" src="sub4_image/서브4_2%20(5).png" alt="상자 안의 실버 나비 케이스 디테일" width="1086" height="1448" loading="lazy" decoding="async">
+            <div class="review-card-copy">
+              <h3 id="review-title-5">작은 디테일까지 취향 저격</h3>
+              <p class="review-card-text">날개 안쪽의 모양이 섬세해서 가까이 볼수록 마음에 들어요. 따로 고른 참을 더하니 제 취향이 담긴 소품이 됐어요. 케이스 하나만 바꿨는데 원래 쓰던 립도 새로 산 것 같은 느낌이라 만족해요.</p>
+              <p class="review-card-rating" aria-label="별점 5점 만점에 5점"><span aria-hidden="true">★★★★★</span></p>
+              <a class="review-card-product" href="./sub1_3.html#case-silver-title">
+                <span>플럼키 버터플라이케이스 · 실버</span>
+                <img src="sub4_image/서브4_2%20(5).png" alt="" width="32" height="32" loading="lazy">
+              </a>
+            </div>
+          </article>
+          <!-- 02 REVIEW 손등 발색부터 마음에 든 조합 -->
+          <article class="review-card" aria-labelledby="review-title-9">
+            <img class="review-card-photo" src="sub4_image/서브4_2%20(9).png" alt="손등 발색과 함께 든 딥퍼플 나비 케이스" width="1122" height="1402" loading="lazy" decoding="async">
+            <div class="review-card-copy">
+              <h3 id="review-title-9">손등 발색부터 마음에 든 조합</h3>
+              <p class="review-card-text">보랏빛 케이스와 차분한 립 컬러가 정말 잘 어울려요. 한 번 가볍게 바를 때와 덧바를 때의 느낌이 달라서 그날 메이크업에 맞춰 쓰고 있어요. 창가에서 찍으면 케이스 색이 더 예쁘게 나와요.</p>
+              <p class="review-card-rating" aria-label="별점 5점 만점에 4점"><span aria-hidden="true">★★★★☆</span></p>
+              <a class="review-card-product" href="./sub1_3.html#case-purple-title">
+                <span>플럼키 버터플라이케이스 · 딥퍼플</span>
+                <img src="sub4_image/서브4_2%20(9).png" alt="" width="32" height="32" loading="lazy">
+              </a>
+            </div>
+          </article>
+          <!-- 02 REVIEW 가방에 달아 두니 잊을 일이 없네요 -->
+          <article class="review-card" aria-labelledby="review-title-3">
+            <img class="review-card-photo" src="sub4_image/서브4_2%20(3).png" alt="검은 가방에 체인으로 연결한 틴트" width="1448" height="1086" loading="lazy" decoding="async">
+            <div class="review-card-copy">
+              <h3 id="review-title-3">가방에 달아 두니 잊을 일이 없네요</h3>
+              <p class="review-card-text">외출할 때 립을 자주 두고 나왔는데 이제는 가방에 연결해 두니 마음이 편해요. 길쭉한 케이스에 핑크빛이 비쳐서 깔끔하면서도 포인트가 돼요. 자주 쓰는 가방마다 옮겨 달며 사용하고 있어요.</p>
+              <p class="review-card-rating" aria-label="별점 5점 만점에 5점"><span aria-hidden="true">★★★★★</span></p>
+              <a class="review-card-product" href="./sub1_2.html#lips-products-title">
+                <span>플러미 글레이즈틴트</span>
+                <img src="sub4_image/서브4_2%20(3).png" alt="" width="32" height="32" loading="lazy">
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="review-column">
+          <!-- 02 REVIEW 손안에 들어오는 작은 오브제 -->
+          <article class="review-card" aria-labelledby="review-title-6">
+            <img class="review-card-photo" src="sub4_image/서브4_2%20(6).png" alt="손바닥 위에 올린 실버 나비 케이스" width="1086" height="1448" loading="lazy" decoding="async">
+            <div class="review-card-copy">
+              <h3 id="review-title-6">손안에 들어오는 작은 오브제</h3>
+              <p class="review-card-text">사진으로 봤을 때보다 실물이 더 반짝여요. 손에 올려 보니 날개 모양이 또렷해서 한참 구경했어요. 패키지도 예뻐서 버리지 않고 작은 액세서리를 담아 두는 상자로 쓰고 있답니다.</p>
+              <p class="review-card-rating" aria-label="별점 5점 만점에 5점"><span aria-hidden="true">★★★★★</span></p>
+              <a class="review-card-product" href="./sub1_3.html#case-silver-title">
+                <span>플럼키 버터플라이케이스 · 실버</span>
+                <img src="sub4_image/서브4_2%20(6).png" alt="" width="32" height="32" loading="lazy">
+              </a>
+            </div>
+          </article>
+          <!-- 02 REVIEW 내가 고른 참이라 더 특별해요 -->
+          <article class="review-card" aria-labelledby="review-title-10">
+            <img class="review-card-photo" src="sub4_image/서브4_2%20(10).png" alt="여러 참을 연결한 딥퍼플 나비 케이스" width="1086" height="1448" loading="lazy" decoding="async">
+            <div class="review-card-copy">
+              <h3 id="review-title-10">내가 고른 참이라 더 특별해요</h3>
+              <p class="review-card-text">보라색 케이스에 서로 다른 참을 달아 보면서 조합을 골랐어요. 작은 장식 하나만 바꿔도 느낌이 꽤 달라지네요. 다음에는 실버 체인과도 매치해 보고 싶어요. 취향대로 꾸미는 과정까지 즐거운 제품이에요.</p>
+              <p class="review-card-rating" aria-label="별점 5점 만점에 4점"><span aria-hidden="true">★★★★☆</span></p>
+              <a class="review-card-product" href="./sub1_3.html#case-purple-title">
+                <span>플럼키 버터플라이케이스 · 딥퍼플</span>
+                <img src="sub4_image/서브4_2%20(10).png" alt="" width="32" height="32" loading="lazy">
+              </a>
+            </div>
+          </article>
+          <!-- 02 REVIEW 체리 참으로 완성한 주말 룩 -->
+          <article class="review-card" aria-labelledby="review-title-1">
+            <img class="review-card-photo" src="sub4_image/서브4_2%20(1).png" alt="데님 벨트 고리에 연결한 핑크 체리 참" width="1086" height="1448" loading="lazy" decoding="async">
+            <div class="review-card-copy">
+              <h3 id="review-title-1">체리 참으로 완성한 주말 룩</h3>
+              <p class="review-card-text">니트와 데님에 체리 참을 하나 더했을 뿐인데 룩이 훨씬 귀여워졌어요. 짙은 핑크빛 체리가 은은하게 반짝여서 마음에 들어요. 가방에 달아도 예쁘지만 저는 벨트 고리에 연결하는 조합이 가장 좋았어요.</p>
+              <p class="review-card-rating" aria-label="별점 5점 만점에 5점"><span aria-hidden="true">★★★★★</span></p>
+              <a class="review-card-product" href="./sub1_4.html#charm-cherry-title">
+                <span>체리쉬 메탈 참 키링</span>
+                <img src="sub4_image/서브4_2%20(1).png" alt="" width="32" height="32" loading="lazy">
+              </a>
+            </div>
+          </article>
+          <!-- 02 REVIEW 파우치에서 꺼낼 때마다 기분 좋아요 -->
+          <article class="review-card" aria-labelledby="review-title-4">
+            <img class="review-card-photo" src="sub4_image/서브4_2%20(4).png" alt="핑크 패키지 옆 틴트와 손등 발색" width="1448" height="1086" loading="lazy" decoding="async">
+            <div class="review-card-copy">
+              <h3 id="review-title-4">파우치에서 꺼낼 때마다 기분 좋아요</h3>
+              <p class="review-card-text">투명한 케이스 안으로 컬러가 보여서 원하는 립을 바로 찾을 수 있어요. 은빛 장식과 부드러운 핑크 컬러 조합이 제 취향이에요. 작은 파우치에 넣어 다니며 오후에 메이크업을 고칠 때 사용하고 있어요.</p>
+              <p class="review-card-rating" aria-label="별점 5점 만점에 4점"><span aria-hidden="true">★★★★☆</span></p>
+              <a class="review-card-product" href="./sub1_2.html#lips-products-title">
+                <span>플러미 글레이즈틴트</span>
+                <img src="sub4_image/서브4_2%20(4).png" alt="" width="32" height="32" loading="lazy">
+              </a>
+            </div>
+          </article>
+        </div>
+        </div>
+        <!-- 02 REVIEW 전문 보기 -->
+        <div class="review-more-wrap">
+          <button class="review-more" type="button" aria-controls="review-grid" aria-expanded="false" aria-label="리뷰 전문 모두 펼치기">MORE</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- 공통 푸터: css/common.css · js/common.js -->
+    <footer class="site-footer" id="footer">
+      <div class="footer-top">
+        <a class="footer-home" href="./index.html" aria-label="PLUMKY 메인으로">
+          <svg viewBox="90 0 216 107" role="img" aria-label="PLUMKY">
+            <image href="main_image/logo.svg" width="306" height="107"></image>
+          </svg>
+        </a>
+        <nav class="footer-links" aria-label="사이트 안내">
+          <a href="#">공지사항</a>
+          <a href="#">개인정보 이용 처리방침</a>
+          <a href="#footer-contact">고객센터</a>
+        </nav>
+        <nav class="footer-social" aria-label="소셜 미디어">
+          <a href="#" aria-label="인스타그램">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle class="footer-icon-fill" cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+          </a>
+          <a href="#" aria-label="틱톡">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 4v11a4 4 0 1 1-4-4M14 4c0 4 3 5 6 5"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="유튜브">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect class="footer-icon-fill" x="2" y="4" width="20" height="16" rx="5"></rect>
+              <path class="footer-icon-cutout" d="m10 8 6 4-6 4Z"></path>
+            </svg>
+          </a>
+        </nav>
+      </div>
+      <div class="footer-details">
+        <div class="footer-contact" id="footer-contact">
+          <h2>CONTACT</h2>
+          <address>
+            <a href="mailto:nara0062@naver.com">nara0062@naver.com</a>
+            <a href="tel:05119950809">051-1995-0809</a>
+          </address>
+        </div>
+        <div class="footer-company">
+          <h2>COMPANY</h2>
+          <address>
+            <span>부산광역시 부산진구 가야대로 157번길</span>
+            <span>중앙 브랜드타운 10층</span>
+          </address>
+        </div>
+      </div>
+
+      <!-- FOOTER 메탈 심볼·로고 -->
+      <div class="footer-metal" aria-label="PLUMKY 메탈 심볼과 로고">
+        <div class="footer-metal-item footer-metal-symbol">
+          <img src="main_image/심볼1.png" alt="PLUMKY 메탈 심볼" width="2175" height="2232" loading="lazy" draggable="false">
+        </div>
+        <div class="footer-metal-item footer-metal-wordmark">
+          <svg viewBox="700 0 1880 987" role="img" aria-label="PLUMKY 메탈 로고">
+            <image href="main_image/로고1.png" width="2580" height="987"></image>
+          </svg>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 헤더 전체 메뉴 -->
+    <dialog class="common-header-dialog common-header-side-menu" id="common-header-side-menu" aria-label="전체 메뉴">
+      <div class="common-header-side-tools">
+        <a class="common-header-login" href="#login">Login/Join</a>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-search" aria-label="검색 열기" aria-haspopup="dialog" aria-controls="common-header-search">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+        </button>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-cart" aria-label="장바구니 열기" aria-haspopup="dialog" aria-controls="common-header-cart">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+        </button>
+        <button class="common-header-icon-button" type="button" data-common-header-close aria-label="전체 메뉴 닫기" autofocus>
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+      <nav class="common-header-side-nav" aria-label="전체 메뉴">
+        <a class="common-header-side-title common-header-my-page" href="#my-page">My Page</a>
+        <details class="common-header-side-group" open>
+          <summary class="common-header-side-title"><a href="./sub1.html">SHOP</a></summary>
+          <ul class="common-header-side-links">
+            <li><a href="./sub1.html#best">BEST</a></li>
+            <li><a href="./sub1_1.html">holiday</a></li>
+            <li><a href="./sub1_2.html">Lips</a></li>
+            <li><a href="./sub1_3.html">Case</a></li>
+            <li><a href="./sub1_4.html">charm</a></li>
+          </ul>
+        </details>
+        <a class="common-header-side-title" href="./sub2.html">CUSTOM</a>
+        <a class="common-header-side-title" href="sub.3.html">BRAND</a>
+        <details class="common-header-side-group">
+          <summary class="common-header-side-title"><a href="./sub4_1.html">COMMUNITY</a></summary>
+          <ul class="common-header-side-links">
+            <li><a href="./sub4_1.html">style gallery</a></li>
+            <li><a href="./sub4_2.html">review</a></li>
+            <li><a href="./sub4_3.html">event</a></li>
+            <li><a href="./sub4_4.html">Q&amp;A</a></li>
+          </ul>
+        </details>
+      </nav>
+    </dialog>
+
+    <!-- 헤더 검색 -->
+    <dialog class="common-header-dialog common-header-search" id="common-header-search" aria-labelledby="common-header-search-title">
+      <div class="common-header-dialog-heading">
+        <h2 id="common-header-search-title">Search</h2>
+        <button class="common-header-icon-button" type="button" data-common-header-close aria-label="검색 닫기">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+      <label class="common-header-search-field">
+        <span class="common-header-sr-only">검색어</span>
+        <input type="search" name="keyword" placeholder="검색어를 입력하세요" autocomplete="off" autofocus>
+        <svg class="common-header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+      </label>
+    </dialog>
+
+    <!-- 헤더 장바구니 -->
+    <dialog class="common-header-dialog common-header-cart" id="common-header-cart" aria-labelledby="common-header-cart-title">
+      <div class="common-header-dialog-heading">
+        <h2 id="common-header-cart-title">Shopping Bag <span>(0)</span></h2>
+        <button class="common-header-icon-button" type="button" data-common-header-close aria-label="장바구니 닫기" autofocus>
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+      <p class="common-header-cart-empty">장바구니가 비어 있습니다.</p>
+    </dialog>
+  </body>
+</html>

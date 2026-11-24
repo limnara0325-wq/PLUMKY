@@ -19,7 +19,7 @@
   </head>
   <body>
     <!-- MAIN 시작화면 -->
-    <div class="main-intro" aria-hidden="true">
+    <div class="main-intro" aria-hidden="true" hidden>
       <img class="main-intro-symbol" src="main_image/심볼1.png" alt="" width="2175" height="2232" fetchpriority="high" draggable="false">
     </div>
     <!-- 헤더 아이콘 -->
@@ -50,24 +50,24 @@
       <nav class="header-nav" aria-label="주 메뉴">
         <ul class="header-nav-list">
           <li class="header-nav-item" data-header-dropdown>
-            <button class="header-nav-link" type="button" aria-expanded="false" aria-controls="header-shop-menu">SHOP</button>
+            <a class="header-nav-link" href="./sub1.html" aria-expanded="false" aria-controls="header-shop-menu">SHOP</a>
             <ul class="header-dropdown" id="header-shop-menu" hidden>
-              <li><a href="#best">BEST</a></li>
-              <li><a href="#holiday">holiday</a></li>
-              <li><a href="#lips">Lips</a></li>
-              <li><a href="#case">Case</a></li>
-              <li><a href="#charm">charm</a></li>
+              <li><a href="./sub1.html#best">BEST</a></li>
+              <li><a href="./sub1_1.html">holiday</a></li>
+              <li><a href="./sub1_2.html">Lips</a></li>
+              <li><a href="./sub1_3.html">Case</a></li>
+              <li><a href="./sub1_4.html">charm</a></li>
             </ul>
           </li>
-          <li class="header-nav-item"><a class="header-nav-link" href="#custom">CUSTOM</a></li>
-          <li class="header-nav-item"><a class="header-nav-link" href="#brand">BRAND</a></li>
+          <li class="header-nav-item"><a class="header-nav-link" href="./sub2.html">CUSTOM</a></li>
+          <li class="header-nav-item"><a class="header-nav-link" href="sub.3.html">BRAND</a></li>
           <li class="header-nav-item" data-header-dropdown>
-            <button class="header-nav-link" type="button" aria-expanded="false" aria-controls="header-community-menu">COMMUNITY</button>
+            <a class="header-nav-link" aria-expanded="false" aria-controls="header-community-menu" href="./sub4_1.html">COMMUNITY</a>
             <ul class="header-dropdown" id="header-community-menu" hidden>
-              <li><a href="#style-gallery">style gallary</a></li>
-              <li><a href="#review">review</a></li>
-              <li><a href="#event">event</a></li>
-              <li><a href="#qna">Q&amp;A</a></li>
+              <li><a href="./sub4_1.html">style gallary</a></li>
+              <li><a href="./sub4_2.html">review</a></li>
+              <li><a href="./sub4_3.html">event</a></li>
+              <li><a href="./sub4_4.html">Q&amp;A</a></li>
             </ul>
           </li>
         </ul>
@@ -107,14 +107,20 @@
       <!-- PRODUCT LIPS -->
       <section class="lips-section" id="lips" aria-labelledby="product-title">
         <div class="lips-intro">
-          <h2 id="product-title">PRODUCT</h2>
+          <h2 id="product-title"><a href="./sub1.html">PRODUCT</a></h2>
           <p>“일상 속 스타일에 새로운 감각을 더하는 플럼키의 오브제 컬렉션을 만나보세요”</p>
         </div>
         <div class="lips-content">
           <div class="lips-layout">
-            <img class="lips-model" src="main_image/02_LIPS.모델.jpg" alt="플러미 글레이즈 틴트를 들고 있는 모델" width="1792" height="2400" loading="lazy">
+            <!-- PRODUCT LIPS 모델 이미지·호버 영상 -->
+            <div class="lips-model">
+              <img class="lips-model-image" src="main_image/02_LIPS.모델.jpg" alt="플러미 글레이즈 틴트를 들고 있는 모델" width="1792" height="2400" loading="lazy">
+              <video class="lips-model-video" muted playsinline preload="metadata" poster="main_image/02_LIPS.모델.jpg" aria-hidden="true">
+                <source src="main_image/02_모델.mp4" type="video/mp4">
+              </video>
+            </div>
             <div class="lips-products">
-              <h3 class="lips-heading">LIPS</h3>
+              <h3 class="lips-heading"><a href="./sub1_2.html">LIPS</a></h3>
               <div class="lips-slider-reveal">
               <div class="swiper lips-swiper" aria-label="플러미 글레이즈 틴트 컬렉션">
                 <div class="swiper-wrapper">
@@ -126,7 +132,7 @@
                       <p class="lips-product-english">PLUMMY GLAZE TINT 01 PLU</p>
                       <h4 id="lips-plu-title">플러미 글레이즈 틴트 01 플루</h4>
                       <p class="lips-description">깊고 매혹적인 플럼빛, 강렬한 존재감.</p>
-                      <a class="lips-buy" href="#lips" aria-label="플루 구매하기">구매하기</a>
+                      <a class="lips-buy" href="./sub1_2.html" aria-label="플루 구매하기">구매하기</a>
                     </div>
                   </article>
                   <article class="swiper-slide lips-card" aria-labelledby="lips-mouvy-title">
@@ -137,7 +143,7 @@
                       <p class="lips-product-english">PLUMMY GLAZE TINT 02 MOUVY</p>
                       <h4 id="lips-mouvy-title">플러미 글레이즈 틴트 02 모비</h4>
                       <p class="lips-description">차분하게 스며드는 모브빛의 여운.</p>
-                      <a class="lips-buy" href="#lips" aria-label="모비 구매하기">구매하기</a>
+                      <a class="lips-buy" href="./sub1_2.html" aria-label="모비 구매하기">구매하기</a>
                     </div>
                   </article>
                   <article class="swiper-slide lips-card" aria-labelledby="lips-berrit-title">
@@ -147,7 +153,7 @@
                       <p class="lips-product-english">PLUMMY GLAZE TINT 03 BERRIT</p>
                       <h4 id="lips-berrit-title">플러미 글레이즈 틴트 03 베리</h4>
                       <p class="lips-description">선명한 베리빛으로 완성하는 대담한 무드.</p>
-                      <a class="lips-buy" href="#lips" aria-label="베리 구매하기">구매하기</a>
+                      <a class="lips-buy" href="./sub1_2.html" aria-label="베리 구매하기">구매하기</a>
                     </div>
                   </article>
                   <article class="swiper-slide lips-card" aria-labelledby="lips-rozy-title">
@@ -157,7 +163,7 @@
                       <p class="lips-product-english">PLUMMY GLAZE TINT 04 ROZY</p>
                       <h4 id="lips-rozy-title">플러미 글레이즈 틴트 04 로지</h4>
                       <p class="lips-description">은은한 로즈빛으로 물드는 특별한 순간.</p>
-                      <a class="lips-buy" href="#lips" aria-label="로지 구매하기">구매하기</a>
+                      <a class="lips-buy" href="./sub1_2.html" aria-label="로지 구매하기">구매하기</a>
                     </div>
                   </article>
                   <article class="swiper-slide lips-card" aria-labelledby="lips-peony-title">
@@ -167,7 +173,7 @@
                       <p class="lips-product-english">PLUMMY GLAZE TINT 05 PEONY</p>
                       <h4 id="lips-peony-title">플러미 글레이즈 틴트 05 피오니</h4>
                       <p class="lips-description">부드러운 핑크빛이 남기는 섬세한 분위기.</p>
-                      <a class="lips-buy" href="#lips" aria-label="피오니 구매하기">구매하기</a>
+                      <a class="lips-buy" href="./sub1_2.html" aria-label="피오니 구매하기">구매하기</a>
                     </div>
                   </article>
                 </div>
@@ -186,7 +192,7 @@
       <section class="case-section" id="case" aria-labelledby="case-title">
         <div class="case-layout">
           <div class="case-products">
-            <h2 class="case-heading" id="case-title">CASE</h2>
+            <h2 class="case-heading" id="case-title"><a href="sub1_3.html">CASE</a></h2>
             <div class="case-slider-reveal">
             <div class="swiper case-swiper" dir="rtl" aria-label="나비 메탈 케이스 컬렉션">
               <div class="swiper-wrapper">
@@ -250,7 +256,13 @@
             </div>
             </div>
           </div>
-          <img class="case-model" src="main_image/03_case모델.png" alt="나비 장식과 메탈 케이스 컬렉션을 연출한 모델" width="1086" height="1448" loading="lazy">
+          <!-- PRODUCT CASE 모델 이미지·호버 영상 -->
+          <div class="case-model">
+            <img class="case-model-image" src="main_image/03_case모델.jpg?v=20261123" alt="보라색 의상을 입은 CASE 컬렉션 모델" width="1792" height="2400" loading="lazy">
+            <video class="case-model-video" muted playsinline preload="metadata" poster="main_image/03_case모델.jpg?v=20261123" aria-hidden="true">
+              <source src="main_image/모델3.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </section>
       <!-- CUSTOMIZING -->
@@ -267,7 +279,7 @@
             <span>완성하는 나만의 시그니처 ”</span>
           </p>
         </div>
-        <a class="custom-more" href="#" aria-label="커스터마이징 케이스 컬렉션 더 보기">MORE</a>
+        <a class="custom-more" href="sub2.html" aria-label="커스터마이징 케이스 컬렉션 더 보기">MORE</a>
       </section>
       <!-- HOLIDAY EDITION -->
       <section class="holiday-section" id="holiday" aria-labelledby="holiday-title">
@@ -294,7 +306,7 @@
         <!-- HOLIDAY EDITION 제품 -->
         <div class="holiday-products">
           <article class="holiday-card">
-            <a class="holiday-product-link" href="#" aria-label="01 플루 버터플라이 에디션 자세히 보기">
+            <a class="holiday-product-link" href="./sub1_1.html" aria-label="01 플루 버터플라이 에디션 자세히 보기">
               <img class="holiday-product-image" src="main_image/05_1.PLU.jpg" alt="플루 버터플라이 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
               <img class="holiday-product-hover" src="main_image/05_1.PLU_호버%20.jpg" alt="" width="2400" height="1792" loading="lazy" draggable="false">
               <img class="holiday-new" src="main_image/new.png" alt="new" width="46" height="46" loading="lazy">
@@ -302,7 +314,7 @@
             </a>
           </article>
           <article class="holiday-card">
-            <a class="holiday-product-link" href="#" aria-label="02 모비 버터플라이 에디션 자세히 보기">
+            <a class="holiday-product-link" href="./sub1_1.html" aria-label="02 모비 버터플라이 에디션 자세히 보기">
               <img class="holiday-product-image" src="main_image/05_2.MOV.jpg" alt="모비 버터플라이 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
               <img class="holiday-product-hover" src="main_image/05_2.MOV_호버.jpg" alt="" width="2400" height="1792" loading="lazy" draggable="false">
               <img class="holiday-new" src="main_image/new.png" alt="new" width="46" height="46" loading="lazy">
@@ -310,7 +322,7 @@
             </a>
           </article>
           <article class="holiday-card">
-            <a class="holiday-product-link" href="#" aria-label="03 베리 버터플라이 에디션 자세히 보기">
+            <a class="holiday-product-link" href="./sub1_1.html" aria-label="03 베리 버터플라이 에디션 자세히 보기">
               <img class="holiday-product-image" src="main_image/05_3.BERRY.jpg" alt="베리 버터플라이 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
               <img class="holiday-product-hover" src="main_image/05_3.BERRY호버.jpg" alt="" width="2400" height="1792" loading="lazy" draggable="false">
               <img class="holiday-new" src="main_image/new.png" alt="new" width="46" height="46" loading="lazy">
@@ -318,7 +330,7 @@
             </a>
           </article>
           <article class="holiday-card">
-            <a class="holiday-product-link" href="#" aria-label="04 로지 버터플라이 에디션 자세히 보기">
+            <a class="holiday-product-link" href="./sub1_1.html" aria-label="04 로지 버터플라이 에디션 자세히 보기">
               <img class="holiday-product-image" src="main_image/05_4.ROSY.jpg" alt="로지 버터플라이 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
               <img class="holiday-product-hover" src="main_image/05_4.ROSY호버.jpg" alt="" width="2400" height="1792" loading="lazy" draggable="false">
               <img class="holiday-new" src="main_image/new.png" alt="new" width="46" height="46" loading="lazy">
@@ -326,7 +338,7 @@
             </a>
           </article>
           <article class="holiday-card">
-            <a class="holiday-product-link" href="#" aria-label="05 피오니 버터플라이 에디션 자세히 보기">
+            <a class="holiday-product-link" href="./sub1_1.html" aria-label="05 피오니 버터플라이 에디션 자세히 보기">
               <img class="holiday-product-image" src="main_image/05_5.PIONY.jpg" alt="피오니 버터플라이 틴트 기본 제품 사진" width="2400" height="1792" loading="lazy" draggable="false">
               <img class="holiday-product-hover" src="main_image/05_5.PIONY호버.jpg" alt="" width="2400" height="1792" loading="lazy" draggable="false">
               <img class="holiday-new" src="main_image/new.png" alt="new" width="46" height="46" loading="lazy">
@@ -334,7 +346,7 @@
             </a>
           </article>
         </div>
-        <a class="holiday-buy" href="#" aria-label="홀리데이 에디션 구매하기">구매하기</a>
+        <a class="holiday-buy" href="./sub1_1.html" aria-label="홀리데이 에디션 구매하기">구매하기</a>
       </section>
       <!-- BRAND -->
       <section class="brand-section" id="brand" aria-labelledby="brand-title">
@@ -347,7 +359,7 @@
               <span>“ 단순한 뷰티 아이템을 넘어, 나를 표현하는 하나의 오브제 ”</span>
               <span>플럼키는 취향과 개성이 새로운 스타일이 되는 순간을 만들어갑니다.</span>
             </p>
-            <a class="brand-more" href="#" aria-label="브랜드 이야기 더 보기">MORE</a>
+            <a class="brand-more" href="sub.3.html" aria-label="브랜드 이야기 더 보기">MORE</a>
           </div>
         </div>
       </section>
@@ -362,29 +374,29 @@
           <div class="swiper gallery-swiper" aria-label="플럼키 스타일 갤러리">
             <div class="swiper-wrapper">
                 <div class="swiper-slide gallery-slide" data-gallery-photo="1">
-                  <figure class="gallery-photo swiper-slide-transform">
+                  <a class="gallery-photo swiper-slide-transform" href="sub4_1.html">
                     <img src="main_image/07_모델3.jpg" alt="꽃과 함께 누워 있는 금발 모델" width="2752" height="1536" loading="lazy" draggable="false">
-                  </figure>
+                  </a>
                 </div>
                 <div class="swiper-slide gallery-slide" data-gallery-photo="2">
-                  <figure class="gallery-photo swiper-slide-transform">
+                  <a class="gallery-photo swiper-slide-transform" href="sub4_1.html">
                     <img src="main_image/07_모델1.jpg" alt="안개 낀 들판에서 흰 드레스를 입은 두 모델" width="1792" height="2400" loading="lazy" draggable="false">
-                  </figure>
+                  </a>
                 </div>
                 <div class="swiper-slide gallery-slide" data-gallery-photo="3">
-                  <figure class="gallery-photo swiper-slide-transform">
+                  <a class="gallery-photo swiper-slide-transform" href="sub4_1.html">
                     <img src="main_image/07_모델4.jpg" alt="초록빛 배경 앞 땋은 머리 모델의 옆모습" width="1792" height="2400" loading="lazy" draggable="false">
-                  </figure>
+                  </a>
                 </div>
                 <div class="swiper-slide gallery-slide" data-gallery-photo="4">
-                  <figure class="gallery-photo swiper-slide-transform">
+                  <a class="gallery-photo swiper-slide-transform" href="sub4_1.html">
                     <img src="main_image/07_모델2.png" alt="푸른 안개와 빛이 감도는 몽환적인 숲" width="1456" height="816" loading="lazy" draggable="false">
-                  </figure>
+                  </a>
                 </div>
                 <div class="swiper-slide gallery-slide" data-gallery-photo="5">
-                  <figure class="gallery-photo swiper-slide-transform">
+                  <a class="gallery-photo swiper-slide-transform" href="sub4_1.html">
                     <img src="main_image/07_모델5.jpg" alt="나비와 안경을 스타일링한 검은 머리 모델" width="2752" height="1536" loading="lazy" draggable="false">
-                  </figure>
+                  </a>
                 </div>
             </div>
           </div>
@@ -395,7 +407,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"></path></svg>
           </button>
         </div>
-        <a class="gallery-more" href="#" aria-label="스타일 갤러리 더 보기">MORE</a>
+        <a class="gallery-more" href="sub4_1.html" aria-label="스타일 갤러리 더 보기">MORE</a>
       </section>
     </main>
 
@@ -480,24 +492,24 @@
       <nav class="header-side-nav" aria-label="전체 메뉴">
         <a class="header-side-title header-my-page" href="#my-page">My Page</a>
         <details class="header-side-group" open>
-          <summary class="header-side-title">SHOP</summary>
+          <summary class="header-side-title"><a href="./sub1.html">SHOP</a></summary>
           <ul class="header-side-links">
-            <li><a href="#best">BEST</a></li>
-            <li><a href="#holiday">holiday</a></li>
-            <li><a href="#lips">Lips</a></li>
-            <li><a href="#case">Case</a></li>
-            <li><a href="#charm">charm</a></li>
+            <li><a href="./sub1.html#best">BEST</a></li>
+            <li><a href="./sub1_1.html">holiday</a></li>
+            <li><a href="./sub1_2.html">Lips</a></li>
+            <li><a href="./sub1_3.html">Case</a></li>
+            <li><a href="./sub1_4.html">charm</a></li>
           </ul>
         </details>
-        <a class="header-side-title" href="#custom">CUSTOM</a>
-        <a class="header-side-title" href="#brand">BRAND</a>
+        <a class="header-side-title" href="./sub2.html">CUSTOM</a>
+        <a class="header-side-title" href="sub.3.html">BRAND</a>
         <details class="header-side-group">
-          <summary class="header-side-title">COMMUNITY</summary>
+          <summary class="header-side-title"><a href="./sub4_1.html">COMMUNITY</a></summary>
           <ul class="header-side-links">
-            <li><a href="#style-gallery">style gallary</a></li>
-            <li><a href="#review">review</a></li>
-            <li><a href="#event">event</a></li>
-            <li><a href="#qna">Q&amp;A</a></li>
+            <li><a href="./sub4_1.html">style gallary</a></li>
+            <li><a href="./sub4_2.html">review</a></li>
+            <li><a href="./sub4_3.html">event</a></li>
+            <li><a href="./sub4_4.html">Q&amp;A</a></li>
           </ul>
         </details>
       </nav>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case | PLUMKY</title>
+    <!-- 공통 스타일과 기능 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/common.js" defer></script>
+    <!-- sub1_3 전용 스타일과 기능 -->
+    <link rel="stylesheet" href="css/sub1_3.css">
+    <script src="js/sub1_3.js" defer></script>
+  </head>
+  <body class="case-page">
+    <!-- 헤더 아이콘 -->
+    <svg class="common-header-icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="icon-search" viewBox="0 0 24 24">
+        <circle cx="10.5" cy="10.5" r="7.5"></circle>
+        <path d="m16 16 5 5"></path>
+      </symbol>
+      <symbol id="icon-cart" viewBox="0 0 24 24">
+        <path d="M2 4h3l3 12h11l3-10H5.5M8 12h12"></path>
+        <circle cx="9.5" cy="20" r="1.5"></circle>
+        <circle cx="18.5" cy="20" r="1.5"></circle>
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18"></path>
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="m5 5 14 14M19 5 5 19"></path>
+      </symbol>
+    </svg>
+
+    <!-- 공통 헤더: css/common.css · js/common.js -->
+    <header class="common-header">
+      <nav class="common-header-nav" aria-label="주 메뉴">
+        <ul class="common-header-nav-list">
+          <li class="common-header-nav-item" data-common-header-dropdown>
+            <a class="common-header-nav-link" href="./sub1.html" aria-current="true" aria-expanded="false" aria-controls="common-header-shop-menu">SHOP</a>
+            <ul class="common-header-dropdown" id="common-header-shop-menu" hidden>
+              <li><a href="./sub1.html#best">BEST</a></li>
+              <li><a href="./sub1_1.html">holiday</a></li>
+              <li><a href="./sub1_2.html">Lips</a></li>
+              <li><a href="./sub1_3.html" aria-current="page">Case</a></li>
+              <li><a href="./sub1_4.html">charm</a></li>
+            </ul>
+          </li>
+          <li class="common-header-nav-item"><a class="common-header-nav-link" href="./sub2.html">CUSTOM</a></li>
+          <li class="common-header-nav-item"><a class="common-header-nav-link" href="sub.3.html">BRAND</a></li>
+          <li class="common-header-nav-item" data-common-header-dropdown>
+            <a class="common-header-nav-link" aria-expanded="false" aria-controls="common-header-community-menu" href="./sub4_1.html">COMMUNITY</a>
+            <ul class="common-header-dropdown" id="common-header-community-menu" hidden>
+              <li><a href="./sub4_1.html">style gallary</a></li>
+              <li><a href="./sub4_2.html">review</a></li>
+              <li><a href="./sub4_3.html">event</a></li>
+              <li><a href="./sub4_4.html">Q&amp;A</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <a class="common-header-logo" href="./index.html" aria-label="PLUMKY 메인">
+        <svg viewBox="700 0 1880 987" role="img" aria-label="PLUMKY">
+          <image href="main_image/로고1.png" width="2580" height="987"></image>
+        </svg>
+      </a>
+
+      <div class="common-header-tools">
+        <a class="common-header-account" href="#login">Login/Join</a>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-search" aria-label="검색 열기" aria-haspopup="dialog" aria-controls="common-header-search">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+        </button>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-cart" aria-label="장바구니 열기" aria-haspopup="dialog" aria-controls="common-header-cart">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+        </button>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-side-menu" aria-label="전체 메뉴 열기" aria-haspopup="dialog" aria-controls="common-header-side-menu">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-menu"></use></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- sub1_3 본문 -->
+    <main id="sub1_3">
+      <!-- CASE 메인 비주얼 -->
+      <section class="case-visual" aria-labelledby="case-visual-title">
+        <img class="case-visual-image" src="sub1_image/2-3_02_banner.png" alt="라일락 새틴 위에 놓인 나비 메탈 케이스" width="543" height="724" fetchpriority="high">
+        <div class="case-visual-content">
+          <h1 class="case-visual-title" id="case-visual-title"><a href="./sub1.html">SHOP</a></h1>
+          <nav class="case-visual-categories" aria-label="제품 카테고리">
+            <a href="./sub1_1.html">Holiday</a>
+            <a href="./sub1_2.html">Lips</a>
+            <a href="./sub1_3.html" aria-current="page">Case</a>
+            <a href="./sub1_4.html">Charm</a>
+          </nav>
+        </div>
+      </section>
+      <!-- CASE 제품 컬렉션 -->
+      <section class="case-products" aria-labelledby="case-products-title">
+        <h2 class="case-products-title" id="case-products-title">CASE</h2>
+        <div class="case-products-grid">
+          <!-- CASE 실버 제품 -->
+          <article class="case-product-card" aria-labelledby="case-silver-title">
+            <div class="case-product-photo">
+              <img src="main_image/03_1.실버.jpg" alt="플럼키 버터플라이케이스 - 실버" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="case-product-hover" src="main_image/03_1.실버_호버.png" alt="" loading="lazy" draggable="false">
+              <span class="case-product-hot">HOT</span>
+              <button class="case-product-like" type="button" aria-label="플럼키 버터플라이케이스 - 실버 관심상품" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+              </button>
+            </div>
+            <div class="case-product-info">
+              <h3 id="case-silver-title">플럼키 버터플라이케이스<span class="case-product-color case-product-color-inline"> - 실버</span></h3>
+              <p class="case-product-price"><span class="case-product-discount">25%</span> <strong>10,300원</strong> <del>13,800원</del></p>
+              <button class="case-product-cart" type="button" data-common-header-dialog="common-header-cart" aria-label="플럼키 버터플라이케이스 - 실버 장바구니 열기" aria-haspopup="dialog" aria-controls="common-header-cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              </button>
+            </div>
+          </article>
+          <!-- CASE 라이트퍼플 제품 -->
+          <article class="case-product-card" aria-labelledby="case-lilac-title">
+            <div class="case-product-photo">
+              <img src="main_image/03_2.라일락.jpg" alt="플럼키 버터플라이케이스 - 라이트퍼플" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="case-product-hover" src="main_image/03_2.라일_호버.png" alt="" loading="lazy" draggable="false">
+              
+              <button class="case-product-like" type="button" aria-label="플럼키 버터플라이케이스 - 라이트퍼플 관심상품" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+              </button>
+            </div>
+            <div class="case-product-info">
+              <h3 id="case-lilac-title">플럼키 버터플라이케이스<span class="case-product-color"> - 라이트퍼플</span></h3>
+              <p class="case-product-price"><span class="case-product-discount">25%</span> <strong>10,300원</strong> <del>13,800원</del></p>
+              <button class="case-product-cart" type="button" data-common-header-dialog="common-header-cart" aria-label="플럼키 버터플라이케이스 - 라이트퍼플 장바구니 열기" aria-haspopup="dialog" aria-controls="common-header-cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              </button>
+            </div>
+          </article>
+          <!-- CASE 라이트핑크 제품 -->
+          <article class="case-product-card" aria-labelledby="case-pink-title">
+            <div class="case-product-photo">
+              <img src="main_image/03_5.핑크.jpg" alt="플럼키 버터플라이케이스 - 라이트핑크" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="case-product-hover" src="main_image/03_5.핑크_호버.png" alt="" loading="lazy" draggable="false">
+              
+              <button class="case-product-like" type="button" aria-label="플럼키 버터플라이케이스 - 라이트핑크 관심상품" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+              </button>
+            </div>
+            <div class="case-product-info">
+              <h3 id="case-pink-title">플럼키 버터플라이케이스<span class="case-product-color"> - 라이트핑크</span></h3>
+              <p class="case-product-price"><span class="case-product-discount">25%</span> <strong>10,300원</strong> <del>13,800원</del></p>
+              <button class="case-product-cart" type="button" data-common-header-dialog="common-header-cart" aria-label="플럼키 버터플라이케이스 - 라이트핑크 장바구니 열기" aria-haspopup="dialog" aria-controls="common-header-cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              </button>
+            </div>
+          </article>
+          <!-- CASE 라이트블루 제품 -->
+          <article class="case-product-card" aria-labelledby="case-blue-title">
+            <div class="case-product-photo">
+              <img src="main_image/03_4_블루.jpg" alt="플럼키 버터플라이케이스 - 라이트블루" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="case-product-hover" src="main_image/03_4_블루_호버.png" alt="" loading="lazy" draggable="false">
+              
+              <button class="case-product-like" type="button" aria-label="플럼키 버터플라이케이스 - 라이트블루 관심상품" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+              </button>
+            </div>
+            <div class="case-product-info">
+              <h3 id="case-blue-title">플럼키 버터플라이케이스<span class="case-product-color"> - 라이트블루</span></h3>
+              <p class="case-product-price"><span class="case-product-discount">25%</span> <strong>10,300원</strong> <del>13,800원</del></p>
+              <button class="case-product-cart" type="button" data-common-header-dialog="common-header-cart" aria-label="플럼키 버터플라이케이스 - 라이트블루 장바구니 열기" aria-haspopup="dialog" aria-controls="common-header-cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              </button>
+            </div>
+          </article>
+          <!-- CASE 딥퍼플 제품 -->
+          <article class="case-product-card" aria-labelledby="case-purple-title">
+            <div class="case-product-photo">
+              <img src="main_image/03_3딥퍼플.jpg" alt="플럼키 버터플라이케이스 - 딥퍼플" width="2400" height="1792" loading="lazy" draggable="false">
+              <img class="case-product-hover" src="main_image/03_3딥퍼플_호버.png" alt="" loading="lazy" draggable="false">
+              
+              <button class="case-product-like" type="button" aria-label="플럼키 버터플라이케이스 - 딥퍼플 관심상품" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+              </button>
+            </div>
+            <div class="case-product-info">
+              <h3 id="case-purple-title">플럼키 버터플라이케이스<span class="case-product-color"> - 딥퍼플</span></h3>
+              <p class="case-product-price"><span class="case-product-discount">25%</span> <strong>10,300원</strong> <del>13,800원</del></p>
+              <button class="case-product-cart" type="button" data-common-header-dialog="common-header-cart" aria-label="플럼키 버터플라이케이스 - 딥퍼플 장바구니 열기" aria-haspopup="dialog" aria-controls="common-header-cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <!-- 공통 푸터: css/common.css · js/common.js -->
+    <footer class="site-footer" id="footer">
+      <div class="footer-top">
+        <a class="footer-home" href="./index.html" aria-label="PLUMKY 메인으로">
+          <svg viewBox="90 0 216 107" role="img" aria-label="PLUMKY">
+            <image href="main_image/logo.svg" width="306" height="107"></image>
+          </svg>
+        </a>
+        <nav class="footer-links" aria-label="사이트 안내">
+          <a href="#">공지사항</a>
+          <a href="#">개인정보 이용 처리방침</a>
+          <a href="#footer-contact">고객센터</a>
+        </nav>
+        <nav class="footer-social" aria-label="소셜 미디어">
+          <a href="#" aria-label="인스타그램">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle class="footer-icon-fill" cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+          </a>
+          <a href="#" aria-label="틱톡">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 4v11a4 4 0 1 1-4-4M14 4c0 4 3 5 6 5"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="유튜브">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect class="footer-icon-fill" x="2" y="4" width="20" height="16" rx="5"></rect>
+              <path class="footer-icon-cutout" d="m10 8 6 4-6 4Z"></path>
+            </svg>
+          </a>
+        </nav>
+      </div>
+      <div class="footer-details">
+        <div class="footer-contact" id="footer-contact">
+          <h2>CONTACT</h2>
+          <address>
+            <a href="mailto:nara0062@naver.com">nara0062@naver.com</a>
+            <a href="tel:05119950809">051-1995-0809</a>
+          </address>
+        </div>
+        <div class="footer-company">
+          <h2>COMPANY</h2>
+          <address>
+            <span>부산광역시 부산진구 가야대로 157번길</span>
+            <span>중앙 브랜드타운 10층</span>
+          </address>
+        </div>
+      </div>
+
+      <!-- FOOTER 메탈 심볼·로고 -->
+      <div class="footer-metal" aria-label="PLUMKY 메탈 심볼과 로고">
+        <div class="footer-metal-item footer-metal-symbol">
+          <img src="main_image/심볼1.png" alt="PLUMKY 메탈 심볼" width="2175" height="2232" loading="lazy" draggable="false">
+        </div>
+        <div class="footer-metal-item footer-metal-wordmark">
+          <svg viewBox="700 0 1880 987" role="img" aria-label="PLUMKY 메탈 로고">
+            <image href="main_image/로고1.png" width="2580" height="987"></image>
+          </svg>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 헤더 전체 메뉴 -->
+    <dialog class="common-header-dialog common-header-side-menu" id="common-header-side-menu" aria-label="전체 메뉴">
+      <div class="common-header-side-tools">
+        <a class="common-header-login" href="#login">Login/Join</a>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-search" aria-label="검색 열기" aria-haspopup="dialog" aria-controls="common-header-search">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+        </button>
+        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-cart" aria-label="장바구니 열기" aria-haspopup="dialog" aria-controls="common-header-cart">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
+        </button>
+        <button class="common-header-icon-button" type="button" data-common-header-close aria-label="전체 메뉴 닫기" autofocus>
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+      <nav class="common-header-side-nav" aria-label="전체 메뉴">
+        <a class="common-header-side-title common-header-my-page" href="#my-page">My Page</a>
+        <details class="common-header-side-group" open>
+          <summary class="common-header-side-title"><a href="./sub1.html">SHOP</a></summary>
+          <ul class="common-header-side-links">
+            <li><a href="./sub1.html#best">BEST</a></li>
+            <li><a href="./sub1_1.html">holiday</a></li>
+            <li><a href="./sub1_2.html">Lips</a></li>
+            <li><a href="./sub1_3.html" aria-current="page">Case</a></li>
+            <li><a href="./sub1_4.html">charm</a></li>
+          </ul>
+        </details>
+        <a class="common-header-side-title" href="./sub2.html">CUSTOM</a>
+        <a class="common-header-side-title" href="sub.3.html">BRAND</a>
+        <details class="common-header-side-group">
+          <summary class="common-header-side-title"><a href="./sub4_1.html">COMMUNITY</a></summary>
+          <ul class="common-header-side-links">
+            <li><a href="./sub4_1.html">style gallary</a></li>
+            <li><a href="./sub4_2.html">review</a></li>
+            <li><a href="./sub4_3.html">event</a></li>
+            <li><a href="./sub4_4.html">Q&amp;A</a></li>
+          </ul>
+        </details>
+      </nav>
+    </dialog>
+
+    <!-- 헤더 검색 -->
+    <dialog class="common-header-dialog common-header-search" id="common-header-search" aria-labelledby="common-header-search-title">
+      <div class="common-header-dialog-heading">
+        <h2 id="common-header-search-title">Search</h2>
+        <button class="common-header-icon-button" type="button" data-common-header-close aria-label="검색 닫기">
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+      <label class="common-header-search-field">
+        <span class="common-header-sr-only">검색어</span>
+        <input type="search" name="keyword" placeholder="검색어를 입력하세요" autocomplete="off" autofocus>
+        <svg class="common-header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+      </label>
+    </dialog>
+
+    <!-- 헤더 장바구니 -->
+    <dialog class="common-header-dialog common-header-cart" id="common-header-cart" aria-labelledby="common-header-cart-title">
+      <div class="common-header-dialog-heading">
+        <h2 id="common-header-cart-title">Shopping Bag <span>(0)</span></h2>
+        <button class="common-header-icon-button" type="button" data-common-header-close aria-label="장바구니 닫기" autofocus>
+          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+      <p class="common-header-cart-empty">장바구니가 비어 있습니다.</p>
+    </dialog>
+  </body>
+</html>

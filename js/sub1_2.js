@@ -1,0 +1,20 @@
+"use strict";
+
+// Lips 제품 관심상품
+// 하트 버튼을 누르면 해당 제품의 관심상품 선택 상태를 전환합니다.
+function initLipsProductFavorites() {
+  const products = document.querySelector(".lips-products");
+  if (!products) return;
+
+  // 클릭한 관심상품 버튼의 선택 상태와 접근성 속성을 함께 변경합니다.
+  function toggleLipsProductFavorite(event) {
+    const button = event.target.closest(".lips-product-like");
+    if (!button) return;
+    const selected = button.getAttribute("aria-pressed") === "true";
+    button.setAttribute("aria-pressed", String(!selected));
+  }
+
+  products.addEventListener("click", toggleLipsProductFavorite);
+}
+
+initLipsProductFavorites();

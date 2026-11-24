@@ -1,0 +1,596 @@
+@charset "UTF-8";
+
+/* SUB4_4 Q&A 페이지 */
+.qna-page {
+  color: var(--color-text);
+  background: #fffaff;
+}
+
+/* 공통 헤더 대비와 현재 메뉴 */
+.qna-page > .common-header {
+  isolation: isolate;
+  color: var(--color-white);
+}
+
+.qna-page > .common-header::before {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  height: clamp(8rem, 18vh, 13rem);
+  content: "";
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--color-text) 65%, transparent), transparent);
+  pointer-events: none;
+}
+
+.qna-page > .common-header .common-header-tools {
+  color: var(--color-white);
+}
+
+
+/* Q&A 본문 바로가기와 키보드 초점 */
+.qna-skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 1rem;
+  z-index: 30;
+  padding: 0.75rem 1rem;
+  transform: translateY(-150%);
+  color: var(--color-white);
+  background: var(--color-purple-dark);
+  font-family: "Pretendard", sans-serif;
+}
+
+.qna-skip-link:focus {
+  transform: none;
+}
+
+.qna-page main :focus-visible,
+.qna-detail :focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* 01 COMMUNITY 메인 비주얼과 연보라색 제목·카테고리 */
+.qna-hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 22rem;
+  aspect-ratio: 1920 / 690;
+  overflow: hidden;
+  color: var(--color-purple-light);
+  background: var(--color-text);
+}
+
+.qna-hero-image,
+.qna-hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.qna-hero-image {
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.qna-hero::after {
+  content: "";
+  background: linear-gradient(to bottom, transparent 30%, color-mix(in srgb, var(--color-purple-dark) 38%, transparent) 70%, var(--color-text));
+  pointer-events: none;
+}
+
+/* 01 COMMUNITY 제목과 카테고리 */
+.qna-hero-copy {
+  position: absolute;
+  right: 1rem;
+  bottom: 12%;
+  left: 1rem;
+  text-align: center;
+}
+
+.qna-hero h1 {
+  font-size: clamp(2.75rem, 4.166667vw, 5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.qna-community-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.666667vw;
+  margin-top: 1.041667vw;
+  font-size: clamp(1.125rem, 1.666667vw, 2rem);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.qna-community-nav a {
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 180ms ease;
+}
+
+.qna-community-nav [aria-current="page"],
+.qna-community-nav a:focus-visible {
+  border-bottom-color: currentColor;
+}
+
+@media (hover: hover) {
+  .qna-community-nav:has(a:hover:not([aria-current="page"])) [aria-current="page"] {
+    border-bottom-color: transparent;
+  }
+
+  .qna-community-nav a:hover {
+    border-bottom-color: currentColor;
+  }
+}
+
+/* 02 Q&A 제목과 본문 너비 */
+.qna-section {
+  padding-block: 6.25vw 11.458333vw;
+  scroll-margin-top: 2rem;
+}
+
+.qna-section:focus {
+  outline: none;
+}
+
+.qna-section-title {
+  color: var(--color-purple-dark);
+  font-size: clamp(1.75rem, 2.083333vw, 2.5rem);
+  text-align: center;
+}
+
+.qna-content {
+  width: 73%;
+  max-width: 87.5rem;
+  margin: 5.416667vw auto 0;
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.875rem;
+}
+
+/* 02 FAQ 자주 묻는 질문 */
+.qna-faq-title {
+  margin: 0 1.25rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.qna-faq-item {
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.qna-faq-item:first-child {
+  border-top: 1px solid var(--color-primary);
+}
+
+.qna-faq-question {
+  display: grid;
+  grid-template-columns: 7.5rem 2.5rem minmax(0, 1fr) 1rem;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4.25rem;
+  padding: 1.25rem 1.875rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+.qna-faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.qna-faq-question::after {
+  width: 0.875rem;
+  height: 0.875rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  content: "";
+  transform: translateY(-0.2rem) rotate(45deg);
+}
+
+/* 02 FAQ 첫 질문의 기본 보라색 배경 */
+.qna-faq-item:first-child > .qna-faq-question,
+.qna-faq-item[open] > .qna-faq-question {
+  color: var(--color-white);
+  background: #52365f;
+}
+
+.qna-faq-item[open] > .qna-faq-question::after {
+  transform: translateY(0.2rem) rotate(225deg);
+}
+
+.qna-faq-answer {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 1rem;
+  min-height: 5.125rem;
+  padding: 1.25rem 4rem 1.25rem 10.375rem;
+  background: #f6ebff;
+  line-height: 1.8;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.qna-faq-answer a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* 03 INQUIRY BOARD 문의 게시판 */
+.qna-board {
+  margin-top: 5.208333vw;
+}
+
+.qna-board-table {
+  width: 100%;
+  table-layout: fixed;
+  border-top: 1px solid var(--color-purple-dark);
+  text-align: center;
+}
+
+.qna-col-number { width: 9%; }
+.qna-col-product { width: 9%; }
+.qna-col-author { width: 10%; }
+.qna-col-date { width: 13%; }
+
+.qna-board-table thead {
+  color: var(--color-white);
+  background: #52365f;
+}
+
+.qna-board-table th {
+  height: 3.25rem;
+  padding: 0.75rem 0.375rem;
+  text-align: center;
+}
+
+.qna-board-table tbody tr {
+  height: 5.875rem;
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.qna-board-table td {
+  padding: 1rem 0.375rem;
+  overflow-wrap: anywhere;
+}
+
+.qna-board-table td:nth-child(4),
+.qna-board-table td:nth-child(5) {
+  color: var(--color-primary);
+}
+
+/* 03 INQUIRY BOARD 상품정보와 비밀글 아이콘 */
+.qna-product-placeholder {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-inline: auto;
+  background: #dedede;
+}
+
+.qna-board-icon {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.qna-inquiry-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 2.75rem;
+  text-align: left;
+}
+
+.qna-inquiry-status {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  font-size: 0.75rem;
+}
+
+.qna-inquiry-title {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+@media (hover: hover) {
+  .qna-inquiry-button:hover .qna-inquiry-title {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}
+
+/* 03 INQUIRY BOARD 검색과 결과 안내 */
+.qna-board-message {
+  margin-top: 1.5rem;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.qna-search {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 4.0625vw;
+}
+
+.qna-search-select {
+  position: relative;
+}
+
+.qna-search-select::after {
+  position: absolute;
+  top: 1rem;
+  right: 0.75rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  content: "";
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.qna-search select,
+.qna-search input,
+.qna-search > button {
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-purple-dark);
+  font-size: 0.875rem;
+}
+
+.qna-search select {
+  width: 5.5rem;
+  padding-right: 2rem;
+  appearance: none;
+}
+
+.qna-search input {
+  width: 8.75rem;
+  min-width: 0;
+}
+
+.qna-search > button:hover {
+  color: var(--color-white);
+  background: var(--color-purple-dark);
+}
+
+/* 03 INQUIRY BOARD 페이지 이동 */
+.qna-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-top: 1.5rem;
+}
+
+.qna-pagination button {
+  display: grid;
+  place-items: center;
+  min-width: 2rem;
+  min-height: 2.75rem;
+}
+
+.qna-pagination [aria-current="page"] {
+  color: var(--color-purple-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.qna-pagination .qna-page-step {
+  width: 1.75rem;
+  min-width: 1.75rem;
+  min-height: 1.75rem;
+  margin-inline: 0.375rem;
+  border: 1px solid var(--color-purple-dark);
+  border-radius: 50%;
+}
+
+.qna-page-step::before {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  content: "";
+  transform: translateX(-0.1rem) rotate(45deg);
+}
+
+.qna-page-step:first-child::before {
+  transform: translateX(0.1rem) rotate(225deg);
+}
+
+.qna-pagination button:disabled {
+  opacity: 0.35;
+}
+
+/* 03 INQUIRY BOARD 문의 상세 대화상자 */
+.qna-detail {
+  position: fixed;
+  inset: 0;
+  width: min(34rem, calc(100% - 2.5rem));
+  max-height: calc(100% - 3rem);
+  margin: auto;
+  padding: 2rem;
+  border: 1px solid var(--color-primary);
+  color: var(--color-text);
+  background: #fffaff;
+  font-family: "Pretendard", sans-serif;
+}
+
+.qna-detail::backdrop {
+  background: color-mix(in srgb, var(--color-text) 60%, transparent);
+}
+
+.qna-detail h2 {
+  margin-bottom: 1.5rem;
+  color: var(--color-purple-dark);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.qna-detail p {
+  margin-top: 0.75rem;
+  line-height: 1.8;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.qna-detail form {
+  margin-top: 2rem;
+  text-align: right;
+}
+
+.qna-detail-close {
+  min-height: 2.75rem;
+  padding: 0.5rem 1.5rem;
+  color: var(--color-white);
+  background: var(--color-purple-dark);
+}
+
+/* SUB4_4 태블릿 */
+@media (max-width: 1024px) {
+  .qna-community-nav {
+    gap: 0.5rem 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .qna-section {
+    padding-block: 5rem 8rem;
+  }
+
+  .qna-content {
+    width: calc(100% - 3rem);
+    margin-top: 4rem;
+  }
+
+  .qna-faq-question {
+    grid-template-columns: 6.5rem 1.5rem minmax(0, 1fr) 0.875rem;
+    gap: 0.75rem;
+    padding-inline: 1rem;
+  }
+
+  .qna-faq-answer {
+    grid-template-columns: 1.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding-inline: 8.25rem 2.625rem;
+  }
+
+  .qna-board { margin-top: 4rem; }
+  .qna-search { margin-top: 3rem; }
+}
+
+/* SUB4_4 모바일 */
+@media (max-width: 600px) {
+  .qna-hero {
+    min-height: 26rem;
+  }
+
+  .qna-hero-image {
+    object-position: 54% center;
+  }
+
+  .qna-hero-copy {
+    right: 0.75rem;
+    bottom: 10%;
+    left: 0.75rem;
+  }
+
+  .qna-hero h1 {
+    font-size: clamp(2.25rem, 10vw, 3rem);
+  }
+
+  .qna-community-nav {
+    gap: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .qna-section { padding-block: 3.5rem 5rem; }
+  .qna-content { width: calc(100% - 2.5rem); margin-top: 3rem; }
+  .qna-faq-title { margin-left: 0; }
+
+  .qna-faq-question {
+    grid-template-columns: 1rem minmax(0, 1fr) 0.875rem;
+    gap: 0.25rem 0.625rem;
+    padding: 1rem 0.875rem;
+  }
+
+  .qna-faq-category {
+    grid-column: 2;
+    color: var(--color-primary);
+    font-size: 0.75rem;
+  }
+
+  .qna-faq-item:first-child .qna-faq-category,
+  .qna-faq-item[open] .qna-faq-category { color: var(--color-purple-light); }
+  .qna-faq-marker { grid-column: 1; grid-row: 2; }
+  .qna-faq-text { grid-column: 2; grid-row: 2; }
+  .qna-faq-question::after { grid-column: 3; grid-row: 1 / 3; }
+
+  .qna-faq-answer {
+    grid-template-columns: 1rem minmax(0, 1fr);
+    gap: 0.625rem;
+    padding: 1rem 2.75rem 1.25rem 0.875rem;
+  }
+
+  .qna-board { margin-top: 3rem; }
+  .qna-col-number, .qna-col-product { width: 0; }
+  .qna-col-author { width: 23%; }
+  .qna-col-date { width: 28%; }
+  .qna-board-table th:nth-child(-n+2),
+  .qna-board-table td:nth-child(-n+2) { display: none; }
+  .qna-board-table th { font-size: 0.75rem; }
+  .qna-board-table tbody tr { height: 5rem; }
+  .qna-board-table td { padding-inline: 0.25rem; }
+  .qna-board-table td:nth-child(4),
+  .qna-board-table td:nth-child(5) { font-size: 0.75rem; }
+  .qna-inquiry-button { gap: 0.25rem; font-size: 0.8125rem; }
+  .qna-inquiry-button .qna-board-icon { width: 0.75rem; height: 0.75rem; }
+  .qna-inquiry-status { font-size: 0.625rem; }
+  .qna-search { margin-top: 2rem; }
+  .qna-search input { width: min(8.75rem, 32vw); }
+  .qna-pagination { gap: 0; }
+  .qna-detail { padding: 1.5rem; }
+}
+
+/* SUB4_4 콘텐츠 스크롤 등장 효과 */
+.qna-reveal {
+  opacity: 0;
+  translate: 0 2rem;
+  transition: opacity 750ms ease, translate 750ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.qna-reveal.is-qna-revealed,
+.qna-reveal:focus-within {
+  opacity: 1;
+  translate: none;
+}
+
+.qna-community-nav.qna-reveal { transition-delay: 180ms; }
+
+/* SUB4_4 모션 접근성 */
+@media (prefers-reduced-motion: reduce) {
+  .qna-reveal {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+
+  .qna-community-nav a { transition: none; }
+}

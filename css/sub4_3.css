@@ -1,0 +1,354 @@
+@charset "UTF-8";
+
+/* SUB4_3 EVENT 페이지 */
+.event-page {
+  color: var(--color-purple-dark);
+  background: #fffaff;
+}
+
+/* SUB4_1과 동일한 공통 헤더 */
+.event-page > .common-header {
+  isolation: isolate;
+  color: var(--color-white);
+  background: transparent;
+}
+
+.event-page > .common-header::before {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  height: clamp(8rem, 18vh, 13rem);
+  content: "";
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-text) 82%, transparent) 0%,
+    color-mix(in srgb, var(--color-text) 58%, transparent) 35%,
+    color-mix(in srgb, var(--color-text) 24%, transparent) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.event-page > .common-header .common-header-tools {
+  color: var(--color-white);
+}
+
+
+/* EVENT 본문 바로가기 */
+.event-skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 1rem;
+  z-index: 30;
+  padding: 0.75rem 1rem;
+  transform: translateY(-150%);
+  color: var(--color-white);
+  background: var(--color-purple-dark);
+  font-family: "Pretendard", sans-serif;
+}
+
+.event-skip-link:focus {
+  transform: none;
+}
+
+/* 01 COMMUNITY 메인 비주얼 */
+.event-hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 22rem;
+  aspect-ratio: 1920 / 690;
+  overflow: hidden;
+  color: var(--color-purple-light);
+  background: var(--color-purple-dark);
+}
+
+.event-hero-image,
+.event-hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.event-hero-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.event-hero::after {
+  content: "";
+  background: linear-gradient(to bottom, transparent 30%, color-mix(in srgb, var(--color-text) 12%, transparent) 55%, var(--color-text) 100%);
+  pointer-events: none;
+}
+
+/* 01 COMMUNITY 제목과 카테고리 */
+.event-hero-copy {
+  position: absolute;
+  right: 1rem;
+  bottom: 12%;
+  left: 1rem;
+  text-align: center;
+}
+
+.event-hero h1 {
+  font-size: clamp(2.75rem, 4.166667vw, 5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.event-community-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.666667vw;
+  margin-top: 1.041667vw;
+  font-size: clamp(1.125rem, 1.666667vw, 2rem);
+  font-weight: 700;
+  line-height: 1.5;
+  text-shadow: 0 2px 4px color-mix(in srgb, var(--color-purple-light) 40%, transparent);
+}
+
+.event-community-nav > a,
+.event-community-nav > span {
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 180ms ease;
+}
+
+.event-community-nav > [aria-current="page"],
+.event-community-nav > a:focus-visible {
+  border-bottom-color: currentColor;
+}
+
+.event-community-nav > a:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* 01 COMMUNITY 카테고리 호버 */
+@media (hover: hover) {
+  .event-community-nav:has(> a:hover:not([aria-current="page"])) > [aria-current="page"] {
+    border-bottom-color: transparent;
+  }
+
+  .event-community-nav > a:hover {
+    border-bottom-color: currentColor;
+  }
+}
+
+/* 02 EVENT 제목과 배너 그리드 */
+.event-section {
+  padding-block: 6.25vw 12.5vw;
+  scroll-margin-top: 2rem;
+}
+
+.event-section:focus {
+  outline: none;
+}
+
+.event-section-title {
+  font-size: clamp(2.25rem, 3.333333vw, 4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4.166667vw;
+  width: 70%;
+  max-width: 84rem;
+  margin: 5.833333vw auto 0;
+}
+
+/* 02 HOLIDAY EVENT와 04 WELCOME EVENT 전체 너비 */
+.event-card {
+  min-width: 0;
+}
+
+.event-card-wide {
+  grid-column: 1 / -1;
+}
+
+.event-card-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1670 / 941;
+  object-fit: cover;
+}
+
+/* 02·03·04 EVENT 이미지와 아래 텍스트를 함께 올리는 링크 호버 */
+.event-card-link {
+  display: block;
+  transition: transform 240ms ease;
+}
+
+.event-card-link:focus-visible {
+  outline: 2px solid var(--color-purple-dark);
+  outline-offset: 4px;
+  transform: translateY(-0.5rem);
+}
+
+@media (hover: hover) {
+  .event-card-link:hover {
+    transform: translateY(-0.5rem);
+  }
+}
+
+/* 02·03·04 EVENT 기간과 설명 */
+.event-card-info {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.5rem 1rem;
+  margin-top: 1.25rem;
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--color-primary);
+  font-family: "Pretendard", sans-serif;
+}
+
+.event-card-description {
+  min-width: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.event-card-period {
+  display: block;
+  color: #9900FF;
+  font-weight: 600;
+}
+
+.event-card-title {
+  font-size: clamp(1rem, 1.25vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: right;
+}
+
+/* SUB4_3 태블릿 */
+@media (max-width: 1024px) {
+  .event-hero {
+    min-height: 22rem;
+  }
+
+  .event-community-nav {
+    gap: 0.5rem 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .event-section {
+    padding-block: 5rem 7.5rem;
+  }
+
+  .event-grid {
+    gap: 3rem 1.5rem;
+    width: calc(100% - 3rem);
+    margin-top: 4rem;
+  }
+
+  .event-card-info {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+  }
+
+  .event-card-title {
+    grid-row: 1;
+    text-align: left;
+  }
+}
+
+/* SUB4_3 모바일 */
+@media (max-width: 600px) {
+  .event-hero {
+    min-height: 26rem;
+  }
+
+  .event-hero-copy {
+    right: 0.75rem;
+    bottom: 10%;
+    left: 0.75rem;
+  }
+
+  .event-hero h1 {
+    font-size: clamp(2.25rem, 10vw, 3rem);
+  }
+
+  .event-community-nav {
+    gap: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .event-section {
+    padding-block: 3.5rem 5rem;
+  }
+
+  .event-section-title {
+    font-size: 2.25rem;
+  }
+
+  .event-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+    width: calc(100% - 2.5rem);
+    margin-top: 2.5rem;
+  }
+}
+
+/* SUB4_3 텍스트와 이미지의 아래에서 위로 등장 효과 */
+.event-page .event-reveal {
+  opacity: 0;
+  translate: 0 2rem;
+  transition: opacity 750ms ease, translate 750ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.event-page .event-reveal.is-event-revealed {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* 01 COMMUNITY 제목 다음에 카테고리 등장 */
+.event-page .event-community-nav.event-reveal {
+  transition-delay: 180ms;
+}
+
+/* 02 EVENT 제목을 COMMUNITY 다음에 시간차로 표시 */
+.event-page .event-section-title.event-reveal {
+  transition-delay: 350ms;
+}
+
+/* SUB4_3 키보드 탐색 시 콘텐츠 즉시 표시 */
+.event-page .event-reveal:focus-within {
+  opacity: 1;
+  translate: none;
+  transition: none;
+}
+
+/* SUB4_3 모션 접근성 */
+@media (prefers-reduced-motion: reduce) {
+  .event-card-link,
+  .event-card-link:hover,
+  .event-card-link:focus-visible {
+    transform: none;
+    transition: none;
+  }
+
+  .event-community-nav > a,
+  .event-community-nav > span {
+    transition: none;
+  }
+
+  .event-page .event-reveal {
+    opacity: 1;
+    translate: none;
+    transition: none;
+    transition-delay: 0ms;
+  }
+}

@@ -1,0 +1,993 @@
+@charset "UTF-8";
+
+/* SHOP 메인 배너 */
+.shop-visual {
+  position: relative;
+  isolation: isolate;
+  height: 40vw;
+  overflow: hidden;
+  background: var(--color-purple-dark);
+}
+
+.shop-visual-background {
+  position: absolute;
+  top: -46%;
+  left: 50%;
+  z-index: -2;
+  width: 128%;
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+}
+
+/* SHOP 메인 배너 상단 헤더 그라데이션 */
+.shop-visual::before {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  height: clamp(10rem, 16vw, 19rem);
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-text) 75%, transparent) 0%,
+    color-mix(in srgb, var(--color-text) 35%, transparent) 40%,
+    transparent 100%
+  );
+  pointer-events: none;
+  content: "";
+}
+
+/* SHOP 메인 배너 하단 그라데이션 */
+.shop-visual::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    transparent 55%,
+    color-mix(in srgb, var(--color-text) 40%, transparent) 78%,
+    var(--color-text) 100%
+  );
+  content: "";
+}
+
+.shop-visual-title {
+  position: absolute;
+  top: 53.125%;
+  left: 52.5%;
+  width: 48.385417%;
+  transform: translateX(-50%);
+}
+
+.shop-visual-title img {
+  width: 100%;
+  height: auto;
+  animation: shop-title-enter 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+/* SHOP 메인 배너 텍스트 등장 애니메이션 */
+@keyframes shop-title-enter {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SHOP 메인 배너 텍스트 모션 접근성 */
+@media (prefers-reduced-motion: reduce) {
+  .shop-visual-title img {
+    animation: none;
+  }
+}
+
+/* SHOP 메인 배너 태블릿 */
+@media (max-width: 1024px) {
+  .shop-visual {
+    height: 60vw;
+    min-height: 24rem;
+  }
+
+  .shop-visual-background {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+  }
+
+  .shop-visual-title {
+    top: 55%;
+    left: 50%;
+    width: 70%;
+  }
+}
+
+/* SHOP 메인 배너 모바일 */
+@media (max-width: 600px) {
+  .shop-visual {
+    height: 110vw;
+    min-height: 25rem;
+  }
+
+  .shop-visual-title {
+    top: 56%;
+    width: calc(100% - 2rem);
+  }
+}
+
+/* SHOP 카테고리와 BEST 제품 */
+.shop-best {
+  padding: 5rem 0 4.625rem;
+  color: var(--color-purple-light);
+  background: var(--color-text);
+}
+
+.shop-best-intro {
+  text-align: center;
+}
+
+.shop-title {
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-shadow: 0 2px 4px var(--color-purple-gray);
+}
+
+.shop-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1.25rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 3px var(--color-purple-gray);
+}
+
+/* SHOP 카테고리 밑줄 호버 */
+.shop-categories a {
+  position: relative;
+}
+
+.shop-categories a::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.125rem;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 400ms ease, opacity 400ms ease;
+  pointer-events: none;
+  content: "";
+}
+
+.shop-categories a:hover::after,
+.shop-categories a:focus-visible::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* SHOP 카테고리 밑줄 모션 접근성 */
+@media (prefers-reduced-motion: reduce) {
+  .shop-categories a::after {
+    transition: none;
+  }
+}
+
+.shop-best-content {
+  width: 75%;
+  margin: 7.5rem auto 0;
+}
+
+.shop-best-heading {
+  margin: 0 0 2.25rem 1.125rem;
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+
+.shop-best-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.40625vw;
+}
+
+/* SHOP BEST 제품 카드 */
+.shop-best-card {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 340 / 460;
+  overflow: hidden;
+  color: var(--color-white);
+  background: var(--color-purple-gray);
+  font-family: "Pretendard", sans-serif;
+}
+
+.shop-best-image,
+.shop-best-hover {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 450ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.shop-best-hover {
+  z-index: 1;
+  opacity: 0;
+}
+
+/* SHOP BEST 전체 카드 하단 그라데이션 */
+.shop-best-card::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to bottom, transparent 55%, color-mix(in srgb, var(--color-primary) 90%, transparent) 100%);
+  pointer-events: none;
+  content: "";
+}
+
+.shop-best-badge {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: auto;
+}
+
+.shop-best-info {
+  position: absolute;
+  z-index: 3;
+  inset: auto 0 1rem;
+  padding-inline: 0.5rem;
+  text-align: center;
+}
+
+.shop-best-english {
+  font-size: clamp(0.65rem, 0.833333vw, 1rem);
+  line-height: 1.5;
+}
+
+.shop-best-info h4 {
+  margin-top: 0.25rem;
+  font-size: clamp(0.8rem, 1.041667vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.shop-best-description {
+  margin-top: 0.375rem;
+  font-size: clamp(0.6rem, 0.729167vw, 0.875rem);
+  word-break: keep-all;
+}
+
+.shop-best-buy {
+  display: inline-block;
+  min-width: 6rem;
+  margin-top: 2rem;
+  padding: 0.0625rem 0.75rem;
+  border: 1px solid currentColor;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.shop-best-description + .shop-best-buy {
+  margin-top: 0.875rem;
+}
+
+.shop-best-buy:hover {
+  color: var(--color-text);
+  background: var(--color-white);
+}
+
+.shop-best :focus-visible {
+  outline: 2px solid var(--color-purple-light);
+  outline-offset: 4px;
+}
+
+/* SHOP BEST 사진 전환과 확대 호버 */
+@media (hover: hover) {
+  .shop-best-card:hover .shop-best-hover {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  .shop-best-card:hover .shop-best-image {
+    transform: scale(1.08);
+  }
+}
+
+.shop-best-card:focus-within .shop-best-hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.shop-best-card:focus-within .shop-best-image {
+  transform: scale(1.08);
+}
+
+/* SHOP BEST 태블릿 */
+@media (max-width: 1024px) {
+  .shop-best {
+    padding: 4rem 1.5rem;
+  }
+
+  .shop-title {
+    font-size: 4rem;
+  }
+
+  .shop-categories {
+    font-size: 1.75rem;
+  }
+
+  .shop-best-content {
+    width: 100%;
+    margin-top: 5rem;
+  }
+
+  .shop-best-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .shop-best-english {
+    font-size: 0.875rem;
+  }
+
+  .shop-best-info h4 {
+    font-size: 1.125rem;
+  }
+
+  .shop-best-description {
+    font-size: 0.8125rem;
+  }
+}
+
+/* SHOP BEST 모바일 */
+@media (max-width: 600px) {
+  .shop-best {
+    padding: 3rem 1rem;
+  }
+
+  .shop-title {
+    font-size: 3rem;
+  }
+
+  .shop-categories {
+    gap: 0.5rem 1rem;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .shop-best-content {
+    margin-top: 3rem;
+  }
+
+  .shop-best-heading {
+    margin: 0 0 1.25rem;
+    font-size: 2rem;
+  }
+
+  .shop-best-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .shop-best-card {
+    width: 100%;
+    max-width: 25rem;
+    justify-self: center;
+  }
+
+  .shop-best-info {
+    bottom: 1.25rem;
+  }
+
+  .shop-best-buy {
+    min-height: 2.75rem;
+    padding: 0.625rem 1.25rem;
+  }
+}
+
+/* SHOP 제품 컬렉션 연속 그라데이션 배경 */
+.shop-collections-background {
+  background: linear-gradient(
+    to bottom,
+    var(--color-background) 0%,
+    color-mix(in srgb, var(--color-background) 90%, var(--color-primary)) 40%,
+    color-mix(in srgb, var(--color-background) 40%, var(--color-primary)) 100%
+  );
+}
+
+/* SHOP HOLIDAY 제품 슬라이더 */
+:is(.shop-holiday, .shop-lips, .shop-case, .shop-charm) {
+  padding: 9.895833vw 0 5.208333vw;
+  overflow: hidden;
+  background: transparent;
+}
+
+:is(.shop-holiday-heading, .shop-lips-heading, .shop-case-heading, .shop-charm-heading) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 3.229167vw 3rem 14.583333vw;
+}
+
+:is(.shop-holiday-heading, .shop-lips-heading, .shop-case-heading, .shop-charm-heading) h2 {
+  color: var(--color-purple-dark);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-shadow: 0 2px 3px var(--color-purple-gray);
+}
+
+:is(.shop-holiday-next, .shop-lips-prev, .shop-case-next, .shop-charm-prev) {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: var(--color-purple-light);
+  background: color-mix(in srgb, var(--color-primary) 70%, transparent);
+  transition: background 200ms ease;
+}
+
+:is(.shop-holiday-next, .shop-lips-prev, .shop-case-next, .shop-charm-prev):hover {
+  background: var(--color-primary);
+}
+
+:is(.shop-holiday-next, .shop-lips-prev, .shop-case-next, .shop-charm-prev) svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+:is(.shop-holiday-swiper, .shop-lips-swiper, .shop-case-swiper, .shop-charm-swiper) {
+  margin-left: 13.020833vw;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+:is(.shop-holiday-swiper, .shop-lips-swiper, .shop-case-swiper, .shop-charm-swiper) .swiper-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+  transition-property: transform;
+}
+
+:is(.shop-holiday-card, .shop-lips-card, .shop-case-card, .shop-charm-card) {
+  position: relative;
+  flex-shrink: 0;
+  width: 18.229167vw;
+  font-family: "Pretendard", sans-serif;
+}
+
+:is(.shop-holiday-swiper, .shop-lips-swiper, .shop-case-swiper, .shop-charm-swiper):not(.swiper-initialized) .swiper-wrapper {
+  gap: 0.520833vw;
+  overflow-x: auto;
+}
+
+:is(.shop-holiday-swiper, .shop-lips-swiper, .shop-case-swiper, .shop-charm-swiper) .swiper-notification {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+/* SHOP HOLIDAY 제품 사진과 도구 */
+:is(.shop-holiday-photo, .shop-lips-photo, .shop-case-photo, .shop-charm-photo) {
+  position: relative;
+  aspect-ratio: 350 / 412;
+  overflow: hidden;
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--color-text) 20%, transparent);
+}
+
+:is(.shop-holiday-photo, .shop-lips-photo, .shop-case-photo, .shop-charm-photo) > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:is(.shop-holiday-like, .shop-lips-like, .shop-case-like, .shop-charm-like) {
+  position: absolute;
+  top: 1rem;
+  right: 0.75rem;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  color: var(--color-purple-light);
+}
+
+:is(.shop-holiday-like, .shop-lips-like, .shop-case-like, .shop-charm-like) svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  transition: fill 200ms ease;
+}
+
+:is(.shop-holiday-like, .shop-lips-like, .shop-case-like, .shop-charm-like)[aria-pressed="true"] svg {
+  fill: currentColor;
+}
+
+:is(.shop-holiday-hot, .shop-lips-hot, .shop-case-hot, .shop-charm-hot) {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  clip-path: polygon(50% 0, 68% 30%, 100% 50%, 68% 68%, 50% 100%, 32% 68%, 0 50%, 32% 30%);
+  color: var(--color-white);
+  background: var(--color-primary);
+  font-family: "Playfair Display", serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* SHOP HOLIDAY 제품명과 가격 */
+:is(.shop-holiday-info, .shop-lips-info, .shop-case-info, .shop-charm-info) {
+  position: relative;
+  padding: 0.75rem 2.75rem 0 0;
+}
+
+:is(.shop-holiday-info, .shop-lips-info, .shop-case-info, .shop-charm-info) h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  word-break: keep-all;
+}
+
+:is(.shop-holiday-price, .shop-lips-price, .shop-case-price, .shop-charm-price) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 0.375rem;
+  font-size: 0.9375rem;
+}
+
+:is(.shop-holiday-discount, .shop-lips-discount, .shop-case-discount, .shop-charm-discount) {
+  color: #b400ff;
+}
+
+:is(.shop-holiday-price, .shop-lips-price, .shop-case-price, .shop-charm-price) strong {
+  font-weight: 600;
+}
+
+:is(.shop-holiday-price, .shop-lips-price, .shop-case-price, .shop-charm-price) del {
+  color: #b5afb9;
+  font-size: 0.8125rem;
+}
+
+:is(.shop-holiday-cart, .shop-lips-cart, .shop-case-cart, .shop-charm-cart) {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  display: grid;
+  place-items: center;
+  width: 1.625rem;
+  height: 1.625rem;
+  border-radius: 0.25rem;
+  color: var(--color-purple-light);
+  background: var(--color-purple-gray);
+}
+
+:is(.shop-holiday-cart, .shop-lips-cart, .shop-case-cart, .shop-charm-cart) svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+:is(.shop-holiday, .shop-lips, .shop-case, .shop-charm) :focus-visible {
+  outline: 2px solid var(--color-purple-dark);
+  outline-offset: 3px;
+}
+
+/* SHOP HOLIDAY 기존 사진 확대 호버 */
+@media (hover: hover) {
+  :is(.shop-holiday-photo, .shop-lips-photo, .shop-case-photo, .shop-charm-photo):hover > img {
+    transform: scale(1.08);
+  }
+}
+
+:is(.shop-holiday-photo, .shop-lips-photo, .shop-case-photo, .shop-charm-photo):focus-within > img {
+  transform: scale(1.08);
+}
+
+/* SHOP HOLIDAY 태블릿 */
+@media (max-width: 1024px) {
+  :is(.shop-holiday, .shop-lips, .shop-case, .shop-charm) {
+    padding: 5rem 0;
+  }
+
+  :is(.shop-holiday-heading, .shop-lips-heading, .shop-case-heading, .shop-charm-heading) {
+    margin: 0 1.5rem 2rem;
+  }
+
+  :is(.shop-holiday-swiper, .shop-lips-swiper, .shop-case-swiper, .shop-charm-swiper) {
+    margin-left: 1.5rem;
+  }
+
+  :is(.shop-holiday-card, .shop-lips-card, .shop-case-card, .shop-charm-card) {
+    width: 32vw;
+  }
+
+  :is(.shop-holiday-cart, .shop-lips-cart, .shop-case-cart, .shop-charm-cart) {
+    right: 0;
+  }
+}
+
+/* SHOP HOLIDAY 모바일 */
+@media (max-width: 600px) {
+  :is(.shop-holiday, .shop-lips, .shop-case, .shop-charm) {
+    padding: 3rem 0;
+  }
+
+  :is(.shop-holiday-heading, .shop-lips-heading, .shop-case-heading, .shop-charm-heading) {
+    margin: 0 1rem 1.5rem;
+  }
+
+  :is(.shop-holiday-heading, .shop-lips-heading, .shop-case-heading, .shop-charm-heading) h2 {
+    font-size: 2rem;
+  }
+
+  :is(.shop-holiday-swiper, .shop-lips-swiper, .shop-case-swiper, .shop-charm-swiper) {
+    margin-left: 1rem;
+  }
+
+  :is(.shop-holiday-card, .shop-lips-card, .shop-case-card, .shop-charm-card) {
+    width: 72vw;
+  }
+
+  :is(.shop-holiday-info, .shop-lips-info, .shop-case-info, .shop-charm-info) {
+    padding-right: 3rem;
+  }
+
+  :is(.shop-holiday-cart, .shop-lips-cart, .shop-case-cart, .shop-charm-cart) {
+    top: 0.625rem;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+/* SHOP HOLIDAY 오른쪽에서 왼쪽으로 등장 */
+:is(.shop-holiday, .shop-case).is-reveal-ready :is(.shop-holiday-heading, .shop-case-heading),
+:is(.shop-holiday, .shop-case).is-reveal-ready :is(.shop-holiday-swiper, .shop-case-swiper) {
+  opacity: 0;
+  translate: 100vw 0;
+  transition: opacity 500ms ease, translate 1500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:is(.shop-holiday, .shop-case).is-reveal-ready :is(.shop-holiday-swiper, .shop-case-swiper) {
+  transition-delay: 180ms;
+}
+
+:is(.shop-holiday, .shop-case).is-reveal-ready.is-visible :is(.shop-holiday-heading, .shop-case-heading),
+:is(.shop-holiday, .shop-case).is-reveal-ready.is-visible :is(.shop-holiday-swiper, .shop-case-swiper) {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* SHOP HOLIDAY 모션 접근성 */
+@media (prefers-reduced-motion: reduce) {
+  :is(.shop-holiday, .shop-case).is-reveal-ready :is(.shop-holiday-heading, .shop-case-heading),
+  :is(.shop-holiday, .shop-case).is-reveal-ready :is(.shop-holiday-swiper, .shop-case-swiper) {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+
+  :is(.shop-holiday-photo, .shop-case-photo) > img {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* SHOP LIPS 왼쪽 화살표와 오른쪽 정렬 */
+:is(.shop-lips, .shop-charm) {
+  padding-top: 5rem;
+}
+
+:is(.shop-lips-heading, .shop-charm-heading) {
+  flex-direction: row-reverse;
+  margin: 0 13.541667vw 2.5rem 2.552083vw;
+}
+
+:is(.shop-lips-prev, .shop-charm-prev) svg {
+  rotate: 180deg;
+}
+
+:is(.shop-lips-swiper, .shop-charm-swiper) {
+  margin-left: 0;
+  margin-right: 12.5vw;
+}
+
+/* SHOP LIPS 왼쪽에서 오른쪽으로 등장 */
+:is(.shop-lips, .shop-charm).is-reveal-ready :is(.shop-lips-heading, .shop-charm-heading),
+:is(.shop-lips, .shop-charm).is-reveal-ready :is(.shop-lips-swiper, .shop-charm-swiper) {
+  opacity: 0;
+  translate: -100vw 0;
+  transition: opacity 500ms ease, translate 1500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:is(.shop-lips, .shop-charm).is-reveal-ready :is(.shop-lips-swiper, .shop-charm-swiper) {
+  transition-delay: 180ms;
+}
+
+:is(.shop-lips, .shop-charm).is-reveal-ready.is-visible :is(.shop-lips-heading, .shop-charm-heading),
+:is(.shop-lips, .shop-charm).is-reveal-ready.is-visible :is(.shop-lips-swiper, .shop-charm-swiper) {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* SHOP LIPS 태블릿 */
+@media (max-width: 1024px) {
+  :is(.shop-lips-heading, .shop-charm-heading) {
+    margin: 0 1.5rem 2rem;
+  }
+
+  :is(.shop-lips-swiper, .shop-charm-swiper) {
+    margin-left: 0;
+    margin-right: 1.5rem;
+  }
+}
+
+/* SHOP LIPS 모바일 */
+@media (max-width: 600px) {
+  :is(.shop-lips, .shop-charm) {
+    padding-top: 3rem;
+  }
+
+  :is(.shop-lips-heading, .shop-charm-heading) {
+    margin: 0 1rem 1.5rem;
+  }
+
+  :is(.shop-lips-swiper, .shop-charm-swiper) {
+    margin-right: 1rem;
+  }
+}
+
+/* SHOP LIPS 모션 접근성 */
+@media (prefers-reduced-motion: reduce) {
+  :is(.shop-lips, .shop-charm).is-reveal-ready :is(.shop-lips-heading, .shop-charm-heading),
+  :is(.shop-lips, .shop-charm).is-reveal-ready :is(.shop-lips-swiper, .shop-charm-swiper) {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+
+  :is(.shop-lips-photo, .shop-charm-photo) > img {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* SHOP CASE 배경과 제품 문구 */
+.shop-case {
+  padding: 5rem 0 10rem;
+}
+
+.shop-case-info {
+  color: var(--color-white);
+}
+
+.shop-case-color {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.shop-case-discount {
+  color: var(--color-purple-light);
+}
+
+.shop-case-price del {
+  color: var(--color-purple-dark);
+}
+
+/* SHOP CASE 태블릿 */
+@media (max-width: 1024px) {
+  .shop-case {
+    padding: 4rem 0 5rem;
+  }
+}
+
+/* SHOP CASE 모바일 */
+@media (max-width: 600px) {
+  .shop-case {
+    padding: 3rem 0;
+  }
+}
+
+/* SHOP 모델 배너 */
+.shop-model-banner {
+  height: 30.3125vw;
+  overflow: hidden;
+  background: var(--color-text);
+}
+
+.shop-model-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* SHOP 모델 배너 스크롤 패럴랙스 */
+.shop-model-banner.is-parallax .shop-model-media {
+  position: relative;
+  top: -15%;
+  height: 130%;
+  transform: translateY(var(--shop-banner-offset, 0px));
+  will-change: transform;
+}
+
+/* SHOP 모델 배너 패럴랙스 모션 접근성 */
+@media (prefers-reduced-motion: reduce) {
+  .shop-model-banner.is-parallax .shop-model-media {
+    top: 0;
+    height: 100%;
+    transform: none;
+    will-change: auto;
+  }
+}
+
+/* SHOP 모델 배너 태블릿 */
+@media (max-width: 1024px) {
+  .shop-model-banner {
+    height: 44vw;
+  }
+}
+
+/* SHOP 모델 배너 모바일 */
+@media (max-width: 600px) {
+  .shop-model-banner {
+    height: 75vw;
+    min-height: 16rem;
+  }
+
+  .shop-model-media {
+    object-position: 55% 40%;
+  }
+}
+
+/* SHOP CHARM 배경과 제품 문구 */
+.shop-charm {
+  padding: 9.895833vw 0 8.333333vw;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-background) 20%, var(--color-primary)) 0%,
+    var(--color-primary) 30%,
+    var(--color-purple-dark) 80%,
+    var(--color-text) 100%
+  );
+}
+
+.shop-charm-heading {
+  margin: 0 10.677083vw 2rem 5.208333vw;
+}
+
+.shop-charm-heading h2,
+.shop-charm-info {
+  color: var(--color-white);
+}
+
+.shop-charm-swiper {
+  margin-right: 10.260417vw;
+}
+
+.shop-charm-prev {
+  color: var(--color-primary);
+  background: var(--color-background);
+}
+
+.shop-charm-prev:hover {
+  background: var(--color-purple-light);
+}
+
+.shop-charm-like {
+  color: var(--color-purple-dark);
+}
+
+.shop-charm-name {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.shop-charm-discount {
+  color: var(--color-purple-light);
+}
+
+.shop-charm-price del {
+  color: var(--color-background);
+}
+
+.shop-charm-cart {
+  color: var(--color-primary);
+  background: var(--color-purple-light);
+}
+
+.shop-charm :focus-visible {
+  outline-color: var(--color-purple-light);
+}
+
+/* SHOP CHARM 태블릿 */
+@media (max-width: 1024px) {
+  .shop-charm {
+    padding: 5rem 0;
+  }
+
+  .shop-charm-heading {
+    margin: 0 1.5rem 2rem;
+  }
+
+  .shop-charm-swiper {
+    margin-right: 1.5rem;
+  }
+}
+
+/* SHOP CHARM 모바일 */
+@media (max-width: 600px) {
+  .shop-charm {
+    padding: 3rem 0;
+  }
+
+  .shop-charm-heading {
+    margin: 0 1rem 1.5rem;
+  }
+
+  .shop-charm-swiper {
+    margin-right: 1rem;
+  }
+}
+
+/* SHOP 텍스트 스크롤 등장 애니메이션 */
+.shop-text-reveal {
+  opacity: 0;
+  translate: 0 2rem;
+  transition: opacity 800ms ease, translate 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--shop-text-delay, 0ms);
+}
+
+.shop-text-reveal.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* SHOP BEST 모션 접근성 */
+@media (prefers-reduced-motion: reduce) {
+  .shop-text-reveal {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+
+  .shop-best-image,
+  .shop-best-hover {
+    transition: none;
+    transform: none !important;
+  }
+}

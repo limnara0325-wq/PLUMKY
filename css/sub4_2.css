@@ -1,0 +1,419 @@
+@charset "UTF-8";
+
+/* SUB4_2 페이지와 공통 헤더 */
+.community-page {
+  color: var(--color-purple-dark);
+  background: var(--color-background);
+}
+
+.community-page > .common-header {
+  isolation: isolate;
+  color: var(--color-white);
+  background: transparent;
+}
+
+/* SUB4_2 헤더 가독성을 위한 상단 그라데이션 */
+.community-page > .common-header::before {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  height: clamp(8rem, 18vh, 13rem);
+  content: "";
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-text) 82%, transparent) 0%,
+    color-mix(in srgb, var(--color-text) 58%, transparent) 35%,
+    color-mix(in srgb, var(--color-text) 24%, transparent) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.community-page > .common-header .common-header-tools {
+  color: var(--color-white);
+}
+
+
+/* 01 COMMUNITY 영상 배너 */
+.review-hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 22rem;
+  aspect-ratio: 1920 / 690;
+  overflow: hidden;
+  color: var(--color-purple-light);
+  background: var(--color-purple-dark);
+}
+
+.review-hero-video,
+.review-hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.review-hero-video {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 01 COMMUNITY 영상 하단 그라데이션 */
+.review-hero::after {
+  content: "";
+  background: linear-gradient(to bottom, transparent 35%, color-mix(in srgb, var(--color-text) 24%, transparent) 65%, var(--color-text) 100%);
+  pointer-events: none;
+}
+
+/* 01 COMMUNITY 제목과 카테고리 */
+.review-hero-copy {
+  position: absolute;
+  right: 1rem;
+  bottom: 12%;
+  left: 1rem;
+  text-align: center;
+}
+
+.review-hero h1 {
+  font-size: clamp(2.75rem, 4.166667vw, 5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.review-community-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.666667vw;
+  margin-top: 1.041667vw;
+  font-size: clamp(1.125rem, 1.666667vw, 2rem);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* 01 COMMUNITY 현재 카테고리와 링크 강조 */
+.review-community-nav > a,
+.review-community-nav > span {
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid transparent;
+}
+
+.review-community-nav > [aria-current="page"],
+.review-community-nav > a:hover,
+.review-community-nav > a:focus-visible {
+  border-bottom-color: currentColor;
+}
+
+.review-community-nav > a:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* 01 COMMUNITY 다른 카테고리 호버 시 현재 메뉴 밑줄 숨김 */
+@media (hover: hover) {
+  .review-community-nav:has(> :hover:not([aria-current="page"])) > [aria-current="page"] {
+    border-bottom-color: transparent;
+  }
+
+  .review-community-nav > span:hover {
+    border-bottom-color: currentColor;
+  }
+}
+
+/* 01 COMMUNITY 태블릿 */
+@media (max-width: 1024px) {
+  .review-hero {
+    min-height: 22rem;
+  }
+
+  .review-community-nav {
+    gap: 0.5rem 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
+/* 01 COMMUNITY 모바일 */
+@media (max-width: 600px) {
+  .review-hero {
+    min-height: 26rem;
+  }
+
+  .review-hero-copy {
+    right: 0.75rem;
+    bottom: 10%;
+    left: 0.75rem;
+  }
+
+  .review-hero h1 {
+    font-size: clamp(2.25rem, 10vw, 3rem);
+  }
+
+  .review-community-nav {
+    gap: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* 02 REVIEW 섹션 제목과 카드 배치 */
+.review-section {
+  padding: 6.666667vw 0 5.833333vw;
+  background: var(--color-background);
+}
+
+.review-section-title {
+  color: var(--color-purple-dark);
+  font-size: clamp(2.25rem, 3.333333vw, 4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.25vw;
+  width: 76.041667%;
+  max-width: 91.25rem;
+  margin: 6.666667vw auto 0;
+}
+
+.review-column {
+  display: grid;
+  gap: 1.25vw;
+  min-width: 0;
+}
+
+.review-column:nth-child(2) {
+  padding-top: 6.458333vw;
+}
+
+/* 02 REVIEW 사진과 후기 내용 */
+.review-card {
+  overflow: hidden;
+  color: var(--color-primary);
+  background: var(--color-white);
+  font-family: "Pretendard", sans-serif;
+  transition: transform 240ms ease;
+}
+
+/* 02 REVIEW 카드 호버 상승 효과 */
+@media (hover: hover) {
+  .review-card:hover {
+    transform: translateY(-0.5rem);
+  }
+}
+
+/* 02 REVIEW 모션 줄이기 설정 */
+@media (prefers-reduced-motion: reduce) {
+  .review-card {
+    transition: none;
+  }
+
+  .review-card:hover {
+    transform: none;
+  }
+}
+
+.review-card-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 460 / 422;
+  object-fit: cover;
+}
+
+.review-card-copy {
+  padding: 1.041667vw;
+}
+
+.review-card h3 {
+  overflow: hidden;
+  font-size: clamp(0.875rem, 0.9375vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.review-card-text {
+  display: -webkit-box;
+  min-height: 3.2em;
+  margin-top: 0.625rem;
+  overflow: hidden;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.review-card-rating {
+  margin-top: 0.625rem;
+  color: var(--color-purple-dark);
+  font-size: 1.125rem;
+  line-height: 1.4;
+  letter-spacing: -0.08em;
+}
+
+/* 02 REVIEW 연결 상품 */
+.review-card-product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-primary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.review-card-product img {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-card-product:hover span {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.review-card-product:focus-visible,
+.review-more:focus-visible {
+  outline: 2px solid var(--color-purple-dark);
+  outline-offset: 4px;
+}
+
+/* 02 REVIEW 전문 펼치기 */
+.review-grid.is-expanded .review-card-text {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+
+.review-grid.is-expanded .review-card h3 {
+  white-space: normal;
+}
+
+.review-more-wrap {
+  margin-top: 7.5vw;
+  text-align: center;
+}
+
+.review-more {
+  min-width: 7.5rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 1.5rem;
+  color: var(--color-white);
+  background: var(--color-primary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.review-more:hover {
+  background: var(--color-purple-dark);
+}
+
+/* SUB4_2 텍스트와 이미지의 아래에서 위로 등장 효과 */
+.community-page .review-reveal {
+  opacity: 0;
+  translate: 0 2rem;
+  transition: opacity 750ms ease, translate 750ms cubic-bezier(0.22, 1, 0.36, 1), transform 240ms ease;
+}
+
+.community-page .review-reveal.is-review-revealed {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* SUB4_2 배너 제목 다음에 카테고리 등장 */
+.community-page .review-community-nav.review-reveal {
+  transition-delay: 180ms;
+}
+
+/* SUB4_2 커뮤니티 등장 후 리뷰 제목 순서로 표시 */
+.community-page .review-section-title.review-reveal {
+  transition-delay: 350ms;
+}
+
+/* SUB4_2 등장 효과 모션 접근성 */
+@media (prefers-reduced-motion: reduce) {
+  .community-page .review-reveal {
+    opacity: 1;
+    translate: none;
+    transition: none;
+    transition-delay: 0ms;
+  }
+}
+
+/* 02 REVIEW 태블릿 */
+@media (max-width: 1024px) {
+  .review-section {
+    padding-block: 5rem;
+  }
+
+  .review-grid {
+    gap: 1rem;
+    width: calc(100% - 3rem);
+    margin-top: 4rem;
+  }
+
+  .review-column {
+    gap: 1rem;
+  }
+
+  .review-column:nth-child(2) {
+    padding-top: 3rem;
+  }
+
+  .review-card-copy {
+    padding: 0.875rem;
+  }
+
+  .review-more-wrap {
+    margin-top: 4rem;
+  }
+}
+
+/* 02 REVIEW 모바일 */
+@media (max-width: 600px) {
+  .review-section {
+    padding-block: 3.5rem;
+  }
+
+  .review-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    width: calc(100% - 2.5rem);
+    max-width: 25rem;
+    margin-top: 2.5rem;
+  }
+
+  .review-column {
+    gap: 1.5rem;
+  }
+
+  .review-column:nth-child(2) {
+    padding-top: 0;
+  }
+
+  .review-card-copy {
+    padding: 1rem;
+  }
+
+  .review-card h3 {
+    font-size: 1rem;
+  }
+
+  .review-more-wrap {
+    margin-top: 2.5rem;
+  }
+}
