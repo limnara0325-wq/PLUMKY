@@ -19,9 +19,9 @@ function initSub3Reveal() {
   const targets = [...document.querySelectorAll(selectors.join(","))].filter((element) => {
     // 03 배너의 배경 사진은 등장 애니메이션에서 제외합니다.
     if (element.matches(".brand-style-background")) return false;
-    // 01 배너는 고정하고 문구 이미지에만 등장 애니메이션을 적용합니다.
+    // 01 배경은 고정하고 BRAND 제목과 문구 이미지만 순서대로 등장시킵니다.
     if (element.closest(".brand-hero")) {
-      return element.matches(".brand-hero-word, .brand-hero-description img");
+      return element.matches(".brand-hero-title, .brand-hero-word, .brand-hero-description img");
     }
     return !element.classList.contains("common-header-sr-only")
       && !(element.matches("p") && element.querySelector("img"));

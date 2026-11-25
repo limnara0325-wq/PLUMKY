@@ -198,6 +198,8 @@ function initCommunityRevealLifecycle(page, targets, observer, revealClass, visi
       element.classList.add(revealClass);
       element.classList.toggle(visibleClass, reducedMotion.matches);
     });
+    // 재진입 시에도 숨김 상태를 먼저 확정해 등장 효과가 한 프레임에 합쳐지지 않게 합니다.
+    void page.offsetWidth;
     if (!reducedMotion.matches) {
       prepareFrame = window.requestAnimationFrame(prepareObservation);
     } else {

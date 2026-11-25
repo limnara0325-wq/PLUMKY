@@ -813,6 +813,42 @@ body > .site-header::before {
 body.community-reveal-preparing:is(.gallery-page, .community-page, .event-page, .qna-page)
   :is(.gallery-reveal, .review-reveal, .event-reveal, .qna-reveal) {
   transition: none;
+  animation: none;
+}
+
+/* COMMUNITY 화면 진입과 재방문 시 콘텐츠 등장 */
+body:is(.gallery-page, .community-page, .event-page, .qna-page)
+  :is(.gallery-reveal.is-gallery-revealed, .review-reveal.is-review-revealed, .event-reveal.is-event-revealed, .qna-reveal.is-qna-revealed) {
+  animation: community-content-rise 750ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--community-reveal-delay, 0ms);
+}
+
+:is(.gallery-community-nav, .review-community-nav, .event-community-nav, .qna-community-nav) {
+  --community-reveal-delay: 180ms;
+}
+
+:is(.gallery-title, .review-section-title, .event-section-title, .qna-section-title) {
+  --community-reveal-delay: 350ms;
+}
+
+@keyframes community-content-rise {
+  from { opacity: 0; translate: 0 2rem; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+/* COMMUNITY 모션 접근성과 키보드 즉시 표시 */
+body:is(.gallery-page, .community-page, .event-page, .qna-page)
+  :is(.gallery-reveal, .review-reveal, .event-reveal, .qna-reveal):focus-within {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:is(.gallery-page, .community-page, .event-page, .qna-page)
+    :is(.gallery-reveal, .review-reveal, .event-reveal, .qna-reveal) {
+    animation: none;
+    opacity: 1;
+    translate: none;
+  }
 }
 
 /* FOOTER 모션 접근성 */

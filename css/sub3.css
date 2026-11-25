@@ -810,8 +810,30 @@
   translate: 0 0;
 }
 
+/* BRAND 제목 다음에 설명과 영문 문구 순서로 등장 */
+.sub3-page .brand-hero-title.sub3-reveal.is-sub3-revealed,
+.sub3-page .brand-hero-copy .sub3-reveal.is-sub3-revealed {
+  animation: brand-hero-content-rise 750ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--brand-hero-reveal-delay, 0ms);
+}
+
+.brand-hero-description img { --brand-hero-reveal-delay: 800ms; }
+.brand-hero-beyond { --brand-hero-reveal-delay: 1000ms; }
+.brand-hero-beauty { --brand-hero-reveal-delay: 1150ms; }
+.brand-hero-into { --brand-hero-reveal-delay: 1300ms; }
+.brand-hero-identity { --brand-hero-reveal-delay: 1450ms; }
+
+@keyframes brand-hero-content-rise {
+  from { opacity: 0; translate: 0 1.75rem; }
+  to { opacity: 1; translate: 0 0; }
+}
+
 /* SUB3 등장 애니메이션 모션 접근성 */
 @media (prefers-reduced-motion: reduce) {
+  .sub3-page .brand-hero-title.sub3-reveal.is-sub3-revealed,
+  .sub3-page .brand-hero-copy .sub3-reveal.is-sub3-revealed {
+    animation: none;
+  }
   .sub3-page .sub3-reveal {
     opacity: 1;
     translate: none;
