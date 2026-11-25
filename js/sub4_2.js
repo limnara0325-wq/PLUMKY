@@ -57,14 +57,11 @@ function initReviewReveal() {
   }
 
   const observer = new IntersectionObserver(handleReviewReveal, {
-    threshold: 0.08,
-    rootMargin: "0px 0px -24px 0px"
+    threshold: 0.01,
+    rootMargin: "0px 0px 32px 0px"
   });
 
-  targets.forEach((element) => {
-    element.classList.add("review-reveal");
-    observer.observe(element);
-  });
+  initCommunityRevealLifecycle(page, targets, observer, "review-reveal", "is-review-revealed");
 
   // 키보드 초점이 들어온 콘텐츠는 즉시 표시합니다.
   function handleReviewRevealFocus(event) {

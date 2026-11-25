@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PLUMKY EVENT. 홀리데이 키링, 구매 사은품과 공식몰 회원 쿠폰 혜택을 만나보세요.">
     <title>Event | PLUMKY</title>
+    <!-- 공통 심볼 파비콘 -->
+    <link rel="icon" href="favicon.ico?v=20261125" sizes="16x16 32x32 48x48 64x64 256x256">
+    <link rel="icon" type="image/png" sizes="64x64" href="main_image/favicon.png?v=20261125">
     <!-- 공통 스타일과 기능 -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
@@ -71,9 +74,9 @@
 
       <div class="common-header-tools">
         <a class="common-header-account" href="#login">Login/Join</a>
-        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-search" aria-label="검색 열기" aria-haspopup="dialog" aria-controls="common-header-search">
+        <span class="common-header-icon-button" aria-hidden="true">
           <svg class="common-header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
-        </button>
+        </span>
         <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-cart" aria-label="장바구니 열기" aria-haspopup="dialog" aria-controls="common-header-cart">
           <svg class="common-header-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
         </button>
@@ -230,9 +233,9 @@
     <dialog class="common-header-dialog common-header-side-menu" id="common-header-side-menu" aria-label="전체 메뉴">
       <div class="common-header-side-tools">
         <a class="common-header-login" href="#login">Login/Join</a>
-        <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-search" aria-label="검색 열기" aria-haspopup="dialog" aria-controls="common-header-search">
+        <span class="common-header-icon-button" aria-hidden="true">
           <svg class="common-header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
-        </button>
+        </span>
         <button class="common-header-icon-button" type="button" data-common-header-dialog="common-header-cart" aria-label="장바구니 열기" aria-haspopup="dialog" aria-controls="common-header-cart">
           <svg class="common-header-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
         </button>
@@ -264,21 +267,6 @@
           </ul>
         </details>
       </nav>
-    </dialog>
-
-    <!-- 헤더 검색 -->
-    <dialog class="common-header-dialog common-header-search" id="common-header-search" aria-labelledby="common-header-search-title">
-      <div class="common-header-dialog-heading">
-        <h2 id="common-header-search-title">Search</h2>
-        <button class="common-header-icon-button" type="button" data-common-header-close aria-label="검색 닫기">
-          <svg class="common-header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
-        </button>
-      </div>
-      <label class="common-header-search-field">
-        <span class="common-header-sr-only">검색어</span>
-        <input type="search" name="keyword" placeholder="검색어를 입력하세요" autocomplete="off" autofocus>
-        <svg class="common-header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
-      </label>
     </dialog>
 
     <!-- 헤더 장바구니 -->

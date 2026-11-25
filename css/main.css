@@ -5,13 +5,18 @@ html.is-intro-active {
   overflow: hidden;
 }
 
+/* MAIN 시작화면 확인 모드: 저장 기록과 모션 설정에 관계없이 배경을 표시합니다. */
+html[data-intro-preview="true"] .main-intro {
+  animation-duration: 5s;
+}
+
 .main-intro {
   position: fixed;
   inset: 0;
   z-index: 1000;
   display: grid;
   place-items: center;
-  background: var(--color-text);
+  background: var(--color-text) url("../main_image/intro_bg.jpg") center / cover no-repeat;
   perspective: 75rem;
   animation: main-intro-exit 5s cubic-bezier(0.4, 0, 0.2, 1) both;
 }

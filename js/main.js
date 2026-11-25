@@ -210,13 +210,15 @@ function createIntroMetalSymbol(intro, timeline) {
 
 
 // MAIN 시작화면
-// 첫 방문에만 시작화면을 보여주고 종료 후 메인배너 문구를 등장시킵니다.
+// 시작화면을 표시하고 종료 후 메인배너 문구를 등장시킵니다.
 function initMainIntro() {
   const intro = document.querySelector(".main-intro");
   if (!intro) {
     initHeaderSloganReveal();
     return;
   }
+  // HTML의 확인 모드가 켜져 있으면 새로고침할 때도 시작화면을 표시합니다.
+  const replayIntroForPreview = document.documentElement.dataset.introPreview === "true";
   let alreadySeen = false;
   try {
     alreadySeen = window.localStorage.getItem("plumky-main-intro-seen") === "1";
@@ -224,16 +226,26 @@ function initMainIntro() {
   } catch {
     // 브라우저가 저장소를 차단해도 메인 화면은 정상적으로 표시합니다.
   }
-  if (alreadySeen) {
+  if (alreadySeen && !replayIntroForPreview) {
     intro.hidden = true;
     initHeaderSloganReveal();
     return;
   }
+  // 확인 모드에서는 종료된 CSS 애니메이션도 처음부터 5초 동안 다시 표시합니다.
+  if (replayIntroForPreview) {
+    intro.style.animation = "none";
+    intro.style.animationDuration = "5s";
+  }
   intro.hidden = false;
+  if (replayIntroForPreview) {
+    void intro.offsetWidth;
+    intro.style.removeProperty("animation");
+    intro.style.animationDuration = "5s";
+  }
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const duration = reducedMotion.matches ? 100 : 5000;
+  const duration = replayIntroForPreview ? 5000 : reducedMotion.matches ? 100 : 5000;
   const animation = intro.getAnimations?.().find((item) => item.animationName === "main-intro-exit");
-  const remaining = Math.max(0, duration - Number(animation?.currentTime || 0));
+  const remaining = replayIntroForPreview ? duration : Math.max(0, duration - Number(animation?.currentTime || 0));
   const content = [...document.querySelectorAll(".site-header, main, .site-footer")];
   const inertBefore = content.map((element) => element.inert);
   let finished = false;
@@ -975,7 +987,7 @@ if (header) {
     dialogOpener = null;
   }
 
-  // 헤더 버튼으로 검색, 장바구니, 전체 메뉴 대화상자를 제어합니다.
+  // 헤더 버튼으로 장바구니와 전체 메뉴 대화상자를 제어합니다.
   function handleHeaderClick(event) {
     const opener = event.target.closest("[data-header-dialog]");
     const closer = event.target.closest("[data-header-close]");

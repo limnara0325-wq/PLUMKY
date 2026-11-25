@@ -192,8 +192,7 @@
   transform: translateY(-0.2rem) rotate(45deg);
 }
 
-/* 02 FAQ 첫 질문의 기본 보라색 배경 */
-.qna-faq-item:first-child > .qna-faq-question,
+/* 02 FAQ 선택하여 펼친 질문의 보라색 배경 */
 .qna-faq-item[open] > .qna-faq-question {
   color: var(--color-white);
   background: #52365f;
@@ -537,7 +536,6 @@
     font-size: 0.75rem;
   }
 
-  .qna-faq-item:first-child .qna-faq-category,
   .qna-faq-item[open] .qna-faq-category { color: var(--color-purple-light); }
   .qna-faq-marker { grid-column: 1; grid-row: 2; }
   .qna-faq-text { grid-column: 2; grid-row: 2; }

@@ -1,25 +1,30 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-intro-preview="true">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PLUMKY — Your style, your object.">
     <title>PLUMKY</title>
+    <!-- 공통 심볼 파비콘 -->
+    <link rel="icon" href="favicon.ico?v=20261125" sizes="16x16 32x32 48x48 64x64 256x256">
+    <link rel="icon" type="image/png" sizes="64x64" href="main_image/favicon.png?v=20261125">
     <!-- MAIN 시작화면 심볼 미리 불러오기 -->
     <link rel="preload" as="image" href="main_image/심볼1.png">
+    <!-- MAIN 시작화면 배경 미리 불러오기 -->
+    <link rel="preload" as="image" href="main_image/intro_bg.jpg">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <!-- MAIN 전용 스타일 -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?v=20261125-intro-preview3">
     <!-- LIPS 제품 슬라이더 라이브러리 -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
     <script src="js/common.js" defer></script>
     <!-- MAIN 전용 기능 -->
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js?v=20261125-intro-preview3" defer></script>
   </head>
   <body>
     <!-- MAIN 시작화면 -->
-    <div class="main-intro" aria-hidden="true" hidden>
+    <div class="main-intro" aria-hidden="true">
       <img class="main-intro-symbol" src="main_image/심볼1.png" alt="" width="2175" height="2232" fetchpriority="high" draggable="false">
     </div>
     <!-- 헤더 아이콘 -->
@@ -74,9 +79,9 @@
       </nav>
 
       <div class="header-tools">
-        <button class="header-icon-button" type="button" data-header-dialog="header-search" aria-label="검색 열기" aria-haspopup="dialog" aria-controls="header-search">
+        <span class="header-icon-button" aria-hidden="true">
           <svg class="header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
-        </button>
+        </span>
         <button class="header-icon-button" type="button" data-header-dialog="header-cart" aria-label="장바구니 열기" aria-haspopup="dialog" aria-controls="header-cart">
           <svg class="header-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
         </button>
@@ -203,7 +208,7 @@
                       <p class="case-collection">PLUMKEY — BUTTERFLY CASE</p>
                       <h3 id="case-silver-title">01 SILVER METAL<span>실버 메탈</span></h3>
                       <p class="case-description">깨끗하고 세련된 실버 메탈 컬러로, 어떤 스타일에도 자연스럽게 어우러지는 시크한 무드.</p>
-                      <a class="case-buy" href="#case" aria-label="실버 메탈 구매하기">구매하기</a>
+                      <a class="case-buy" href="sub1_3.html" aria-label="실버 메탈 구매하기">구매하기</a>
                     </div>
                   </article>
                   <article class="swiper-slide case-card" aria-labelledby="case-lilac-title">
@@ -214,7 +219,7 @@
                       <p class="case-collection">PLUMKEY — BUTTERFLY CASE</p>
                       <h3 id="case-lilac-title">02 LILAC METAL<span>라일락 메탈</span></h3>
                       <p class="case-description">은은한 라벤더빛과 부드러운 메탈 광택이 어우러져 몽환적이고 신비로운 분위기를 연출하는 컬러.</p>
-                      <a class="case-buy" href="#case" aria-label="라일락 메탈 구매하기">구매하기</a>
+                      <a class="case-buy" href="sub1_3.html" aria-label="라일락 메탈 구매하기">구매하기</a>
                     </div>
                   </article>
                   <article class="swiper-slide case-card" aria-labelledby="case-purple-title">
@@ -224,7 +229,7 @@
                       <p class="case-collection">PLUMKEY — BUTTERFLY CASE</p>
                       <h3 id="case-purple-title">03 DEEP PURPLE METAL<span>딥퍼플 메탈</span></h3>
                       <p class="case-description">깊고 짙은 퍼플 메탈 컬러로, 묵직한 광택과 강렬한 존재감이 돋보이는 매혹적인 무드.</p>
-                      <a class="case-buy" href="#case" aria-label="딥퍼플 메탈 구매하기">구매하기</a>
+                      <a class="case-buy" href="sub1_3.html" aria-label="딥퍼플 메탈 구매하기">구매하기</a>
                     </div>
                   </article>
                   <article class="swiper-slide case-card" aria-labelledby="case-blue-title">
@@ -234,7 +239,7 @@
                       <p class="case-collection">PLUMKEY — BUTTERFLY CASE</p>
                       <h3 id="case-blue-title">04 ICE BLUE METAL<span>아이스블루 메탈</span></h3>
                       <p class="case-description">차가운 블루빛이 감도는 메탈 컬러로, 청량하면서도 미래적인 분위기를 담은 쿨한 무드.</p>
-                      <a class="case-buy" href="#case" aria-label="아이스블루 메탈 구매하기">구매하기</a>
+                      <a class="case-buy" href="sub1_3.html" aria-label="아이스블루 메탈 구매하기">구매하기</a>
                     </div>
                   </article>
                   <article class="swiper-slide case-card" aria-labelledby="case-pink-title">
@@ -244,7 +249,7 @@
                       <p class="case-collection">PLUMKEY — BUTTERFLY CASE</p>
                       <h3 id="case-pink-title">05 PINK METAL<span>핑크 메탈</span></h3>
                       <p class="case-description">은은한 핑크빛과 글로시한 메탈 광택이 만나 사랑스러우면서도 키치한 매력을 표현하는 컬러.</p>
-                      <a class="case-buy" href="#case" aria-label="핑크 메탈 구매하기">구매하기</a>
+                      <a class="case-buy" href="sub1_3.html" aria-label="핑크 메탈 구매하기">구매하기</a>
                     </div>
                   </article>
               </div>
@@ -479,9 +484,9 @@
     <dialog class="header-dialog header-side-menu" id="header-side-menu" aria-label="전체 메뉴">
       <div class="header-side-tools">
         <a class="header-login" href="#login">Login/Join</a>
-        <button class="header-icon-button" type="button" data-header-dialog="header-search" aria-label="검색 열기" aria-haspopup="dialog" aria-controls="header-search">
+        <span class="header-icon-button" aria-hidden="true">
           <svg class="header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
-        </button>
+        </span>
         <button class="header-icon-button" type="button" data-header-dialog="header-cart" aria-label="장바구니 열기" aria-haspopup="dialog" aria-controls="header-cart">
           <svg class="header-icon" aria-hidden="true"><use href="#icon-cart"></use></svg>
         </button>
@@ -513,21 +518,6 @@
           </ul>
         </details>
       </nav>
-    </dialog>
-
-    <!-- 헤더 검색 -->
-    <dialog class="header-dialog header-search" id="header-search" aria-labelledby="header-search-title">
-      <div class="header-dialog-heading">
-        <h2 id="header-search-title">Search</h2>
-        <button class="header-icon-button" type="button" data-header-close aria-label="검색 닫기">
-          <svg class="header-icon" aria-hidden="true"><use href="#icon-close"></use></svg>
-        </button>
-      </div>
-      <label class="header-search-field">
-        <span class="header-sr-only">검색어</span>
-        <input type="search" name="keyword" placeholder="검색어를 입력하세요" autocomplete="off" autofocus>
-        <svg class="header-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
-      </label>
     </dialog>
 
     <!-- 헤더 장바구니 -->

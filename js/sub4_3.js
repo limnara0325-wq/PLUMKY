@@ -37,14 +37,11 @@ function initEventReveal() {
   }
 
   const observer = new IntersectionObserver(handleEventReveal, {
-    threshold: 0.08,
-    rootMargin: "0px 0px -24px 0px"
+    threshold: 0.01,
+    rootMargin: "0px 0px 32px 0px"
   });
 
-  targets.forEach((element) => {
-    element.classList.add("event-reveal");
-    observer.observe(element);
-  });
+  initCommunityRevealLifecycle(page, targets, observer, "event-reveal", "is-event-revealed");
 
   // 키보드 초점이 들어온 콘텐츠는 즉시 표시합니다.
   function handleEventRevealFocus(event) {

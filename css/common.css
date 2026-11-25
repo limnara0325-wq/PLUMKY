@@ -809,6 +809,12 @@ body > .site-header::before {
   }
 }
 
+/* COMMUNITY 페이지 이동 시 등장 효과의 초기 상태를 즉시 적용 */
+body.community-reveal-preparing:is(.gallery-page, .community-page, .event-page, .qna-page)
+  :is(.gallery-reveal, .review-reveal, .event-reveal, .qna-reveal) {
+  transition: none;
+}
+
 /* FOOTER 모션 접근성 */
 @media (prefers-reduced-motion: reduce) {
   .footer-metal-item,

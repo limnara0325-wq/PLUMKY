@@ -1,7 +1,7 @@
 "use strict";
 
 // 공통 헤더
-// 공통 헤더의 드롭다운과 검색·장바구니·전체 메뉴를 초기화합니다.
+// 공통 헤더의 드롭다운과 장바구니·전체 메뉴를 초기화합니다.
 function initCommonHeader() {
   // 헤더
   const header = document.querySelector(".common-header");
@@ -75,7 +75,7 @@ function initCommonHeader() {
       dialogOpener = null;
     }
   
-    // 헤더 버튼으로 검색, 장바구니, 전체 메뉴 대화상자를 제어합니다.
+    // 헤더 버튼으로 장바구니와 전체 메뉴 대화상자를 제어합니다.
     function handleHeaderClick(event) {
       const opener = event.target.closest("[data-common-header-dialog]");
       const closer = event.target.closest("[data-common-header-close]");
@@ -169,6 +169,71 @@ function initCollapsedShopMenu() {
 }
 
 initCollapsedShopMenu();
+
+// COMMUNITY 페이지 이동과 복원 시 등장 애니메이션 시작 시점 관리
+// 초기 숨김 상태를 먼저 그린 뒤 관찰을 시작하고 캐시 복원이나 같은 페이지 이동 시 재실행합니다.
+function initCommunityRevealLifecycle(page, targets, observer, revealClass, visibleClass) {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let prepareFrame = 0;
+  let observeFrame = 0;
+
+  // 준비가 끝난 콘텐츠를 즉시 관찰해 화면 진입에 맞춰 표시합니다.
+  function observeTargets() {
+    targets.forEach((element) => observer.observe(element));
+  }
+
+  // 초기 스타일이 한 프레임 반영된 후 등장 관찰을 시작합니다.
+  function prepareObservation() {
+    page.classList.remove("community-reveal-preparing");
+    observeFrame = window.requestAnimationFrame(observeTargets);
+  }
+
+  // 이전 예약을 취소하고 새 진입에 맞춰 숨김 상태와 관찰을 초기화합니다.
+  function restartReveal() {
+    window.cancelAnimationFrame(prepareFrame);
+    window.cancelAnimationFrame(observeFrame);
+    observer.disconnect();
+    page.classList.add("community-reveal-preparing");
+    targets.forEach((element) => {
+      element.classList.add(revealClass);
+      element.classList.toggle(visibleClass, reducedMotion.matches);
+    });
+    if (!reducedMotion.matches) {
+      prepareFrame = window.requestAnimationFrame(prepareObservation);
+    } else {
+      page.classList.remove("community-reveal-preparing");
+    }
+  }
+
+  // 브라우저의 뒤로 가기 캐시에서 복원된 페이지도 등장 효과를 다시 시작합니다.
+  function handleCommunityPageShow(event) {
+    if (event.persisted) restartReveal();
+  }
+
+  // 같은 주소의 카테고리를 다시 선택해도 등장 효과를 실행합니다.
+  function handleCommunityNavigation(event) {
+    const link = event.target.closest(".gallery-community-nav a, .review-community-nav a, .event-community-nav a, .qna-community-nav a");
+    if (!link || event.defaultPrevented || event.button !== 0
+      || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const destination = new URL(link.href, window.location.href);
+    if (destination.origin === window.location.origin
+      && destination.pathname === window.location.pathname
+      && destination.search === window.location.search
+      && destination.hash === window.location.hash) restartReveal();
+  }
+
+  // 페이지를 떠날 때 실행 대기 중인 프레임을 취소합니다.
+  function handleCommunityPageHide() {
+    window.cancelAnimationFrame(prepareFrame);
+    window.cancelAnimationFrame(observeFrame);
+  }
+
+  window.addEventListener("pageshow", handleCommunityPageShow);
+  window.addEventListener("hashchange", restartReveal);
+  window.addEventListener("pagehide", handleCommunityPageHide);
+  page.addEventListener("click", handleCommunityNavigation);
+  restartReveal();
+}
 
 // 공통 장바구니 상품 이미지와 구매하기
 // 모든 페이지의 장바구니에 상품 내역과 이미지, 합계 및 구매하기 버튼을 표시합니다.

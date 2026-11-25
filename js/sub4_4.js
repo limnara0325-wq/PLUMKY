@@ -5,6 +5,11 @@
 function initQnaFaq() {
   const items = [...document.querySelectorAll(".qna-faq-item")];
 
+  // 페이지에 처음 들어오면 첫 번째 질문만 펼친 상태로 시작합니다.
+  items.forEach((item, index) => {
+    item.open = index === 0;
+  });
+
   // 새로 펼친 질문을 제외한 나머지 질문을 접습니다.
   function handleFaqToggle(event) {
     if (!event.currentTarget.open) return;
@@ -222,12 +227,9 @@ function initQnaReveal() {
 
   const observer = new IntersectionObserver(handleQnaReveal, {
     threshold: 0.01,
-    rootMargin: "0px 0px -24px 0px"
+    rootMargin: "0px 0px 32px 0px"
   });
-  targets.forEach((element) => {
-    element.classList.add("qna-reveal");
-    observer.observe(element);
-  });
+  initCommunityRevealLifecycle(page, targets, observer, "qna-reveal", "is-qna-revealed");
 
   // 키보드 초점이 들어온 콘텐츠를 즉시 표시합니다.
   function handleQnaFocus(event) {
