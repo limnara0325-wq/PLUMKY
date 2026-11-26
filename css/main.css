@@ -16,7 +16,7 @@ html[data-intro-preview="true"] .main-intro {
   z-index: 1000;
   display: grid;
   place-items: center;
-  background: var(--color-text) url("../main_image/intro_bg.jpg") center / cover no-repeat;
+  background: var(--color-text) url("../main_image/intro_bg.png?v=20261126") center / cover no-repeat;
   perspective: 75rem;
   animation: main-intro-exit 5s cubic-bezier(0.4, 0, 0.2, 1) both;
 }

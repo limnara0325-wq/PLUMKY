@@ -525,7 +525,7 @@ body.gallery-dialog-open {
 
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 1rem;
     width: calc(100% - 2rem);
     aspect-ratio: auto;
@@ -534,6 +534,7 @@ body.gallery-dialog-open {
   .gallery-card {
     position: relative;
     inset: auto;
+    grid-column: span 3;
     width: auto;
     height: auto;
     aspect-ratio: 3 / 4;
@@ -542,6 +543,19 @@ body.gallery-dialog-open {
   .gallery-card-1 {
     grid-column: 1 / -1;
     aspect-ratio: 4 / 5;
+  }
+
+  /* STYLE GALLERY 모바일 중간 강조 사진 */
+  .gallery-card-6 {
+    grid-column: 1 / -1;
+    aspect-ratio: 4 / 3;
+  }
+
+  /* STYLE GALLERY 모바일 하단 세 장 그리드 */
+  .gallery-card-7,
+  .gallery-card-8,
+  .gallery-card-9 {
+    grid-column: span 2;
   }
 
   .gallery-open::after {

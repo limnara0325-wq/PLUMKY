@@ -56,29 +56,29 @@ initCustomTitleReveal();
 // CUSTOMIZE 상품 카탈로그와 SVG 배치 좌표
 const customCatalog = {
   lips: [
-    { id: "lip-plu", name: "플러미 글레이즈 틴트 01 플루", image: "sub2_image/lip 플루.png", card: "main_image/02_1.PLU.jpg", price: 10900 },
-    { id: "lip-mouvy", name: "플러미 글레이즈 틴트 02 모비", image: "sub2_image/lip 모비.png", card: "main_image/02_2.MOV.jpg", price: 10900 },
-    { id: "lip-berry", name: "플러미 글레이즈 틴트 03 베리", image: "sub2_image/lip 베리.png", card: "main_image/02_3.BERRY.jpg", price: 10900 },
-    { id: "lip-rosy", name: "플러미 글레이즈 틴트 04 로지", image: "sub2_image/lip 로지.png", card: "main_image/02_4.ROSY.jpg", price: 10900 },
-    { id: "lip-peony", name: "플러미 글레이즈 틴트 05 피오니", image: "sub2_image/lip 피오니.png", card: "main_image/02_5.PIONY.jpg", price: 10900 }
+    { id: "lip-plu", name: "플러미 글레이즈 틴트 01 플루", image: "sub2_image/lip%20%20(5).png", card: "main_image/02_1.PLU.jpg", price: 10900 },
+    { id: "lip-mouvy", name: "플러미 글레이즈 틴트 02 모비", image: "sub2_image/lip%20%20(3).png", card: "main_image/02_2.MOV.jpg", price: 10900 },
+    { id: "lip-berry", name: "플러미 글레이즈 틴트 03 베리", image: "sub2_image/lip%20%20(4).png", card: "main_image/02_3.BERRY.jpg", price: 10900 },
+    { id: "lip-rosy", name: "플러미 글레이즈 틴트 04 로지", image: "sub2_image/lip%20%20(2).png", card: "main_image/02_4.ROSY.jpg", price: 10900 },
+    { id: "lip-peony", name: "플러미 글레이즈 틴트 05 피오니", image: "sub2_image/lip%20%20(1).png", card: "main_image/02_5.PIONY.jpg", price: 10900 }
   ],
   case: [
     // 참은 오른쪽 체인 세 곳과 아래쪽 날개 고리 두 곳에만 연결합니다.
-    { id: "case-silver", name: "버터플라이 케이스 실버", image: "sub2_image/case 실버.png", card: "main_image/03_1.실버.jpg", price: 10300, position: { x: -284, y: 7, width: 1032, height: 770.56 }, anchors: [[165, 535], [422, 535], [488, 320], [488, 415], [490, 497]] },
-    { id: "case-lilac", name: "버터플라이 케이스 라이트퍼플", image: "sub2_image/case 라이트퍼플.png", card: "main_image/03_2.라일락.jpg", price: 10300, position: { x: 40, y: 166, width: 522.08, height: 522.08 }, anchors: [[170, 536], [424, 535], [490, 320], [493, 418], [494, 497]] },
-    { id: "case-purple", name: "버터플라이 케이스 딥퍼플", image: "sub2_image/case딥퍼플.png", card: "main_image/03_3딥퍼플.jpg", price: 10300, position: { x: -341, y: 4, width: 1083.6, height: 809.088 }, anchors: [[166, 531], [432, 534], [493, 309], [497, 401], [500, 490]] },
-    { id: "case-blue", name: "버터플라이 케이스 라이트블루", image: "sub2_image/case 블루 .png", card: "main_image/03_4_블루.jpg", price: 10300, position: { x: -207, y: 5, width: 1032, height: 770.56 }, anchors: [[177, 529], [431, 529], [488, 320], [493, 416], [494, 496]] },
-    { id: "case-pink", name: "버터플라이 케이스 라이트핑크", image: "sub2_image/case 핑크.png", card: "main_image/03_5.핑크.jpg", price: 10300, position: { x: 55, y: 185, width: 502, height: 502 }, anchors: [[166, 543], [425, 541], [480, 320], [482, 416], [484, 501]] }
+    { id: "case-silver", name: "버터플라이 케이스 실버", image: "sub2_image/case%20silver.png", card: "main_image/03_1.siver_hove.jpg", price: 10300, position: { x: -284, y: 7, width: 1032, height: 770.56 }, anchors: [[165, 535], [422, 535], [488, 320], [488, 415], [490, 497]] },
+    { id: "case-lilac", name: "버터플라이 케이스 라이트퍼플", image: "sub2_image/case%20lap.png", card: "main_image/03_2.lail.jpg", price: 10300, position: { x: 40, y: 166, width: 522.08, height: 522.08 }, anchors: [[170, 536], [424, 535], [490, 320], [493, 418], [494, 497]] },
+    { id: "case-purple", name: "버터플라이 케이스 딥퍼플", image: "sub2_image/case_deep.png", card: "main_image/03_3deep_p.jpg", price: 10300, position: { x: -341, y: 4, width: 1083.6, height: 809.088 }, anchors: [[166, 531], [432, 534], [493, 309], [497, 401], [500, 490]] },
+    { id: "case-blue", name: "버터플라이 케이스 라이트블루", image: "sub2_image/case%20bule%20.png", card: "main_image/03_4_bule.jpg", price: 10300, position: { x: -207, y: 5, width: 1032, height: 770.56 }, anchors: [[177, 529], [431, 529], [488, 320], [493, 416], [494, 496]] },
+    { id: "case-pink", name: "버터플라이 케이스 라이트핑크", image: "sub2_image/pink.png", card: "main_image/03_5.pink.jpg", price: 10300, position: { x: 55, y: 185, width: 502, height: 502 }, anchors: [[166, 543], [425, 541], [480, 320], [482, 416], [484, 501]] }
   ],
   charm: [
-    { id: "charm-butterfly", name: "버터플라이 메탈 참 키링", english: "BUTTERFLY CHARM", image: "sub2_image/charm나비.png", card: "sub1_image/07_나비.jpg", price: 7600, crop: [170, 0, 740, 1448], ring: [0.5, 0.04] },
-    { id: "charm-cherry", name: "체리쉬 메탈 참 키링", english: "CHERRISH CHARM", image: "sub2_image/charm체리.png", card: "sub1_image/07_체리.jpg", price: 7600, crop: [170, 0, 740, 1448], ring: [0.5, 0.04] },
-    { id: "charm-heart", name: "하트 메탈 참 키링", english: "HEART CHARM", image: "sub2_image/charm하트.png", card: "sub1_image/07_하트.jpg", price: 7600, crop: [170, 0, 740, 1448], ring: [0.5, 0.04] },
-    { id: "charm-star", name: "스타 메탈 참 키링", english: "STAR CHARM", image: "sub2_image/charm스타 .png", card: "sub1_image/07_스타.jpg", price: 7600, crop: [140, 0, 800, 1448], ring: [0.5, 0.04] },
-    { id: "charm-ribbon", name: "리본 메탈 참 키링", english: "RIBBON CHARM", image: "sub2_image/charm리본.png", card: "sub1_image/07_리본.jpg", price: 7600, crop: [600, 0, 480, 937], ring: [0.5, 0.04] },
-    { id: "charm-key", name: "키 메탈 참 키링", english: "KEY CHARM", image: "sub2_image/charm키.png", card: "sub1_image/07_키.jpg", price: 7600, crop: [170, 0, 600, 1678], ring: [0.5, 0.04] },
-    { id: "charm-moon", name: "문 메탈 참 키링", english: "MOON CHARM", image: "sub2_image/charm문.png", card: "sub1_image/07_문메탈.jpg", price: 7600, crop: [130, 0, 780, 1536], ring: [0.5, 0.04] },
-    { id: "charm-lock", name: "락 메탈 참 키링", english: "LOCK CHARM", image: "sub2_image/charm락.png", card: "sub1_image/07_락.jpg", price: 7600, crop: [130, 0, 780, 1536], ring: [0.5, 0.04] }
+    { id: "charm-butterfly", name: "버터플라이 메탈 참 키링", english: "BUTTERFLY CHARM", image: "sub2_image/charmpng%20(2).png", card: "sub1_image/07_%20(2).jpg", price: 7600, crop: [170, 0, 740, 1448], ring: [0.5, 0.04] },
+    { id: "charm-cherry", name: "체리쉬 메탈 참 키링", english: "CHERRISH CHARM", image: "sub2_image/charmpng%20(7).png", card: "sub1_image/07_%20(7).jpg", price: 7600, crop: [170, 0, 740, 1448], ring: [0.5, 0.04] },
+    { id: "charm-heart", name: "하트 메탈 참 키링", english: "HEART CHARM", image: "sub2_image/charmpng%20(1).png", card: "sub1_image/07_%20(1).jpg", price: 7600, crop: [170, 0, 740, 1448], ring: [0.5, 0.04] },
+    { id: "charm-star", name: "스타 메탈 참 키링", english: "STAR CHARM", image: "sub2_image/charmpng%20(6).png", card: "sub1_image/07_%20(6).jpg", price: 7600, crop: [140, 0, 800, 1448], ring: [0.5, 0.04] },
+    { id: "charm-ribbon", name: "리본 메탈 참 키링", english: "RIBBON CHARM", image: "sub2_image/charmpng%20(4).png", card: "sub1_image/07_%20(4).jpg", price: 7600, crop: [600, 0, 480, 937], ring: [0.5, 0.04] },
+    { id: "charm-key", name: "키 메탈 참 키링", english: "KEY CHARM", image: "sub2_image/charmpng%20(8).png", card: "sub1_image/07_%20(8).jpg", price: 7600, crop: [170, 0, 600, 1678], ring: [0.5, 0.04] },
+    { id: "charm-moon", name: "문 메탈 참 키링", english: "MOON CHARM", image: "sub2_image/charmpng%20(5).png", card: "sub1_image/07_%20(5).jpg", price: 7600, crop: [130, 0, 780, 1536], ring: [0.5, 0.04] },
+    { id: "charm-lock", name: "락 메탈 참 키링", english: "LOCK CHARM", image: "sub2_image/charmpng%20(3).png", card: "sub1_image/07_%20(3).jpg", price: 7600, crop: [130, 0, 780, 1536], ring: [0.5, 0.04] }
   ]
 };
 

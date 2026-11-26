@@ -548,17 +548,27 @@
   }
 
   .qna-board { margin-top: 3rem; }
-  .qna-col-number, .qna-col-product { width: 0; }
-  .qna-col-author { width: 23%; }
-  .qna-col-date { width: 28%; }
+
+  /* 03 모바일 게시판: 숨긴 두 열의 너비를 제거하고 표시할 세 열에 재분배 */
+  .qna-board-table colgroup { display: none; }
   .qna-board-table th:nth-child(-n+2),
   .qna-board-table td:nth-child(-n+2) { display: none; }
+  .qna-board-table th:nth-child(3) { width: calc(100% - 9.5rem); }
+  .qna-board-table th:nth-child(4) { width: 4.25rem; }
+  .qna-board-table th:nth-child(5) { width: 5.25rem; }
   .qna-board-table th { font-size: 0.75rem; }
   .qna-board-table tbody tr { height: 5rem; }
   .qna-board-table td { padding-inline: 0.25rem; }
   .qna-board-table td:nth-child(4),
-  .qna-board-table td:nth-child(5) { font-size: 0.75rem; }
-  .qna-inquiry-button { gap: 0.25rem; font-size: 0.8125rem; }
+  .qna-board-table td:nth-child(5) {
+    overflow: hidden;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .qna-inquiry-button { min-width: 0; gap: 0.25rem; font-size: 0.8125rem; }
+  .qna-inquiry-title { min-width: 0; word-break: normal; overflow-wrap: anywhere; }
+  .qna-inquiry-lock { flex-shrink: 0; }
   .qna-inquiry-button .qna-board-icon { width: 0.75rem; height: 0.75rem; }
   .qna-inquiry-status { font-size: 0.625rem; }
   .qna-search { margin-top: 2rem; }

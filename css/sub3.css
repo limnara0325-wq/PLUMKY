@@ -456,14 +456,18 @@
 /* YOUR STYLE 배너 모바일 */
 @media (max-width: 600px) {
   .brand-style-banner {
-    height: 75vw;
-    min-height: 20rem;
+    height: 30.416667vw;
+    min-height: 0;
+  }
+
+  .brand-style-background {
+    object-position: center 60%;
   }
 
   .brand-style-copy {
-    top: auto;
-    bottom: 10%;
-    transform: translateX(-50%);
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
   }
 
   .brand-style-copy-left {
